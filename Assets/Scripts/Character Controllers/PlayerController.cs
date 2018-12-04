@@ -10,10 +10,12 @@ public class PlayerController : Controller
 	public static PlayerController instance;
 	
 	#region Values-------------------------------------------------------------------------------------------------------------/
+	
+	private float m_InputTime;
 
-//	private float m_TempHealth;
-
-	[SerializeField] private float m_InputTime;
+	[SerializeField] private bool m_CanDash;
+	[SerializeField] private bool m_CanSuperDash;
+	[SerializeField] private bool m_CanHeavyHit;
 	
 	#endregion
 	
@@ -23,29 +25,47 @@ public class PlayerController : Controller
 	{
 		set { Time.timeScale = value; }
 	}
-	
+
+	public bool CanDash
+	{
+		get { return instance.m_CanDash; }
+		set { instance.m_CanDash = value; }
+	}
+
+	public bool CanSuperDash
+	{
+		get { return instance.m_CanSuperDash; }
+		set { instance.m_CanSuperDash = value; }
+	}
+
+	public bool CanHeavyHit
+	{
+		get { return instance.m_CanHeavyHit; }
+		set { instance.m_CanHeavyHit = value; }
+	}
+
 	#endregion
 
 	#region Monobehaviour------------------------------------------------------------------------------------------------------/
-	
-    private void Awake()
-    {
-	    if (instance != null)
-	    {
-		    Destroy(gameObject);
-	    }
-	    else
-	    {
-		    instance = this;
-	    }
+
+	protected override void Awake()
+	{
+		if (instance != null)
+		{
+			gameObject.SetActive(false);
+		}
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
 	    
-        m_Char = GetComponent<Character>();
-    }
+		base.Awake();
+	}
 
 	private void Update()
 	{
 		PlayerInput();
-//		m_Char.SpawnSpriteTrail();
 	}
 	
 	#endregion
@@ -62,7 +82,7 @@ public class PlayerController : Controller
 		bool isMoving = h != 0 || v != 0;
 		
 		//Track Values
-		if (isMoving)
+		if (isMoving && m_Char.m_CanMove)
 		{
 			Vector2 dir = Mathf.Abs(h) > Mathf.Abs(v) ? new Vector2(h, 0) : new Vector2(0, v);
 			dir = Vector3.Normalize(dir);
@@ -93,27 +113,30 @@ public class PlayerController : Controller
 		#endregion
 
 		#region Heavy Attack
-		
-		
-		if (Input.GetButton("Attack"))
+
+
+		if (CanHeavyHit)
 		{
-			bool animCheck =  m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack_01") &&
-			                  m_InputTime >= m_Char.Anim.GetCurrentAnimatorStateInfo(0).length - 0.05f;
+			if (Input.GetButton("Attack"))
+			{
+				bool animCheck =  m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack_01") &&
+				                  m_InputTime >= m_Char.Anim.GetCurrentAnimatorStateInfo(0).length - 0.05f;
 			
-			m_InputTime += Time.deltaTime;
-			if (animCheck)
-			{
-				m_Char.HeavyCharge();
+				m_InputTime += Time.deltaTime;
+				if (animCheck)
+				{
+					m_Char.HeavyCharge();
+				}
 			}
-		}
 
-		if (Input.GetButtonUp("Attack"))
-		{
-			m_InputTime = 0;
-
-			if (m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Heavy Charge"))
+			if (Input.GetButtonUp("Attack"))
 			{
-				m_Char.HeavyAttack();
+				m_InputTime = 0;
+
+				if (m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Heavy Charge"))
+				{
+					m_Char.HeavyAttack();
+				}
 			}
 		}
 
@@ -121,12 +144,40 @@ public class PlayerController : Controller
 
 		#region Dash
 
-		if (Input.GetButtonDown("Dash") && m_Char.m_CanMove)
+		if (CanDash)
 		{
-			Vector2 dir = Vector3.Normalize(new Vector2(h, v));
-			dir = isMoving ? dir : m_Char.Direction;
-			m_Char.Dash(dir);
+			if (Input.GetButtonDown("Dash") && m_Char.m_CanMove)
+			{
+				Vector2 dir = Vector3.Normalize(new Vector2(h, v));
+				dir = isMoving ? dir : m_Char.Direction;
+				m_Char.Dash(dir);
+			}
 		}
+
+		#endregion
+
+		#region Interaction
+
+		if (Input.GetButtonDown("Interact"))
+		{
+			if (CurrentInteractionObject != null)
+			{
+				CurrentInteractionObject.TriggerInteraction();
+			}
+		}
+
+		#endregion
+
+		#region PlayerCheats
+
+#if UNITY_EDITOR
+		if (Input.GetKeyDown(KeyCode.F1))
+		{
+			CanDash = true;
+			CanSuperDash = true;
+			CanHeavyHit = true;
+		}
+#endif
 
 		#endregion
 	}
@@ -163,25 +214,6 @@ public class PlayerController : Controller
 	#endregion
 
 	#region Coroutines---------------------------------------------------------------------------------------------------------/
-
-	public IEnumerator LerpHealth(float damage, float timer)
-	{
-		float startHealth = m_Char.HealthCurrent;
-		float targetHealth = m_Char.HealthCurrent - damage;
-
-		UI_Gameplay.instance.HealthBar = targetHealth / m_Char.HealthMax;
-
-		float t = 0;
-		while (t < timer)
-		{
-			t += Time.deltaTime;
-
-			m_Char.HealthCurrent = Mathf.Lerp(startHealth, targetHealth, t / timer);
-			UI_Gameplay.instance.TempHealthBar = m_Char.HealthCurrent / m_Char.HealthMax;
-
-			yield return null;
-		}
-	}
 
 	public IEnumerator HapticFeedback(float time, float intensity)
 	{

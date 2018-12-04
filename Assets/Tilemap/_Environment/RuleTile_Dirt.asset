@@ -50,6 +50,26 @@ MonoBehaviour:
     m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
   - m_OriginalSprite: {fileID: 21300008, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
     m_OverrideSprite: {fileID: 21300020, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300830, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300836, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300832, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300834, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300822, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300012, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300824, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300018, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300826, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300140, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300828, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300134, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300808, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300816, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300812, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300810, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
   m_OverrideTilingRules: []
   m_OverrideDefault:
     m_Enabled: 0

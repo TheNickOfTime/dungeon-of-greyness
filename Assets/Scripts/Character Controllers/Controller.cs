@@ -9,11 +9,36 @@ public class Controller : MonoBehaviour, IHittable
 	protected Character m_Char;
 	protected SpriteRenderer m_Ren;
 
+	[Header("Controller")]
 	[SerializeField] protected GameObject m_Particles;
+
+	protected Interaction m_CurrentInteraction;
 
 	#endregion
 
-	protected void Awake()
+	#region Properties---------------------------------------------------------------------------------------------------------/
+
+	public Character Char
+	{
+		get { return m_Char; }
+	}
+
+	public Interaction CurrentInteractionObject
+	{
+		get
+		{
+			return m_CurrentInteraction;
+		}
+		set
+		{
+			m_CurrentInteraction = value;
+			UI_Gameplay.instance.InteractionIconVisibility = value != null;
+		}
+	}
+
+	#endregion
+
+	protected virtual void Awake()
 	{
 		m_Char = GetComponent<Character>();
 		m_Ren = GetComponent<SpriteRenderer>();

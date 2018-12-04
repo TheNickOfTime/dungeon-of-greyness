@@ -7,15 +7,16 @@ public class EnemyController : Controller
 {
 	#region State--------------------------------------------------------------------------------------------------------------/
 
-	private enum EnemyState
+	protected enum EnemyState
 	{
 		Idle,
 		Alert,
 		Attack
 	}
 
-	private EnemyState m_State = EnemyState.Idle;
-	private EnemyState State
+	[Header("Enemy Controller")]
+	[SerializeField] protected EnemyState m_State = EnemyState.Idle;
+	protected EnemyState State
 	{
 		get
 		{
@@ -29,9 +30,12 @@ public class EnemyController : Controller
 			{
 				case EnemyState.Idle:
 					m_Char.Anim.SetBool("IsMoving", false);
+					m_Char.m_CanMove = false;
+					m_Char.Rig.velocity = Vector2.zero;
 					break;
 				case EnemyState.Alert:
 					m_Char.Anim.SetBool("IsMoving", true);
+					m_Char.m_CanMove = true;
 					break;
 				case EnemyState.Attack:
 					m_Char.Anim.SetTrigger("Attack");
@@ -44,12 +48,12 @@ public class EnemyController : Controller
 	
 	#region Values-------------------------------------------------------------------------------------------------------------/
 
-	[SerializeField] private float m_AlertRadius = 5;
-	[SerializeField] private float m_AttackRadius = 1;
+	[SerializeField] protected float m_AlertRadius = 5;
+	[SerializeField] protected float m_AttackRadius = 1;
 	
-	private Transform m_Target;
+	protected Transform m_Target;
 
-	private bool m_DefaultRenFlip;
+	protected bool m_DefaultRenFlip;
 	
 	#endregion
 
@@ -76,48 +80,62 @@ public class EnemyController : Controller
 		switch (State)
 		{
 			case EnemyState.Idle:
-				if (PlayerInRadius(m_AlertRadius))
-				{
-					State = EnemyState.Alert;
-					m_Char.Move(Vector2.zero);
-				}
+				IdleState();
 				break;
 			
 			case EnemyState.Alert:
-				//Checks if player has left enemy's range
-				if (!PlayerInRadius(m_AlertRadius + 1))
-				{
-					State = EnemyState.Idle;
-					return;
-				}
-				
-				//Checks if the player can be attacked;
-				if (PlayerInRadius(m_AttackRadius))
-				{
-					State = EnemyState.Attack;
-				}
-
-				//Applies movement
-				if(m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Move"))
-				{
-					Vector2 direction = Vector3.Normalize(m_Target.position - transform.position);
-					m_Char.Direction = direction;
-
-					m_Char.Move(direction);
-
-					m_Ren.flipX = direction.x < 0 ? m_DefaultRenFlip : !m_DefaultRenFlip;
-				}
+				AlertState();
 				break;
 			
 			case EnemyState.Attack:
-				m_Char.Move(Vector2.zero);
-				
-				//If the player is no longer in the attack state, returns to alert state
-				if (!m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-				{
-					m_State = EnemyState.Alert;
-				}
+				AttackState();
 				break;
+		}
+	}
+
+	protected virtual void IdleState()
+	{
+		if (PlayerInRadius(m_AlertRadius) && PlayerInSight())
+		{
+			State = EnemyState.Alert;
+		}
+	}
+
+	protected virtual void AlertState()
+	{
+		//Checks if player has left enemy's range
+		if (!PlayerInSight())
+		{
+			State = EnemyState.Idle;
+			return;
+		}
+				
+		//Checks if the player can be attacked;
+		if (PlayerInRadius(m_AttackRadius) && PlayerInSight())
+		{
+			State = EnemyState.Attack;
+		}
+
+		//Applies movement
+		if(m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Move"))
+		{
+			Vector2 direction = Vector3.Normalize(m_Target.position - transform.position);
+			m_Char.Direction = direction;
+
+			m_Char.Move(direction);
+
+			m_Ren.flipX = direction.x < 0 ? m_DefaultRenFlip : !m_DefaultRenFlip;
+		}
+	}
+
+	protected virtual void AttackState()
+	{
+		m_Char.Move(Vector2.zero);
+				
+		//If the player is no longer in the attack state, returns to alert state
+		if (!m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+		{
+			m_State = EnemyState.Alert;
 		}
 	}
 	
@@ -133,10 +151,16 @@ public class EnemyController : Controller
 	}
 
 	//Utility----------------------------------------------------------------------------------------------------------/
-	private bool PlayerInRadius(float radius)
+	protected bool PlayerInRadius(float radius)
 	{
 		Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, 1 << LayerMask.NameToLayer("Player"));
 		return hit != null;
+	}
+
+	protected bool PlayerInSight()
+	{
+		bool didHit = Physics2D.Linecast(transform.position, m_Target.position, 1 << LayerMask.NameToLayer("Environment"));
+		return !didHit;
 	}
 
 	#endregion

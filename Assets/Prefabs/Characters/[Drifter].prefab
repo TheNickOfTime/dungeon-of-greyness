@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1453056511114090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.2, y: -3.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.15}
   serializedVersion: 2
   m_Radius: 0.35
 --- !u!81 &81402713631757600
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_HeavyDamage: 5
   m_ComboMax: 3
   m_HitBoxSize: {x: 2, y: 2}
+  m_HeavyHitBoxSize: {x: 4, y: 4}
   m_AttackSounds:
   - {fileID: 8300000, guid: b9b49b1731d11f9479e948bc569d89dc, type: 3}
   - {fileID: 8300000, guid: 8de03522c9038dc45b6aff40a6c334dd, type: 3}
@@ -148,6 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Particles: {fileID: 1125586849818642, guid: e06271707508bae4fbea78e814fa7e80,
     type: 2}
+  m_CanDash: 0
+  m_CanSuperDash: 0
+  m_CanHeavyHit: 0
 --- !u!212 &212704760591356016
 SpriteRenderer:
   m_ObjectHideFlags: 1

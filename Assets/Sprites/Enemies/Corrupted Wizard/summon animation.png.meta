@@ -1,7 +1,26 @@
 fileFormatVersion: 2
 guid: adc2f384aa59f084da141ea83161f7f6
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: summon animation_0
+    21300002: summon animation_1
+    21300004: summon animation_2
+    21300006: summon animation_3
+    21300008: summon animation_4
+    21300010: summon animation_5
+    21300012: summon animation_6
+    21300014: summon animation_7
+    21300016: summon animation_8
+    21300018: summon animation_9
+    21300020: summon animation_10
+    21300022: summon animation_11
+    21300024: summon animation_12
+    21300026: summon animation_13
+    21300028: summon animation_14
+    21300030: summon animation_15
+    21300032: summon animation_16
+    21300034: summon animation_17
+    21300036: summon animation_18
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -45,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -74,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,7 +145,287 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: summon animation_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 18
+        width: 24
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d0a0689a40cef4cb227355520516f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 18
+        width: 36
+        height: 51
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632f6d2781e26fe48accb6d8efd432b8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_2
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 18
+        width: 38
+        height: 51
+      alignment: 9
+      pivot: {x: 0.68421054, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2d5eac6d1394b449acc5653d4b9474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_3
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 18
+        width: 40
+        height: 52
+      alignment: 9
+      pivot: {x: 0.7, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d07b2e1796333428b7ce9438075771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_5
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 18
+        width: 39
+        height: 51
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4afdc1fad394f418fcf88538774f23
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_6
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 18
+        width: 40
+        height: 51
+      alignment: 9
+      pivot: {x: 0.7, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60df943d5b0f6d74ca84ed885a6f8dce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_8
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 18
+        width: 39
+        height: 50
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2861ffea07e59b40b10fe39d2b5e0ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_9
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 18
+        width: 40
+        height: 50
+      alignment: 9
+      pivot: {x: 0.7, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b0d88e867091174daaaa63f2b50751c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_11
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 18
+        width: 39
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da60711f23f2e4841aba39e521175706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_12
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 18
+        width: 40
+        height: 51
+      alignment: 9
+      pivot: {x: 0.7, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24536922c2bd89b4bbbcb3c02896a8a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_14
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 18
+        width: 39
+        height: 51
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546bd7cbda5d4c84d900b5ada50dc5d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_16
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 18
+        width: 39
+        height: 52
+      alignment: 9
+      pivot: {x: 0.6923077, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e021a2641987024bbe7372df6ca02bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_17
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 18
+        width: 37
+        height: 50
+      alignment: 9
+      pivot: {x: 0.6756757, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61142b1ebf694d4f824f16a502ca49e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: summon animation_18
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 18
+        width: 35
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6571429, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435f29f04df11c24a819a1f05bbfb9c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

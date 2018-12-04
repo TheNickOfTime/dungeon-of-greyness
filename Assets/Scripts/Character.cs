@@ -202,8 +202,9 @@ public class Character : MonoBehaviour
 	private IEnumerator LerpMovement(Vector2 targetPosition, float timer)
 	{
 		Vector2 direction = Vector3.Normalize(targetPosition - (Vector2)transform.position);
-
+		
 		m_CanMove = false;
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Water"), true);
 		
 		float t = 0;
 		while (t < timer)
@@ -214,7 +215,9 @@ public class Character : MonoBehaviour
 
 			yield return null;
 		}
+		
 		m_CanMove = true;
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Water"), false);
 	}
 
 	#endregion
@@ -291,22 +294,22 @@ public class Character : MonoBehaviour
 
 	public void PlayAttackNoise()
 	{
-		AudioSource.PlayClipAtPoint(m_AttackSounds[Random.RandomRange(0, m_AttackSounds.Length)], transform.position);
+		SFXManager.PlayClipAtPoint(m_AttackSounds[Random.Range(0, m_AttackSounds.Length)], transform.position);
 	}
 
 	public void PlayHitNoise()
 	{
-		AudioSource.PlayClipAtPoint(m_HitSounds[Random.RandomRange(0, m_HitSounds.Length)], transform.position);
+		SFXManager.PlayClipAtPoint(m_HitSounds[Random.Range(0, m_HitSounds.Length)], transform.position);
 	}
 
 	public void PlayDeathNoise()
 	{
-		AudioSource.PlayClipAtPoint(m_DeathSounds[Random.RandomRange(0, m_DeathSounds.Length)], transform.position);
+		SFXManager.PlayClipAtPoint(m_DeathSounds[Random.Range(0, m_DeathSounds.Length)], transform.position);
 	}
 
 	public void PlayDashNoise()
 	{
-		AudioSource.PlayClipAtPoint(m_DashSound, transform.position);
+		SFXManager.PlayClipAtPoint(m_DashSound, transform.position);
 	}
 	
 	#endregion
