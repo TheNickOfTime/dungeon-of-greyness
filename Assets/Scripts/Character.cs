@@ -43,6 +43,7 @@ public class Character : MonoBehaviour
 	[Space]
 	
 	[SerializeField] private Vector2 m_HitBoxSize = new Vector2(2, 2);
+	[SerializeField] private Vector2 m_HeavyHitBoxSize = new Vector2(3, 3);
 	
 	//Audio
 	[Header("Audio")]
@@ -173,6 +174,16 @@ public class Character : MonoBehaviour
 		Anim.SetTrigger("Attack");
 	}
 
+	public void HeavyCharge()
+	{
+		Anim.SetTrigger("Heavy Charge");
+	}
+
+	public void HeavyAttack()
+	{
+		Anim.SetTrigger("Heavy Attack");
+	}
+
 	public void Dash(Vector2 direction)
 	{
 		Vector2 targetPos = (Vector2)transform.position + direction * m_DashDistance;
@@ -236,14 +247,24 @@ public class Character : MonoBehaviour
 
 	public void HeavyHitBox()
 	{
-		Collider2D[] hits = Physics2D.OverlapBoxAll((Vector2)transform.position + Direction, new Vector2(3, 3), 0);
+		Vector2 offset = GetComponent<SpriteRenderer>().bounds.center;
+		Collider2D[] hits = Physics2D.OverlapBoxAll(offset + Direction, m_HeavyHitBoxSize, 0);
 		foreach (Collider2D hit in hits)
 		{
 			IHittable hitref = hit.gameObject.GetComponent<IHittable>();
+			Character charref = hit.gameObject.GetComponent<Character>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
-				Shaker.instance.CameraShake(4, 1, 0.25f);
-				hitref.OnHit(Direction, m_HeavyDamage);
+				if (charref != null && charref.CanRecieveDamge || charref == null)
+				{
+					Shaker.instance.CameraShake(1.5f * 3, 1, 0.2f);
+					hitref.OnHit(Direction, m_HeavyDamage);
+				
+					if (m_Controller is PlayerController)
+					{
+						Shaker.instance.HapticShake(0.21f, 0.65f);
+					}
+				}
 			}
 		}
 	}

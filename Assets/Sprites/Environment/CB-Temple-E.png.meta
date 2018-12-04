@@ -2,12 +2,12 @@ fileFormatVersion: 2
 guid: 2e4f881e554011e4096e9c18006f888a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: CB-Temple-E_6
-    21300002: CB-Temple-E_7
+    21300000: Grass_01
+    21300002: Grass_02
     21300004: CB-Temple-E_8
-    21300006: CB-Temple-E_9
-    21300008: CB-Temple-E_10
-    21300010: CB-Temple-E_11
+    21300006: Grass_03
+    21300008: Grass_13
+    21300010: Grass_14
     21300012: CB-Temple-E_12
     21300014: CB-Temple-E_13
     21300016: CB-Temple-E_14
@@ -24,11 +24,11 @@ TextureImporter:
     21300038: CB-Temple-E_26
     21300040: CB-Temple-E_27
     21300042: CB-Temple-E_28
-    21300044: CB-Temple-E_29
-    21300046: CB-Temple-E_30
-    21300048: CB-Temple-E_31
-    21300050: CB-Temple-E_32
-    21300052: CB-Temple-E_33
+    21300044: Grass_11
+    21300046: Grass_12
+    21300048: Grass_04
+    21300050: Grass_15
+    21300052: Grass_16
     21300054: CB-Temple-E_34
     21300056: CB-Temple-E_35
     21300058: CB-Temple-E_36
@@ -44,12 +44,12 @@ TextureImporter:
     21300078: CB-Temple-E_47
     21300080: CB-Temple-E_48
     21300082: CB-Temple-E_49
-    21300084: CB-Temple-E_50
-    21300086: CB-Temple-E_51
-    21300088: CB-Temple-E_52
+    21300084: Grass_08
+    21300086: Grass_09
+    21300088: Grass_10
     21300090: CB-Temple-E_53
-    21300092: CB-Temple-E_54
-    21300094: CB-Temple-E_55
+    21300092: Grass_17
+    21300094: Grass_18
     21300096: CB-Temple-E_56
     21300098: CB-Temple-E_57
     21300100: CB-Temple-E_58
@@ -65,10 +65,10 @@ TextureImporter:
     21300120: CB-Temple-E_68
     21300122: CB-Temple-E_69
     21300124: CB-Temple-E_70
-    21300126: CB-Temple-E_71
+    21300126: Grass_07
     21300128: CB-Temple-E_72
-    21300130: CB-Temple-E_73
-    21300132: CB-Temple-E_74
+    21300130: Grass_06
+    21300132: Grass_05
     21300134: CB-Temple-E_75
     21300136: CB-Temple-E_76
     21300138: CB-Temple-E_77
@@ -146,12 +146,12 @@ TextureImporter:
     21300282: CB-Temple-E_151
     21300284: CB-Temple-E_152
     21300286: CB-Temple-E_153
-    21300288: CB-Temple-E_154
-    21300290: CB-Temple-E_155
-    21300292: CB-Temple-E_156
-    21300294: CB-Temple-E_157
-    21300296: CB-Temple-E_158
-    21300298: CB-Temple-E_159
+    21300288: BrickWall_16
+    21300290: BrickWall_17
+    21300292: BrickWall_18
+    21300294: BrickWall_19
+    21300296: BrickWall_20
+    21300298: BrickWall_21
     21300300: CB-Temple-E_160
     21300302: CB-Temple-E_161
     21300304: CB-Temple-E_162
@@ -258,8 +258,8 @@ TextureImporter:
     21300506: CB-Temple-E_269
     21300508: CB-Temple-E_270
     21300510: CB-Temple-E_271
-    21300512: CB-Temple-E_272
-    21300514: CB-Temple-E_273
+    21300512: Water_A_01
+    21300514: Water_B_01
     21300516: CB-Temple-E_274
     21300518: CB-Temple-E_275
     21300520: CB-Temple-E_276
@@ -272,24 +272,24 @@ TextureImporter:
     21300534: CB-Temple-E_283
     21300536: CB-Temple-E_284
     21300538: CB-Temple-E_285
-    21300540: CB-Temple-E_286
-    21300542: CB-Temple-E_287
-    21300544: CB-Temple-E_288
-    21300546: CB-Temple-E_289
-    21300548: CB-Temple-E_290
-    21300550: CB-Temple-E_291
-    21300552: CB-Temple-E_292
-    21300554: CB-Temple-E_293
-    21300556: CB-Temple-E_294
-    21300558: CB-Temple-E_295
+    21300540: Water_A_02
+    21300542: Water_A_03
+    21300544: Water_A_04
+    21300546: Water_A_05
+    21300548: Water_A_06
+    21300550: Water_B_02
+    21300552: Water_B_03
+    21300554: Water_B_04
+    21300556: Water_B_05
+    21300558: Water_B_06
     21300560: CB-Temple-E_296
     21300562: CB-Temple-E_297
-    21300564: CB-Temple-E_298
-    21300566: CB-Temple-E_299
-    21300568: CB-Temple-E_300
-    21300570: CB-Temple-E_301
-    21300572: CB-Temple-E_302
-    21300574: CB-Temple-E_303
+    21300564: Water_A_11
+    21300566: Temple_A_14
+    21300568: Water_A_07
+    21300570: Water_B_11
+    21300572: Water_B_14
+    21300574: Water_B_07
     21300576: CB-Temple-E_304
     21300578: CB-Temple-E_305
     21300580: CB-Temple-E_306
@@ -298,10 +298,10 @@ TextureImporter:
     21300586: CB-Temple-E_309
     21300588: CB-Temple-E_310
     21300590: CB-Temple-E_311
-    21300592: CB-Temple-E_312
-    21300594: CB-Temple-E_314
-    21300596: CB-Temple-E_315
-    21300598: CB-Temple-E_317
+    21300592: Water_A_12
+    21300594: Water_A_08
+    21300596: Water_B_12
+    21300598: Water_B_08
     21300600: CB-Temple-E_318
     21300602: CB-Temple-E_319
     21300604: CB-Temple-E_320
@@ -310,12 +310,12 @@ TextureImporter:
     21300610: CB-Temple-E_323
     21300612: CB-Temple-E_324
     21300614: CB-Temple-E_325
-    21300616: CB-Temple-E_326
-    21300618: CB-Temple-E_328
-    21300620: CB-Temple-E_329
-    21300622: CB-Temple-E_330
-    21300624: CB-Temple-E_332
-    21300626: CB-Temple-E_333
+    21300616: Water_A_13
+    21300618: Water_A_09
+    21300620: Water_A_10
+    21300622: Water_B_13
+    21300624: Water_B_09
+    21300626: Water_B_10
     21300628: CB-Temple-E_334
     21300630: CB-Temple-E_335
     21300632: CB-Temple-E_336
@@ -405,6 +405,7 @@ TextureImporter:
     21300800: CB-Temple-E_422
     21300802: CB-Temple-E_423
     21300804: CB-Temple-E_424
+    21300806: Water_Main
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -487,7 +488,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CB-Temple-E_6
+      name: Grass_01
       rect:
         serializedVersion: 2
         x: 8
@@ -507,7 +508,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_7
+      name: Grass_02
       rect:
         serializedVersion: 2
         x: 16
@@ -547,7 +548,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_9
+      name: Grass_03
       rect:
         serializedVersion: 2
         x: 32
@@ -567,7 +568,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_10
+      name: Grass_13
       rect:
         serializedVersion: 2
         x: 40
@@ -587,7 +588,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_11
+      name: Grass_14
       rect:
         serializedVersion: 2
         x: 48
@@ -927,7 +928,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_29
+      name: Grass_11
       rect:
         serializedVersion: 2
         x: 16
@@ -947,7 +948,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_30
+      name: Grass_12
       rect:
         serializedVersion: 2
         x: 24
@@ -967,7 +968,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_31
+      name: Grass_04
       rect:
         serializedVersion: 2
         x: 32
@@ -987,7 +988,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_32
+      name: Grass_15
       rect:
         serializedVersion: 2
         x: 40
@@ -1007,7 +1008,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_33
+      name: Grass_16
       rect:
         serializedVersion: 2
         x: 48
@@ -1327,7 +1328,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_50
+      name: Grass_08
       rect:
         serializedVersion: 2
         x: 8
@@ -1347,7 +1348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_51
+      name: Grass_09
       rect:
         serializedVersion: 2
         x: 16
@@ -1367,7 +1368,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_52
+      name: Grass_10
       rect:
         serializedVersion: 2
         x: 24
@@ -1407,7 +1408,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_54
+      name: Grass_17
       rect:
         serializedVersion: 2
         x: 40
@@ -1427,7 +1428,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_55
+      name: Grass_18
       rect:
         serializedVersion: 2
         x: 48
@@ -1747,7 +1748,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_71
+      name: Grass_07
       rect:
         serializedVersion: 2
         x: 8
@@ -1787,7 +1788,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_73
+      name: Grass_06
       rect:
         serializedVersion: 2
         x: 24
@@ -1807,7 +1808,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_74
+      name: Grass_05
       rect:
         serializedVersion: 2
         x: 32
@@ -3403,7 +3404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_154
+      name: BrickWall_16
       rect:
         serializedVersion: 2
         x: 88
@@ -3423,7 +3424,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_155
+      name: BrickWall_17
       rect:
         serializedVersion: 2
         x: 96
@@ -3443,7 +3444,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_156
+      name: BrickWall_18
       rect:
         serializedVersion: 2
         x: 104
@@ -3463,7 +3464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_157
+      name: BrickWall_19
       rect:
         serializedVersion: 2
         x: 120
@@ -3483,7 +3484,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_158
+      name: BrickWall_20
       rect:
         serializedVersion: 2
         x: 128
@@ -3503,7 +3504,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_159
+      name: BrickWall_21
       rect:
         serializedVersion: 2
         x: 136
@@ -5643,7 +5644,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_272
+      name: Water_A_01
       rect:
         serializedVersion: 2
         x: 16
@@ -5663,7 +5664,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_273
+      name: Water_B_01
       rect:
         serializedVersion: 2
         x: 72
@@ -5923,7 +5924,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_286
+      name: Water_A_02
       rect:
         serializedVersion: 2
         x: 16
@@ -5943,14 +5944,14 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_287
+      name: Water_A_03
       rect:
         serializedVersion: 2
         x: 24
         y: 112
         width: 8
         height: 8
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -5963,47 +5964,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_288
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 112
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7cbd7067954d6db4ea7b2b07c051fb95
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_289
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 112
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46be146ef4b5386478db49792ec17245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_290
+      name: Water_A_06
       rect:
         serializedVersion: 2
         x: 48
@@ -6023,7 +5984,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_291
+      name: Water_B_02
       rect:
         serializedVersion: 2
         x: 72
@@ -6043,7 +6004,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_292
+      name: Water_B_03
       rect:
         serializedVersion: 2
         x: 80
@@ -6063,7 +6024,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_293
+      name: Water_B_04
       rect:
         serializedVersion: 2
         x: 88
@@ -6083,7 +6044,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_294
+      name: Water_B_05
       rect:
         serializedVersion: 2
         x: 96
@@ -6103,7 +6064,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_295
+      name: Water_B_06
       rect:
         serializedVersion: 2
         x: 104
@@ -6163,7 +6124,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_298
+      name: Water_A_11
       rect:
         serializedVersion: 2
         x: 16
@@ -6183,7 +6144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_299
+      name: Temple_A_14
       rect:
         serializedVersion: 2
         x: 32
@@ -6203,7 +6164,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_300
+      name: Water_A_07
       rect:
         serializedVersion: 2
         x: 48
@@ -6223,7 +6184,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_301
+      name: Water_B_11
       rect:
         serializedVersion: 2
         x: 72
@@ -6243,7 +6204,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_302
+      name: Water_B_14
       rect:
         serializedVersion: 2
         x: 88
@@ -6263,7 +6224,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_303
+      name: Water_B_07
       rect:
         serializedVersion: 2
         x: 104
@@ -6443,7 +6404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_312
+      name: Water_A_12
       rect:
         serializedVersion: 2
         x: 16
@@ -6463,7 +6424,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_314
+      name: Water_A_08
       rect:
         serializedVersion: 2
         x: 48
@@ -6483,7 +6444,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_315
+      name: Water_B_12
       rect:
         serializedVersion: 2
         x: 72
@@ -6503,7 +6464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_317
+      name: Water_B_08
       rect:
         serializedVersion: 2
         x: 104
@@ -6683,7 +6644,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_326
+      name: Water_A_13
       rect:
         serializedVersion: 2
         x: 16
@@ -6703,7 +6664,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_328
+      name: Water_A_09
       rect:
         serializedVersion: 2
         x: 48
@@ -6723,7 +6684,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_329
+      name: Water_A_10
       rect:
         serializedVersion: 2
         x: 56
@@ -6743,7 +6704,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_330
+      name: Water_B_13
       rect:
         serializedVersion: 2
         x: 72
@@ -6763,7 +6724,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_332
+      name: Water_B_09
       rect:
         serializedVersion: 2
         x: 104
@@ -6783,7 +6744,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_333
+      name: Water_B_10
       rect:
         serializedVersion: 2
         x: 112
@@ -8578,6 +8539,66 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a722d8d42ba54fe4b8d94fc24b470023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_A_04
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad29478bfcdea2d4d88259744feff368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_A_05
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 112
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6deb79a0e44a50b4bb76d48896bc4461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Main
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 88
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb6b0446402f3740a9c4211c6d71f60
       vertices: []
       indices: 
       edges: []

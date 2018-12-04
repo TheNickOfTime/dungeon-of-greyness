@@ -12,6 +12,8 @@ public class PlayerController : Controller
 	#region Values-------------------------------------------------------------------------------------------------------------/
 
 //	private float m_TempHealth;
+
+	[SerializeField] private float m_InputTime;
 	
 	#endregion
 	
@@ -88,6 +90,33 @@ public class PlayerController : Controller
 			m_Char.Attack();
 		}
 		
+		#endregion
+
+		#region Heavy Attack
+		
+		
+		if (Input.GetButton("Attack"))
+		{
+			bool animCheck =  m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack_01") &&
+			                  m_InputTime >= m_Char.Anim.GetCurrentAnimatorStateInfo(0).length - 0.05f;
+			
+			m_InputTime += Time.deltaTime;
+			if (animCheck)
+			{
+				m_Char.HeavyCharge();
+			}
+		}
+
+		if (Input.GetButtonUp("Attack"))
+		{
+			m_InputTime = 0;
+
+			if (m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Heavy Charge"))
+			{
+				m_Char.HeavyAttack();
+			}
+		}
+
 		#endregion
 
 		#region Dash
