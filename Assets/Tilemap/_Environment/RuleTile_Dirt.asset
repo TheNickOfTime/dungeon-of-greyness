@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c779848d9dd029409ca676b49e10a18, type: 3}
+  m_Name: RuleTile_Dirt
+  m_EditorClassIdentifier: 
+  m_Tile: {fileID: 11400000, guid: 115443d18ec5ba6449864e771cf5ceaf, type: 2}
+  m_Advanced: 0
+  m_Sprites:
+  - m_OriginalSprite: {fileID: 21300000, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300012, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300006, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300018, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300132, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300140, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300126, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300134, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300002, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300014, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300048, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300060, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300130, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300138, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300084, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300096, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300086, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300088, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300056, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300044, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300058, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300046, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300056, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300094, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300092, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300052, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300064, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300050, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300010, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300098, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  - m_OriginalSprite: {fileID: 21300008, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+    m_OverrideSprite: {fileID: 21300020, guid: 2e4f881e554011e4096e9c18006f888a, type: 3}
+  m_OverrideTilingRules: []
+  m_OverrideDefault:
+    m_Enabled: 0
+    m_TilingRule:
+      m_Neighbors: 0000000000000000000000000000000000000000000000000000000000000000
+      m_Sprites:
+      - {fileID: 0}
+      m_GameObject: {fileID: 0}
+      m_AnimationSpeed: 1
+      m_PerlinScale: 0.5
+      m_RuleTransform: 0
+      m_Output: 0
+      m_ColliderType: 1
+      m_RandomTransform: 0

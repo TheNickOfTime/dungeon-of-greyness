@@ -8,11 +8,11 @@ TextureImporter:
     21300006: Grass_03
     21300008: Grass_13
     21300010: Grass_14
-    21300012: CB-Temple-E_12
-    21300014: CB-Temple-E_13
+    21300012: Dirt_01
+    21300014: Dirt_02
     21300016: CB-Temple-E_14
-    21300018: CB-Temple-E_15
-    21300020: CB-Temple-E_16
+    21300018: Dirt_03
+    21300020: Dirt_12
     21300022: CB-Temple-E_17
     21300024: CB-Temple-E_18
     21300026: CB-Temple-E_19
@@ -30,11 +30,11 @@ TextureImporter:
     21300050: Grass_15
     21300052: Grass_16
     21300054: CB-Temple-E_34
-    21300056: CB-Temple-E_35
-    21300058: CB-Temple-E_36
-    21300060: CB-Temple-E_37
+    21300056: Dirt_10
+    21300058: Dirt_11
+    21300060: Dirt_04
     21300062: CB-Temple-E_38
-    21300064: CB-Temple-E_39
+    21300064: Dirt_13
     21300066: CB-Temple-E_40
     21300068: CB-Temple-E_41
     21300070: CB-Temple-E_42
@@ -50,8 +50,8 @@ TextureImporter:
     21300090: CB-Temple-E_53
     21300092: Grass_17
     21300094: Grass_18
-    21300096: CB-Temple-E_56
-    21300098: CB-Temple-E_57
+    21300096: Dirt_08
+    21300098: Dirt_09
     21300100: CB-Temple-E_58
     21300102: CB-Temple-E_59
     21300104: CB-Temple-E_60
@@ -69,10 +69,10 @@ TextureImporter:
     21300128: CB-Temple-E_72
     21300130: Grass_06
     21300132: Grass_05
-    21300134: CB-Temple-E_75
+    21300134: Dirt_07
     21300136: CB-Temple-E_76
-    21300138: CB-Temple-E_77
-    21300140: CB-Temple-E_78
+    21300138: Dirt_06
+    21300140: Dirt_05
     21300142: CB-Temple-E_80
     21300144: CB-Temple-E_81
     21300146: CB-Temple-E_82
@@ -113,8 +113,8 @@ TextureImporter:
     21300216: BrickWall_08
     21300218: BrickWall_09
     21300220: BrickWall_10
-    21300222: CB-Temple-E_121
-    21300224: CB-Temple-E_122
+    21300222: Door_Open_01
+    21300224: Door_Open_02
     21300226: CB-Temple-E_123
     21300228: CB-Temple-E_124
     21300230: CB-Temple-E_125
@@ -129,8 +129,8 @@ TextureImporter:
     21300248: BrickWall_13
     21300250: BrickWall_14
     21300252: BrickWall_15
-    21300254: CB-Temple-E_137
-    21300256: CB-Temple-E_138
+    21300254: Door_Open_03
+    21300256: Door_Open_04
     21300258: CB-Temple-E_139
     21300260: CB-Temple-E_140
     21300262: CB-Temple-E_141
@@ -195,8 +195,8 @@ TextureImporter:
     21300380: CB-Temple-E_200
     21300382: CB-Temple-E_201
     21300384: CB-Temple-E_202
-    21300386: CB-Temple-E_204
-    21300388: CB-Temple-E_206
+    21300386: Pipe_A_01
+    21300388: Pipe_B_01
     21300390: CB-Temple-E_207
     21300392: CB-Temple-E_208
     21300394: CB-Temple-E_209
@@ -213,8 +213,8 @@ TextureImporter:
     21300416: CB-Temple-E_220
     21300418: CB-Temple-E_221
     21300420: CB-Temple-E_222
-    21300422: CB-Temple-E_223
-    21300424: CB-Temple-E_224
+    21300422: Pipe_A_02
+    21300424: Pipe_B_02
     21300426: CB-Temple-E_225
     21300428: CB-Temple-E_226
     21300430: CB-Temple-E_227
@@ -229,8 +229,8 @@ TextureImporter:
     21300448: CB-Temple-E_236
     21300450: CB-Temple-E_237
     21300452: CB-Temple-E_238
-    21300454: CB-Temple-E_239
-    21300456: CB-Temple-E_240
+    21300454: Pipe_A_03
+    21300456: Pipe_B_03
     21300458: CB-Temple-E_241
     21300460: CB-Temple-E_242
     21300462: CB-Temple-E_243
@@ -241,8 +241,8 @@ TextureImporter:
     21300472: CB-Temple-E_248
     21300474: CB-Temple-E_249
     21300476: CB-Temple-E_250
-    21300478: CB-Temple-E_251
-    21300480: CB-Temple-E_252
+    21300478: Pipe_A_04
+    21300480: Pipe_B_04
     21300482: CB-Temple-E_253
     21300484: CB-Temple-E_254
     21300486: CB-Temple-E_255
@@ -285,7 +285,7 @@ TextureImporter:
     21300560: CB-Temple-E_296
     21300562: CB-Temple-E_297
     21300564: Water_A_11
-    21300566: Temple_A_14
+    21300566: Water_A_14
     21300568: Water_A_07
     21300570: Water_B_11
     21300572: Water_B_14
@@ -328,18 +328,18 @@ TextureImporter:
     21300646: CB-Temple-E_343
     21300648: CB-Temple-E_344
     21300650: CB-Temple-E_345
-    21300652: CB-Temple-E_346
+    21300652: Stairs_Water_A_N
     21300654: CB-Temple-E_347
-    21300656: CB-Temple-E_348
+    21300656: Stairs_Water_B_N
     21300658: CB-Temple-E_349
-    21300660: CB-Temple-E_350
-    21300662: CB-Temple-E_351
-    21300664: CB-Temple-E_352
+    21300660: Side_Grass_01
+    21300662: Side_Grass_02
+    21300664: Stairs_Grass_N
     21300666: CB-Temple-E_353
-    21300668: CB-Temple-E_354
-    21300670: CB-Temple-E_355
-    21300672: CB-Temple-E_356
-    21300674: CB-Temple-E_357
+    21300668: Side_Brick_01
+    21300670: Side_Brick_02
+    21300672: Side_Brick_03
+    21300674: Stairs_Brick_N
     21300676: CB-Temple-E_358
     21300678: CB-Temple-E_359
     21300680: CB-Temple-E_360
@@ -351,21 +351,21 @@ TextureImporter:
     21300692: CB-Temple-E_366
     21300694: CB-Temple-E_367
     21300696: CB-Temple-E_368
-    21300698: CB-Temple-E_369
+    21300698: Stairs_Water_A_W
     21300700: CB-Temple-E_370
-    21300702: CB-Temple-E_371
+    21300702: Stairs_Water_A_E
     21300704: CB-Temple-E_372
-    21300706: CB-Temple-E_373
+    21300706: Stairs_Water_B_W
     21300708: CB-Temple-E_374
-    21300710: CB-Temple-E_375
+    21300710: Stairs_Water_B_E
     21300712: CB-Temple-E_376
-    21300714: CB-Temple-E_377
+    21300714: Stairs_Grass_W
     21300716: CB-Temple-E_378
-    21300718: CB-Temple-E_379
+    21300718: Stairs_Grass_E
     21300720: CB-Temple-E_380
-    21300722: CB-Temple-E_381
+    21300722: Stairs_Brick_W
     21300724: CB-Temple-E_382
-    21300726: CB-Temple-E_383
+    21300726: Stairs_Brick_E
     21300728: CB-Temple-E_384
     21300730: CB-Temple-E_385
     21300732: CB-Temple-E_386
@@ -387,14 +387,14 @@ TextureImporter:
     21300764: CB-Temple-E_404
     21300766: CB-Temple-E_405
     21300768: CB-Temple-E_406
-    21300770: CB-Temple-E_407
+    21300770: Stairs_Grass_S
     21300772: CB-Temple-E_408
-    21300774: CB-Temple-E_409
+    21300774: Stairs_Brick_S
     21300776: CB-Temple-E_410
-    21300778: CB-Temple-E_411
+    21300778: Stairs_Water_A_S
     21300780: CB-Temple-E_412
     21300782: CB-Temple-E_413
-    21300784: CB-Temple-E_414
+    21300784: Stairs_Water_B_S
     21300786: CB-Temple-E_415
     21300788: CB-Temple-E_416
     21300790: CB-Temple-E_417
@@ -406,6 +406,11 @@ TextureImporter:
     21300802: CB-Temple-E_423
     21300804: CB-Temple-E_424
     21300806: Water_Main
+    21300808: Grass_19
+    21300810: Grass_20
+    21300812: Grass_21
+    21300814: CB-Temple-E_1
+    21300816: Grass_22
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -608,7 +613,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_12
+      name: Dirt_01
       rect:
         serializedVersion: 2
         x: 64
@@ -628,7 +633,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_13
+      name: Dirt_02
       rect:
         serializedVersion: 2
         x: 72
@@ -668,7 +673,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_15
+      name: Dirt_03
       rect:
         serializedVersion: 2
         x: 88
@@ -688,7 +693,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_16
+      name: Dirt_12
       rect:
         serializedVersion: 2
         x: 96
@@ -1048,7 +1053,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_35
+      name: Dirt_10
       rect:
         serializedVersion: 2
         x: 72
@@ -1068,7 +1073,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_36
+      name: Dirt_11
       rect:
         serializedVersion: 2
         x: 80
@@ -1088,7 +1093,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_37
+      name: Dirt_04
       rect:
         serializedVersion: 2
         x: 88
@@ -1128,7 +1133,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_39
+      name: Dirt_13
       rect:
         serializedVersion: 2
         x: 104
@@ -1448,7 +1453,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_56
+      name: Dirt_08
       rect:
         serializedVersion: 2
         x: 64
@@ -1468,7 +1473,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_57
+      name: Dirt_09
       rect:
         serializedVersion: 2
         x: 72
@@ -1828,7 +1833,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_75
+      name: Dirt_07
       rect:
         serializedVersion: 2
         x: 64
@@ -1868,7 +1873,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_77
+      name: Dirt_06
       rect:
         serializedVersion: 2
         x: 80
@@ -1888,7 +1893,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_78
+      name: Dirt_05
       rect:
         serializedVersion: 2
         x: 88
@@ -2732,7 +2737,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_121
+      name: Door_Open_01
       rect:
         serializedVersion: 2
         x: 144
@@ -2752,7 +2757,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_122
+      name: Door_Open_02
       rect:
         serializedVersion: 2
         x: 152
@@ -3064,7 +3069,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_137
+      name: Door_Open_03
       rect:
         serializedVersion: 2
         x: 144
@@ -3084,7 +3089,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_138
+      name: Door_Open_04
       rect:
         serializedVersion: 2
         x: 152
@@ -4384,7 +4389,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_204
+      name: Pipe_A_01
       rect:
         serializedVersion: 2
         x: 8
@@ -4404,7 +4409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_206
+      name: Pipe_B_01
       rect:
         serializedVersion: 2
         x: 24
@@ -4744,7 +4749,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_223
+      name: Pipe_A_02
       rect:
         serializedVersion: 2
         x: 8
@@ -4764,7 +4769,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_224
+      name: Pipe_B_02
       rect:
         serializedVersion: 2
         x: 24
@@ -5064,7 +5069,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_239
+      name: Pipe_A_03
       rect:
         serializedVersion: 2
         x: 8
@@ -5084,7 +5089,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_240
+      name: Pipe_B_03
       rect:
         serializedVersion: 2
         x: 24
@@ -5304,7 +5309,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_251
+      name: Pipe_A_04
       rect:
         serializedVersion: 2
         x: 8
@@ -5324,7 +5329,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_252
+      name: Pipe_B_04
       rect:
         serializedVersion: 2
         x: 24
@@ -6144,7 +6149,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Temple_A_14
+      name: Water_A_14
       rect:
         serializedVersion: 2
         x: 32
@@ -7004,13 +7009,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_346
+      name: Stairs_Water_A_N
       rect:
         serializedVersion: 2
         x: 24
-        y: 72
-        width: 8
-        height: 8
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7024,33 +7029,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_347
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 72
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5027bfba592b994f946d3b196629449
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_348
+      name: Stairs_Water_B_N
       rect:
         serializedVersion: 2
         x: 88
-        y: 72
-        width: 8
-        height: 8
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7064,27 +7049,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_349
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 72
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b720a30560ea5c4c96f4ce5fabb1d14
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_350
+      name: Side_Grass_01
       rect:
         serializedVersion: 2
         x: 136
@@ -7104,7 +7069,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_351
+      name: Side_Grass_02
       rect:
         serializedVersion: 2
         x: 144
@@ -7124,15 +7089,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_352
+      name: Stairs_Grass_N
       rect:
         serializedVersion: 2
         x: 160
-        y: 72
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 64
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.25, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7144,27 +7109,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_353
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 72
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2412ea301a0255e418b97531faeec246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_354
+      name: Side_Brick_01
       rect:
         serializedVersion: 2
         x: 184
@@ -7184,7 +7129,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_355
+      name: Side_Brick_02
       rect:
         serializedVersion: 2
         x: 192
@@ -7204,7 +7149,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_356
+      name: Side_Brick_03
       rect:
         serializedVersion: 2
         x: 200
@@ -7224,13 +7169,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_357
+      name: Stairs_Brick_N
       rect:
         serializedVersion: 2
         x: 216
-        y: 72
-        width: 8
-        height: 8
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7239,66 +7184,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c50a87fe5a619264fad6da85225519ec
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_358
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 72
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 388e4b75f4d0c91489198d40bbc2a32e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_359
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7255238f62523da44b9f1ff2ab9c8226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_360
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0675bc8f7e436f4d91e70c0802b764d
       vertices: []
       indices: 
       edges: []
@@ -7324,46 +7209,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_362
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19833b5c8aef0cc4b81054c99770b1ae
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_363
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00d1ae99c26a7a04b976b3c22095bfd3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: CB-Temple-E_364
       rect:
         serializedVersion: 2
@@ -7384,93 +7229,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_365
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4340b8fa1a5c761409af71baab727d80
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_366
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5193beeda50453c48bc851b9c20a0d57
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_367
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fadbb40b1341dd645b0cab7332482c48
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_368
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 64
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ba1be93a8bad30479b0fe1fef65b031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_369
+      name: Stairs_Water_A_W
       rect:
         serializedVersion: 2
         x: 8
-        y: 56
-        width: 8
-        height: 8
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7484,33 +7249,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_370
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa010a82332a4fd4d8200d9cb274767f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_371
+      name: Stairs_Water_A_E
       rect:
         serializedVersion: 2
         x: 48
-        y: 56
-        width: 8
-        height: 8
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7524,33 +7269,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_372
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3db0c906b8d68a54cba7f15bb899b21c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_373
+      name: Stairs_Water_B_W
       rect:
         serializedVersion: 2
         x: 72
-        y: 56
-        width: 8
-        height: 8
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7564,33 +7289,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_374
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b528ff38dbf1954fa445c633abdec32
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_375
+      name: Stairs_Water_B_E
       rect:
         serializedVersion: 2
         x: 112
-        y: 56
-        width: 8
-        height: 8
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7604,35 +7309,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_376
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b0e686246c619d43af9a997b41c45ea
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_377
+      name: Stairs_Grass_W
       rect:
         serializedVersion: 2
         x: 144
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 48
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.25, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7644,35 +7329,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_378
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11fd8582923e8414697cc2684258c11d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_379
+      name: Stairs_Grass_E
       rect:
         serializedVersion: 2
         x: 176
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 48
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.25, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7684,33 +7349,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_380
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1fe951f8c9cc064fb1731d38c04428c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_381
+      name: Stairs_Brick_W
       rect:
         serializedVersion: 2
         x: 200
-        y: 56
-        width: 8
-        height: 8
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7724,33 +7369,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_382
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9ba67ac249a9dc4885dac7bdccd4496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_383
+      name: Stairs_Brick_E
       rect:
         serializedVersion: 2
         x: 232
-        y: 56
-        width: 8
-        height: 8
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7759,346 +7384,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d2a466fac9a46e74bb755ee19d020538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_384
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 56
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8b7726fd9bb194409bd7e9cabc5d8fc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_385
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6923ae8e3b0c8f94fb754ea66ef2f8aa
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_386
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 272d57766ce49d84da16d15a4c11913a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_388
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad3ba7088ed1ecc42b9bc6880c377833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_389
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38fd6bce1e41e8a469bcbbf40d6b6b01
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_390
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a3208c48b363e749b186c737a788818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_391
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37283b1a4ac41c44daee8e7fe7c3ee25
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_393
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05b34ef42b6142644899c9c21f6c737d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_394
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e228f20d1f4893449811c2541423865c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_395
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 629053b469509bd428da0ca8e44d41c1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_396
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a58c939e66d9b7f4fb7033d8738b0e21
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_397
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e79f8bc7b5a55d042a19e4ba0abe0c6c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_398
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a249847805681a428987eaf4b1270af
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_399
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a806942b45aa38a4190a0d6b6ac2edd5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_400
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf06f18dd17939b4c9a21dbdcba05857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_401
-      rect:
-        serializedVersion: 2
-        x: 232
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5256efb38807a0a468c0b52ded840aae
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_402
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 48
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8132ef03d40ada4588374b1785734e3
       vertices: []
       indices: 
       edges: []
@@ -8184,15 +7469,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_407
+      name: Stairs_Grass_S
       rect:
         serializedVersion: 2
         x: 160
-        y: 40
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 32
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.25, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -8204,33 +7489,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_408
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 40
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 607ff538c3475194ab11bad782b425b0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_409
+      name: Stairs_Brick_S
       rect:
         serializedVersion: 2
         x: 216
-        y: 40
-        width: 8
-        height: 8
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8244,33 +7509,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_410
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 40
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3138440a01fbd944d8913b719e112c61
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_411
+      name: Stairs_Water_A_S
       rect:
         serializedVersion: 2
         x: 24
-        y: 32
-        width: 8
-        height: 8
+        y: 24
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8279,26 +7524,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 10ea97a69dcdfbc48a08a2e117d040f2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_412
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bdfc329a0db2b24fa948c52c4d61848
       vertices: []
       indices: 
       edges: []
@@ -8324,13 +7549,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_414
+      name: Stairs_Water_B_S
       rect:
         serializedVersion: 2
         x: 88
-        y: 32
-        width: 8
-        height: 8
+        y: 24
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8339,26 +7564,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 587b8b57d356b2e4fb0bc288088efee5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_415
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 180fcde782172d249b001db5d66837d5
       vertices: []
       indices: 
       edges: []
@@ -8379,166 +7584,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f657ee9b3a734194faaa1e32677b10bf
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_417
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 32
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc91386d1f085b64c863b5fc84d421a0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_418
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 32
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21e9752b0a1c43a45a86cb9eb0e8db29
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_419
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 32
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ffe0f3fa2526e34caf10a181d872570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_420
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 32
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1799acf82fcf88c499de5b1904adb6ef
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_421
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 24
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6cebca07c6e2fc14cac1631cc1482179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_422
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 24
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: beff58dc5edb3ab459f8b675104f632a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_423
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 24
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e98d3527d0d1fca45b4a5743d5c24dd0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CB-Temple-E_424
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 24
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a722d8d42ba54fe4b8d94fc24b470023
       vertices: []
       indices: 
       edges: []
@@ -8592,13 +7637,113 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 3bb6b0446402f3740a9c4211c6d71f60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_19
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ac589ac9bb14d419d65718ab6dddf1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_20
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd4e65144c490f438937eaf85ead0e2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_21
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d66172f3ecbe5f4ba486df530571493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CB-Temple-E_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 238
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ac966fe79f4f44b93679608916040a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_22
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 232
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861484f26f1d58d48bb9832504c302b8
       vertices: []
       indices: 
       edges: []
