@@ -87,11 +87,11 @@ TextureImporter:
     21300164: CB-Temple-E_92
     21300166: CB-Temple-E_93
     21300168: CB-Temple-E_94
-    21300170: CB-Temple-E_95
-    21300172: CB-Temple-E_96
-    21300174: CB-Temple-E_97
-    21300176: CB-Temple-E_98
-    21300178: CB-Temple-E_99
+    21300170: BrickWall_01
+    21300172: BrickWall_02
+    21300174: BrickWall_03
+    21300176: BrickWall_04
+    21300178: BrickWall_05
     21300180: CB-Temple-E_100
     21300182: CB-Temple-E_101
     21300184: CB-Temple-E_102
@@ -108,11 +108,11 @@ TextureImporter:
     21300206: CB-Temple-E_113
     21300208: CB-Temple-E_114
     21300210: CB-Temple-E_115
-    21300212: CB-Temple-E_116
-    21300214: CB-Temple-E_117
-    21300216: CB-Temple-E_118
-    21300218: CB-Temple-E_119
-    21300220: CB-Temple-E_120
+    21300212: BrickWall_06
+    21300214: BrickWall_07
+    21300216: BrickWall_08
+    21300218: BrickWall_09
+    21300220: BrickWall_10
     21300222: CB-Temple-E_121
     21300224: CB-Temple-E_122
     21300226: CB-Temple-E_123
@@ -124,11 +124,11 @@ TextureImporter:
     21300238: CB-Temple-E_129
     21300240: CB-Temple-E_130
     21300242: CB-Temple-E_131
-    21300244: CB-Temple-E_132
-    21300246: CB-Temple-E_133
-    21300248: CB-Temple-E_134
-    21300250: CB-Temple-E_135
-    21300252: CB-Temple-E_136
+    21300244: BrickWall_11
+    21300246: BrickWall_12
+    21300248: BrickWall_13
+    21300250: BrickWall_14
+    21300252: BrickWall_15
     21300254: CB-Temple-E_137
     21300256: CB-Temple-E_138
     21300258: CB-Temple-E_139
@@ -209,7 +209,7 @@ TextureImporter:
     21300408: CB-Temple-E_216
     21300410: CB-Temple-E_217
     21300412: CB-Temple-E_218
-    21300414: CB-Temple-E_219
+    21300414: Blank
     21300416: CB-Temple-E_220
     21300418: CB-Temple-E_221
     21300420: CB-Temple-E_222
@@ -2187,7 +2187,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_95
+      name: BrickWall_01
       rect:
         serializedVersion: 2
         x: 96
@@ -2207,7 +2207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_96
+      name: BrickWall_02
       rect:
         serializedVersion: 2
         x: 104
@@ -2231,7 +2231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_97
+      name: BrickWall_03
       rect:
         serializedVersion: 2
         x: 112
@@ -2255,7 +2255,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_98
+      name: BrickWall_04
       rect:
         serializedVersion: 2
         x: 120
@@ -2279,7 +2279,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_99
+      name: BrickWall_05
       rect:
         serializedVersion: 2
         x: 128
@@ -2619,7 +2619,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_116
+      name: BrickWall_06
       rect:
         serializedVersion: 2
         x: 96
@@ -2639,7 +2639,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_117
+      name: BrickWall_07
       rect:
         serializedVersion: 2
         x: 104
@@ -2663,7 +2663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_118
+      name: BrickWall_08
       rect:
         serializedVersion: 2
         x: 112
@@ -2687,7 +2687,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_119
+      name: BrickWall_09
       rect:
         serializedVersion: 2
         x: 120
@@ -2711,7 +2711,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_120
+      name: BrickWall_10
       rect:
         serializedVersion: 2
         x: 128
@@ -2951,7 +2951,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_132
+      name: BrickWall_11
       rect:
         serializedVersion: 2
         x: 96
@@ -2971,7 +2971,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_133
+      name: BrickWall_12
       rect:
         serializedVersion: 2
         x: 104
@@ -2995,7 +2995,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_134
+      name: BrickWall_13
       rect:
         serializedVersion: 2
         x: 112
@@ -3019,7 +3019,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_135
+      name: BrickWall_14
       rect:
         serializedVersion: 2
         x: 120
@@ -3043,7 +3043,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_136
+      name: BrickWall_15
       rect:
         serializedVersion: 2
         x: 128
@@ -4663,7 +4663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CB-Temple-E_219
+      name: Blank
       rect:
         serializedVersion: 2
         x: 192

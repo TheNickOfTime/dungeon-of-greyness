@@ -63,8 +63,8 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58759655743680476
 CircleCollider2D:
@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MoveSpeed: 4.5
-  m_DashDistance: 4
-  m_DashTime: 0.1
+  m_DashDistance: 4.5
+  m_DashTime: 0.12
   m_HealthMax: 5
   m_BaseDamage: 1
   m_HeavyDamage: 5
@@ -133,6 +133,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2017095884850ad4e93de776754e5a07, type: 3}
   m_DeathSounds:
   - {fileID: 8300000, guid: d658cd6f28fda7a4fb43c111e7f00ad6, type: 3}
+  m_DashSound: {fileID: 8300000, guid: 9b97450c414990a4e9cfb9a3558afa8d, type: 3}
   m_CanMove: 1
 --- !u!114 &114431194450422236
 MonoBehaviour:

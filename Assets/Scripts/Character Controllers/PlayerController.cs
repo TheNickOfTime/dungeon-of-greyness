@@ -9,16 +9,20 @@ public class PlayerController : Controller
 	//Singleton--------------------------------------------------------------------------------------------------------/
 	public static PlayerController instance;
 	
-	//Values-----------------------------------------------------------------------------------------------------------/
-	private float m_TempHealth;
+	#region Values-------------------------------------------------------------------------------------------------------------/
+
+//	private float m_TempHealth;
 	
-	private Vector2 m_LastDir = new Vector2(0, -1);
+	#endregion
 	
-	//Properties-------------------------------------------------------------------------------------------------------/
+	#region Properties---------------------------------------------------------------------------------------------------------/
+	
 	public float TimeScale
 	{
 		set { Time.timeScale = value; }
 	}
+	
+	#endregion
 
 	#region Monobehaviour------------------------------------------------------------------------------------------------------/
 	
@@ -39,6 +43,7 @@ public class PlayerController : Controller
 	private void Update()
 	{
 		PlayerInput();
+//		m_Char.SpawnSpriteTrail();
 	}
 	
 	#endregion
@@ -59,7 +64,10 @@ public class PlayerController : Controller
 		{
 			Vector2 dir = Mathf.Abs(h) > Mathf.Abs(v) ? new Vector2(h, 0) : new Vector2(0, v);
 			dir = Vector3.Normalize(dir);
-			m_Char.Direction = dir;
+			if (m_Char.m_CanMove)
+			{
+				m_Char.Direction = dir;
+			}
 		}
 		
 		//Use Values
@@ -84,7 +92,7 @@ public class PlayerController : Controller
 
 		#region Dash
 
-		if (Input.GetButtonDown("Dash"))
+		if (Input.GetButtonDown("Dash") && m_Char.m_CanMove)
 		{
 			Vector2 dir = Vector3.Normalize(new Vector2(h, v));
 			dir = isMoving ? dir : m_Char.Direction;

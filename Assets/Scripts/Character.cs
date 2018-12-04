@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using Cinemachine;
 using UnityEngine;
 using XInputDotNetPure;
@@ -11,6 +12,7 @@ public class Character : MonoBehaviour
 	private Controller m_Controller;
 	private Animator m_Anim;
 	private Rigidbody2D m_Rig;
+	private SpriteRenderer m_Ren;
 	
 	#endregion
 
@@ -47,9 +49,11 @@ public class Character : MonoBehaviour
 	public AudioClip[] m_AttackSounds;
 	public AudioClip[] m_HitSounds;
 	public AudioClip[] m_DeathSounds;
+	public AudioClip m_DashSound;
 	
 	//Config
 	[HideInInspector] public bool m_CanMove = true;
+	private bool m_CanRecieveDamge = true;
 	
 	#endregion
 
@@ -128,6 +132,11 @@ public class Character : MonoBehaviour
 		}
 	}
 
+	public bool CanRecieveDamge
+	{
+		get { return m_CanRecieveDamge; }
+	}
+
 	#endregion
 
 	//Monobehavior-----------------------------------------------------------------------------------------------------/
@@ -137,6 +146,7 @@ public class Character : MonoBehaviour
 		m_Controller = GetComponent<Controller>();
 		m_Anim = GetComponent<Animator>();
 		m_Rig = GetComponent<Rigidbody2D>();
+		m_Ren = GetComponent<SpriteRenderer>();
 	}
 
 	private void Start()
@@ -166,6 +176,7 @@ public class Character : MonoBehaviour
 	public void Dash(Vector2 direction)
 	{
 		Vector2 targetPos = (Vector2)transform.position + direction * m_DashDistance;
+		m_Anim.SetTrigger("Dash");
 		StartCoroutine(LerpMovement(targetPos, m_DashTime));
 	}
 
@@ -179,7 +190,7 @@ public class Character : MonoBehaviour
 
 	private IEnumerator LerpMovement(Vector2 targetPosition, float timer)
 	{
-		Vector2 startPos = transform.position;
+		Vector2 direction = Vector3.Normalize(targetPosition - (Vector2)transform.position);
 
 		m_CanMove = false;
 		
@@ -188,17 +199,16 @@ public class Character : MonoBehaviour
 		{
 			t += Time.deltaTime;
 
-			m_Rig.MovePosition(Vector3.Lerp(startPos, targetPosition, t / timer));
+			m_Rig.velocity = direction * m_DashDistance / m_DashTime;
 
 			yield return null;
 		}
-
 		m_CanMove = true;
 	}
 
 	#endregion
 
-	#region Utility------------------------------------------------------------------------------------------------------------/
+	#region Animation Events---------------------------------------------------------------------------------------------------/
 	
 	public void AttackHitBox()
 	{
@@ -207,14 +217,18 @@ public class Character : MonoBehaviour
 		foreach (Collider2D hit in hits)
 		{
 			IHittable hitref = hit.gameObject.GetComponent<IHittable>();
+			Character charref = hit.gameObject.GetComponent<Character>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
-				Shaker.instance.CameraShake(1.5f * ComboCurrent, 1, 0.2f);
-				hitref.OnHit(Direction, m_BaseDamage * ComboCurrent);
-				
-				if (m_Controller is PlayerController)
+				if (charref != null && charref.CanRecieveDamge || charref == null)
 				{
-					Shaker.instance.HapticShake(0.15f, 0.5f);
+					Shaker.instance.CameraShake(1.5f * ComboCurrent, 1, 0.2f);
+					hitref.OnHit(Direction, m_BaseDamage * ComboCurrent);
+				
+					if (m_Controller is PlayerController)
+					{
+						Shaker.instance.HapticShake(0.15f, 0.5f);
+					}
 				}
 			}
 		}
@@ -234,6 +248,26 @@ public class Character : MonoBehaviour
 		}
 	}
 
+	public void SpawnSpriteTrail()
+	{
+		GameObject obj = new GameObject();
+		obj.transform.position = transform.position;
+		SpriteRenderer ren = obj.AddComponent<SpriteRenderer>();
+		ren.sprite = m_Ren.sprite;
+		FadeSprite fadeScript = obj.AddComponent<FadeSprite>();
+		fadeScript.Sprite = ren;
+	}
+
+	public void RecieveAttackEnable()
+	{
+		m_CanRecieveDamge = true;
+	}
+
+	public void RecieveAttackDisable()
+	{
+		m_CanRecieveDamge = false;
+	}
+
 	public void PlayAttackNoise()
 	{
 		AudioSource.PlayClipAtPoint(m_AttackSounds[Random.RandomRange(0, m_AttackSounds.Length)], transform.position);
@@ -247,6 +281,11 @@ public class Character : MonoBehaviour
 	public void PlayDeathNoise()
 	{
 		AudioSource.PlayClipAtPoint(m_DeathSounds[Random.RandomRange(0, m_DeathSounds.Length)], transform.position);
+	}
+
+	public void PlayDashNoise()
+	{
+		AudioSource.PlayClipAtPoint(m_DashSound, transform.position);
 	}
 	
 	#endregion
