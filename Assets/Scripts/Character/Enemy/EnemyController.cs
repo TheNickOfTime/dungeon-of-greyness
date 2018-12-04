@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyController : Controller
@@ -54,6 +55,9 @@ public class EnemyController : Controller
 	protected Transform m_Target;
 
 	protected bool m_DefaultRenFlip;
+
+	private Vector3 m_AltDirection;
+
 	
 	#endregion
 
@@ -94,7 +98,7 @@ public class EnemyController : Controller
 	}
 
 	protected virtual void IdleState()
-	{
+	{	
 		if (PlayerInRadius(m_AlertRadius) && PlayerInSight())
 		{
 			State = EnemyState.Alert;
@@ -121,10 +125,10 @@ public class EnemyController : Controller
 		{
 			Vector2 direction = Vector3.Normalize(m_Target.position - transform.position);
 			m_Char.Direction = direction;
-
-			m_Char.Move(direction);
-
 			m_Ren.flipX = direction.x < 0 ? m_DefaultRenFlip : !m_DefaultRenFlip;
+
+			float directionMultiplier = MobCheck() ? -0.5f : 1.0f;
+			m_Char.Move(direction * directionMultiplier);
 		}
 	}
 
@@ -163,5 +167,20 @@ public class EnemyController : Controller
 		return !didHit;
 	}
 
+	protected bool MobCheck()
+	{
+		Collider2D[] hits = Physics2D.OverlapCircleAll((Vector2)transform.position, 0.3f, 1 << LayerMask.NameToLayer("Enemy"));
+		bool didHit = hits.Length > 1;
+
+		if (didHit)
+		{
+			didHit = Physics2D.RaycastAll((Vector2)transform.position + m_Char.Direction * 0.15f, m_Char.Direction, 0.5f, 1 << LayerMask.NameToLayer("Enemy")).Length > 1;
+//			Debug.DrawRay((Vector2)transform.position + m_Char.Direction * 0.125f, m_Char.Direction * 1.5f);
+		}
+		
+		return didHit;
+	}
+
 	#endregion
+
 }

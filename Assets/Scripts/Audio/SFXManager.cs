@@ -6,11 +6,12 @@ public class SFXManager : MonoBehaviour
 {
 	public static AudioSource PlayClipAtPoint(AudioClip clip, Vector2 position)
 	{
-		AudioSource source = Instantiate(new GameObject().AddComponent<AudioSource>(), position, Quaternion.identity);
+		AudioSource source = new GameObject("[OneShotAudio]").AddComponent<AudioSource>();
 		source.spatialBlend = 0.0f;
 		source.clip = clip;
 		source.Play();
-		Destroy(source, clip.length);
+
+		source.gameObject.AddComponent<TimedDestroy>().timer = clip.length;
 
 		return source;
 	}

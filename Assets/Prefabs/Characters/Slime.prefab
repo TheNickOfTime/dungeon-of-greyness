@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4058160034326012}
   - component: {fileID: 212944373469429492}
   - component: {fileID: 95621596088376234}
-  - component: {fileID: 61534351241003156}
+  - component: {fileID: 58773320023282304}
   - component: {fileID: 50494913204533098}
   - component: {fileID: 114782780894387716}
   - component: {fileID: 114259058605801326}
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1980335737080080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.66, y: -4.69, z: 0}
+  m_LocalPosition: {x: -12.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61534351241003156
-BoxCollider2D:
+--- !u!58 &58773320023282304
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,19 +77,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.2}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2, y: 1.5625}
-    newSize: {x: 0.32, y: 0.25}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.15}
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 0.45}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!95 &95621596088376234
 Animator:
   serializedVersion: 3
@@ -121,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Particles: {fileID: 1125586849818642, guid: e06271707508bae4fbea78e814fa7e80,
     type: 2}
+  m_State: 0
   m_AlertRadius: 7
   m_AttackRadius: 1
 --- !u!114 &114782780894387716
@@ -135,17 +126,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MoveSpeed: 2
+  m_DashDistance: 1
+  m_DashTime: 0.1
   m_HealthMax: 2
   m_BaseDamage: 1
   m_HeavyDamage: 0
   m_ComboMax: 1
   m_HitBoxSize: {x: 1, y: 1}
+  m_HeavyHitBoxSize: {x: 3, y: 3}
   m_AttackSounds:
   - {fileID: 8300000, guid: 3486fd40bf4eaa2498e7a1c823f236ee, type: 3}
   m_HitSounds:
   - {fileID: 8300000, guid: 4671908e38022db41922b865680278c6, type: 3}
   m_DeathSounds:
   - {fileID: 8300000, guid: d658cd6f28fda7a4fb43c111e7f00ad6, type: 3}
+  m_DashSound: {fileID: 0}
   m_CanMove: 1
 --- !u!212 &212944373469429492
 SpriteRenderer:
