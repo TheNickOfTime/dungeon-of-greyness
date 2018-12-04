@@ -16,14 +16,14 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 
-//	[SerializeField] private Slider m_TempHealthBar;
-//	public float TempHealthBar
-//	{
-//		set
-//		{
-//			m_TempHealthBar.value = value;
-//		}
-//	}
+	[SerializeField] private Slider m_TempHealthBar;
+	public float TempHealthBar
+	{
+		set
+		{
+			m_TempHealthBar.value = value;
+		}
+	}
 
 	private void Awake()
 	{

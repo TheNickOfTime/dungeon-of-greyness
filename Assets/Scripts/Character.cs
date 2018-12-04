@@ -209,16 +209,15 @@ public class Character : MonoBehaviour
 			IHittable hitref = hit.gameObject.GetComponent<IHittable>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
-				CameraShaker.instance.Shake(1.5f * ComboCurrent, 1, 0.2f);
+				Shaker.instance.CameraShake(1.5f * ComboCurrent, 1, 0.2f);
 				hitref.OnHit(Direction, m_BaseDamage * ComboCurrent);
 				
 				if (m_Controller is PlayerController)
 				{
-					StartCoroutine((m_Controller as PlayerController).HapticFeedback(0.1f, 0.5f));
+					Shaker.instance.HapticShake(0.15f, 0.5f);
 				}
 			}
 		}
-		PlayAttackNoise();
 	}
 
 	public void HeavyHitBox()
@@ -229,7 +228,7 @@ public class Character : MonoBehaviour
 			IHittable hitref = hit.gameObject.GetComponent<IHittable>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
-				CameraShaker.instance.Shake(4, 1, 0.25f);
+				Shaker.instance.CameraShake(4, 1, 0.25f);
 				hitref.OnHit(Direction, m_HeavyDamage);
 			}
 		}

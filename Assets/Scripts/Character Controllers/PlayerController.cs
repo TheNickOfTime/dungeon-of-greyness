@@ -97,12 +97,20 @@ public class PlayerController : Controller
 	//Overrides--------------------------------------------------------------------------------------------------------/
 	public override void OnHit(Vector2 direction, float damage)
 	{
-		m_Char.Anim.SetTrigger("Stun");
+		if(damage > 1)
+		{
+			m_Char.Anim.SetTrigger("Stun Heavy");
+		}
+		else
+		{
+			m_Char.Anim.SetTrigger("Stun Light");
+		}
 
 //		StartCoroutine(LerpHealth(damage, 0.25f));
 		m_Char.HealthCurrent -= damage;
 
 		m_Char.PlayHitNoise();
+		Shaker.instance.HapticShake(0.35f, 0.75f);
 	}
 
 	public override void OnDeath()
@@ -119,25 +127,25 @@ public class PlayerController : Controller
 
 	#region Coroutines---------------------------------------------------------------------------------------------------------/
 
-//	public IEnumerator LerpHealth(float damage, float timer)
-//	{
-//		float startHealth = m_Char.HealthCurrent;
-//		float targetHealth = m_Char.HealthCurrent - damage;
-//
-//		UI_Gameplay.instance.HealthBar = targetHealth / m_Char.HealthMax;
-//		
-//		float t = 0;
-//		while (t < timer)
-//		{
-//			t += Time.deltaTime;
-//
-//			m_Char.HealthCurrent = Mathf.Lerp(startHealth, targetHealth, t / timer);
-//			UI_Gameplay.instance.TempHealthBar = m_Char.HealthCurrent / m_Char.HealthMax;
-//
-//			yield return null;
-//		}
-//	}
-	
+	public IEnumerator LerpHealth(float damage, float timer)
+	{
+		float startHealth = m_Char.HealthCurrent;
+		float targetHealth = m_Char.HealthCurrent - damage;
+
+		UI_Gameplay.instance.HealthBar = targetHealth / m_Char.HealthMax;
+
+		float t = 0;
+		while (t < timer)
+		{
+			t += Time.deltaTime;
+
+			m_Char.HealthCurrent = Mathf.Lerp(startHealth, targetHealth, t / timer);
+			UI_Gameplay.instance.TempHealthBar = m_Char.HealthCurrent / m_Char.HealthMax;
+
+			yield return null;
+		}
+	}
+
 	public IEnumerator HapticFeedback(float time, float intensity)
 	{
 		GamePad.SetVibration(0, 1, 1);

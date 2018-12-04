@@ -98,11 +98,15 @@ public class EnemyController : Controller
 				}
 
 				//Applies movement
-				Vector2 direction = Vector3.Normalize(m_Target.position - transform.position);
-				m_Char.Direction = direction;
+				if(m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Move"))
+				{
+					Vector2 direction = Vector3.Normalize(m_Target.position - transform.position);
+					m_Char.Direction = direction;
 
-				m_Ren.flipX = direction.x < 0 ? m_DefaultRenFlip : !m_DefaultRenFlip;
-				m_Char.Move(direction);
+					m_Char.Move(direction);
+
+					m_Ren.flipX = direction.x < 0 ? m_DefaultRenFlip : !m_DefaultRenFlip;
+				}
 				break;
 			
 			case EnemyState.Attack:
