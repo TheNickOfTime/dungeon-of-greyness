@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58759655743680476}
   - component: {fileID: 50856841923656792}
   - component: {fileID: 95329144770822328}
+  - component: {fileID: 81402713631757600}
   - component: {fileID: 114313070722073742}
   - component: {fileID: 114431194450422236}
   m_Layer: 8
@@ -80,6 +81,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.35
+--- !u!81 &81402713631757600
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453056511114090}
+  m_Enabled: 1
 --- !u!95 &95329144770822328
 Animator:
   serializedVersion: 3
@@ -110,11 +118,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MoveSpeed: 4.5
-  m_HealthMax: 10
+  m_DashDistance: 4
+  m_DashTime: 0.1
+  m_HealthMax: 5
   m_BaseDamage: 1
   m_HeavyDamage: 5
   m_ComboMax: 3
   m_HitBoxSize: {x: 2, y: 2}
+  m_AttackSounds:
+  - {fileID: 8300000, guid: b9b49b1731d11f9479e948bc569d89dc, type: 3}
+  - {fileID: 8300000, guid: 8de03522c9038dc45b6aff40a6c334dd, type: 3}
+  - {fileID: 8300000, guid: b2194b8b4e7deff4390e030faaa034f6, type: 3}
+  m_HitSounds:
+  - {fileID: 8300000, guid: 2017095884850ad4e93de776754e5a07, type: 3}
+  m_DeathSounds:
+  - {fileID: 8300000, guid: d658cd6f28fda7a4fb43c111e7f00ad6, type: 3}
+  m_CanMove: 1
 --- !u!114 &114431194450422236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,6 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0201fd2e7f553b4ea73013575ef0f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Particles: {fileID: 1125586849818642, guid: e06271707508bae4fbea78e814fa7e80,
+    type: 2}
 --- !u!212 &212704760591356016
 SpriteRenderer:
   m_ObjectHideFlags: 1

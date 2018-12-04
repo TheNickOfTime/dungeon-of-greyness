@@ -5,15 +5,6 @@ using UnityEngine;
 
 public class EnemyController : Controller
 {
-	#region Components---------------------------------------------------------------------------------------------------------/
-	
-	private Character m_Char;
-	private SpriteRenderer m_Ren;
-	
-	[SerializeField] private GameObject m_Particles;
-
-	#endregion
-
 	#region State--------------------------------------------------------------------------------------------------------------/
 
 	private enum EnemyState
@@ -57,23 +48,30 @@ public class EnemyController : Controller
 	[SerializeField] private float m_AttackRadius = 1;
 	
 	private Transform m_Target;
+
+	private bool m_DefaultRenFlip;
 	
 	#endregion
 
-	protected void Awake()
-	{
-		//Assign component references
-		m_Char = GetComponent<Character>();
-		m_Ren = GetComponent<SpriteRenderer>();
-	}
-
+	#region MonoBehaviour------------------------------------------------------------------------------------------------------/
+	
 	private void Start()
 	{
 		//Set Values
 		m_Target = PlayerController.instance.transform;
+		m_DefaultRenFlip = m_Ren.flipX;
 	}
 
 	private void Update()
+	{
+		StateMachine();
+	}
+	
+	#endregion
+
+	#region Methods------------------------------------------------------------------------------------------------------------/
+
+	private void StateMachine()
 	{
 		switch (State)
 		{
@@ -102,8 +100,8 @@ public class EnemyController : Controller
 				//Applies movement
 				Vector2 direction = Vector3.Normalize(m_Target.position - transform.position);
 				m_Char.Direction = direction;
-				
-				m_Char.Anim.SetFloat("Horizontal", direction.x < 0 ? -1 : 1);
+
+				m_Ren.flipX = direction.x < 0 ? m_DefaultRenFlip : !m_DefaultRenFlip;
 				m_Char.Move(direction);
 				break;
 			
@@ -118,10 +116,24 @@ public class EnemyController : Controller
 				break;
 		}
 	}
+	
+	//Overrides--------------------------------------------------------------------------------------------------------/
+	public override void OnDeath()
+	{
+		base.OnDeath();
+		
+		Destroy(GetComponent<Collider2D>());
+		Destroy(GetComponent<Rigidbody2D>());
+		Destroy(GetComponent<Controller>());
+		Destroy(this);
+	}
 
+	//Utility----------------------------------------------------------------------------------------------------------/
 	private bool PlayerInRadius(float radius)
 	{
 		Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, 1 << LayerMask.NameToLayer("Player"));
 		return hit != null;
 	}
+
+	#endregion
 }

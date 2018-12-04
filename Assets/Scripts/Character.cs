@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using XInputDotNetPure;
 
-[RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(Rigidbody2D))]
-public class Character : MonoBehaviour, IHittable
+public class Character : MonoBehaviour
 {
 	#region Components---------------------------------------------------------------------------------------------------------/
-	
+
+	private Controller m_Controller;
 	private Animator m_Anim;
 	private Rigidbody2D m_Rig;
 	
@@ -21,6 +19,8 @@ public class Character : MonoBehaviour, IHittable
 	//Movement
 	[Header("Movement")]
 	[SerializeField] private float m_MoveSpeed = 1;
+	[SerializeField] private float m_DashDistance = 1;
+	[SerializeField] private float m_DashTime = 0.1f;
 	private Vector2 m_Direction = new Vector2(0, -1);
 	
 	//Stats
@@ -41,6 +41,12 @@ public class Character : MonoBehaviour, IHittable
 	[Space]
 	
 	[SerializeField] private Vector2 m_HitBoxSize = new Vector2(2, 2);
+	
+	//Audio
+	[Header("Audio")]
+	public AudioClip[] m_AttackSounds;
+	public AudioClip[] m_HitSounds;
+	public AudioClip[] m_DeathSounds;
 	
 	//Config
 	[HideInInspector] public bool m_CanMove = true;
@@ -94,9 +100,13 @@ public class Character : MonoBehaviour, IHittable
 		set
 		{
 			m_HealthCurrent = value;
+			if (m_Controller is PlayerController)
+			{
+				UI_Gameplay.instance.HealthBar = value / HealthMax;
+			}
 			if (m_HealthCurrent <= 0)
 			{
-				OnDeath();
+				m_Controller.OnDeath();
 			}
 		}
 	}
@@ -124,9 +134,13 @@ public class Character : MonoBehaviour, IHittable
 	private void Awake()
 	{
 		//Set component references
+		m_Controller = GetComponent<Controller>();
 		m_Anim = GetComponent<Animator>();
 		m_Rig = GetComponent<Rigidbody2D>();
-		
+	}
+
+	private void Start()
+	{
 		//Initialize values
 		HealthCurrent = HealthMax;
 	}
@@ -149,28 +163,42 @@ public class Character : MonoBehaviour, IHittable
 		Anim.SetTrigger("Attack");
 	}
 
+	public void Dash(Vector2 direction)
+	{
+		Vector2 targetPos = (Vector2)transform.position + direction * m_DashDistance;
+		StartCoroutine(LerpMovement(targetPos, m_DashTime));
+	}
+
 	//Reactions--------------------------------------------------------------------------------------------------------/
-	public void OnHit(Vector2 direction, float damage)
-	{
-		m_Anim.SetTrigger("Stun");
-		HealthCurrent -= damage;
-	}
-
-	public void OnDeath()
-	{
-		m_Anim.SetTrigger("Die");
-		Destroy(GetComponent<Collider2D>());
-		Destroy(GetComponent<Rigidbody2D>());
-		Destroy(GetComponent<Controller>());
-		Destroy(this);
-	}
-
 	public void Knockback(Vector2 direction)
 	{
 		m_Rig.velocity = direction;
 	}
 
-	//Utility----------------------------------------------------------------------------------------------------------/
+	#region Coroutines
+
+	private IEnumerator LerpMovement(Vector2 targetPosition, float timer)
+	{
+		Vector2 startPos = transform.position;
+
+		m_CanMove = false;
+		
+		float t = 0;
+		while (t < timer)
+		{
+			t += Time.deltaTime;
+
+			m_Rig.MovePosition(Vector3.Lerp(startPos, targetPosition, t / timer));
+
+			yield return null;
+		}
+
+		m_CanMove = true;
+	}
+
+	#endregion
+
+	#region Utility------------------------------------------------------------------------------------------------------------/
 	
 	public void AttackHitBox()
 	{
@@ -183,8 +211,14 @@ public class Character : MonoBehaviour, IHittable
 			{
 				CameraShaker.instance.Shake(1.5f * ComboCurrent, 1, 0.2f);
 				hitref.OnHit(Direction, m_BaseDamage * ComboCurrent);
+				
+				if (m_Controller is PlayerController)
+				{
+					StartCoroutine((m_Controller as PlayerController).HapticFeedback(0.1f, 0.5f));
+				}
 			}
 		}
+		PlayAttackNoise();
 	}
 
 	public void HeavyHitBox()
@@ -200,4 +234,21 @@ public class Character : MonoBehaviour, IHittable
 			}
 		}
 	}
+
+	public void PlayAttackNoise()
+	{
+		AudioSource.PlayClipAtPoint(m_AttackSounds[Random.RandomRange(0, m_AttackSounds.Length)], transform.position);
+	}
+
+	public void PlayHitNoise()
+	{
+		AudioSource.PlayClipAtPoint(m_HitSounds[Random.RandomRange(0, m_HitSounds.Length)], transform.position);
+	}
+
+	public void PlayDeathNoise()
+	{
+		AudioSource.PlayClipAtPoint(m_DeathSounds[Random.RandomRange(0, m_DeathSounds.Length)], transform.position);
+	}
+	
+	#endregion
 }
