@@ -21948,6 +21948,10 @@ Prefab:
       propertyPath: m_LevelToLoad
       value: Area_01_B
       objectReference: {fileID: 0}
+    - target: {fileID: 1972103343024420, guid: 2f6831adc15a76f4e9669ecece3c54a1, type: 2}
+      propertyPath: m_Name
+      value: Door_W
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6831adc15a76f4e9669ecece3c54a1, type: 2}
   m_IsPrefabAsset: 0
@@ -23187,7 +23191,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1972103343024420, guid: 2f6831adc15a76f4e9669ecece3c54a1, type: 2}
       propertyPath: m_Name
-      value: Door_S (1)
+      value: Door_E
       objectReference: {fileID: 0}
     - target: {fileID: 1972103343024420, guid: 2f6831adc15a76f4e9669ecece3c54a1, type: 2}
       propertyPath: m_IsActive

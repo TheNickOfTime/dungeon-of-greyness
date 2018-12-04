@@ -8,7 +8,9 @@ using UnityEngine.UI;
 public class UI_Gameplay : MonoBehaviour
 {
 	public static UI_Gameplay instance;
-	
+
+	//Health-----------------------------------------------------------------------------------------------------------/
+	[Header("Health")]
 	[SerializeField] private Slider m_HealthBar;
 	public float HealthBar
 	{
@@ -19,6 +21,7 @@ public class UI_Gameplay : MonoBehaviour
 	}
 
 	//Dialogue---------------------------------------------------------------------------------------------------------/
+	[Header("Dialogue")]
 	[SerializeField] private GameObject m_DialoguePanel;
 	public bool DialoguePanelVisibility
 	{
@@ -36,8 +39,9 @@ public class UI_Gameplay : MonoBehaviour
 			m_DialogueText.text = value;
 		}
 	}
-	
+
 	//Interaction------------------------------------------------------------------------------------------------------/
+	[Header("Interaction")]
 	[SerializeField] private GameObject m_InteractionIcon;
 	public bool InteractionIconVisibility
 	{
@@ -50,8 +54,9 @@ public class UI_Gameplay : MonoBehaviour
 			m_InteractionIcon.SetActive(value);
 		}
 	}
-	
+
 	//Pop Up-----------------------------------------------------------------------------------------------------------/
+	[Header("Pop-Up")]
 	[SerializeField] private GameObject m_PopUpPanel;
 	public bool PopUpPanelVisibility
 	{
@@ -78,6 +83,47 @@ public class UI_Gameplay : MonoBehaviour
 		set
 		{
 			m_PopUpText.text = value;
+		}
+	}
+
+	//Effects----------------------------------------------------------------------------------------------------------/
+	[Header("Effects")]
+	[SerializeField] private GameObject m_FlashPanel;
+	public bool FlashPanel
+	{
+		set
+		{
+			m_FlashPanel.SetActive(false);
+			m_FlashPanel.SetActive(value);
+		}
+	}
+
+	//Wave-------------------------------------------------------------------------------------------------------------/
+	[Header("Wave")]
+	[SerializeField] private GameObject m_WavePanel;
+	public GameObject WavePanel
+	{
+		get
+		{
+			return m_WavePanel;
+		}
+	}
+
+	[SerializeField] private Text m_WaveText;
+	public string WaveText
+	{
+		set
+		{
+			m_WaveText.text = value;
+		}
+	}
+
+	[SerializeField] private Text m_WaveCountdown;
+	public Text WaveCountdown
+	{
+		get
+		{
+			return m_WaveCountdown;
 		}
 	}
 

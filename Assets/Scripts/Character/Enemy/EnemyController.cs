@@ -57,7 +57,8 @@ public class EnemyController : Controller
 	protected bool m_DefaultRenFlip;
 
 	private Vector3 m_AltDirection;
-
+	
+	public bool m_HasToken;
 	
 	#endregion
 
