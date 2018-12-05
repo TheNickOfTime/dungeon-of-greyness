@@ -114,7 +114,7 @@ MonoBehaviour:
   m_DashTime: 0.1
   m_HealthMax: 8
   m_BaseDamage: 1
-  m_HeavyDamage: 4
+  m_HeavyDamage: 0
   m_ComboMax: 1
   m_HitBoxSize: {x: 2, y: 2}
   m_HeavyHitBoxSize: {x: 3, y: 3}
@@ -127,6 +127,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 30f677285cccc6d458818286041f0e75, type: 3}
   m_DashSound: {fileID: 8300000, guid: 38b254971dbcfed41876b3e17f9cb61c, type: 3}
   m_CanMove: 1
+  m_CanRecieveDamge: 1
 --- !u!114 &114443027107218152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +143,8 @@ MonoBehaviour:
   m_State: 0
   m_AlertRadius: 8
   m_AttackRadius: 1
+  m_MinimumDistance: 1
+  m_HasToken: 0
   m_Hazard: {fileID: 1282276929820458, guid: c011ce8a372b23842af87d40111f2603, type: 2}
   m_HazardPositions:
   - positions:

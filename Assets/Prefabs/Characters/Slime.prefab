@@ -114,6 +114,8 @@ MonoBehaviour:
   m_State: 0
   m_AlertRadius: 7
   m_AttackRadius: 1
+  m_MinimumDistance: 1
+  m_HasToken: 0
 --- !u!114 &114782780894387716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +131,7 @@ MonoBehaviour:
   m_DashDistance: 1
   m_DashTime: 0.1
   m_HealthMax: 2
-  m_BaseDamage: 1
+  m_BaseDamage: 0.5
   m_HeavyDamage: 0
   m_ComboMax: 1
   m_HitBoxSize: {x: 1, y: 1}
@@ -142,6 +144,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d658cd6f28fda7a4fb43c111e7f00ad6, type: 3}
   m_DashSound: {fileID: 0}
   m_CanMove: 1
+  m_CanRecieveDamge: 1
 --- !u!212 &212944373469429492
 SpriteRenderer:
   m_ObjectHideFlags: 1

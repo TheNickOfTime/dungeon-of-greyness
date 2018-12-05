@@ -9,8 +9,15 @@ public class SceneLoader : MonoBehaviour
 	public static SceneLoader instance;
 
 	[SerializeField] private Image m_FadePanel;
+	
+	private struct PlayerRespawnData
+	{
+		public int healthPacks;
+	}
+	private PlayerRespawnData m_PlayerRespawnData;
 
-	private string m_PlayerSpawnName;
+	private string m_LastSpawn;
+	private string m_LastLevel;
 
 	private void Awake()
 	{
@@ -23,10 +30,24 @@ public class SceneLoader : MonoBehaviour
 			instance = this;
 			DontDestroyOnLoad(gameObject);
 		}
+
+		m_LastLevel = SceneManager.GetActiveScene().name;
+		m_LastSpawn = "Player Spawn";
 	}
 
 	public void LoadLevel(string levelName, string spawnName)
 	{
+		if (levelName == "")
+		{
+			PlayerController.instance.HealthPacks = m_PlayerRespawnData.healthPacks;
+		}
+		
+		levelName = levelName == "" ? m_LastLevel : levelName;
+		m_LastLevel = levelName;
+
+		spawnName = spawnName == "" ? m_LastSpawn : spawnName;
+		m_LastSpawn = spawnName;
+		
 		StartCoroutine(LoadingSequence(levelName, spawnName));
 	}
 

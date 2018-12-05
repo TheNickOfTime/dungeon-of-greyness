@@ -13,7 +13,7 @@ public class FloorHazard : MonoBehaviour
 			PlayerController player = hits[i].GetComponent<PlayerController>();
 			if (player != null)
 			{
-				player.OnHit(Vector2.zero, 2);
+				player.OnHit(Vector2.zero, 1);
 			}
 		}
 	}

@@ -16,6 +16,10 @@ public class PlayerController : Controller
 	[SerializeField] private bool m_CanDash;
 	[SerializeField] private bool m_CanSuperDash;
 	[SerializeField] private bool m_CanHeavyHit;
+
+	[SerializeField] private AudioClip m_HealSound;
+
+	private int m_HealthPacks = 0;
 	
 	#endregion
 	
@@ -44,6 +48,12 @@ public class PlayerController : Controller
 		set { instance.m_CanHeavyHit = value; }
 	}
 
+	public int HealthPacks
+	{
+		get { return m_HealthPacks; }
+		set { m_HealthPacks = value; }
+	}
+
 	#endregion
 
 	#region Monobehaviour------------------------------------------------------------------------------------------------------/
@@ -61,6 +71,9 @@ public class PlayerController : Controller
 		}
 	    
 		base.Awake();
+
+		GameObject spawn = new GameObject("Player Spawn");
+		spawn.transform.position = transform.position;
 	}
 
 	private void Update()
@@ -156,6 +169,16 @@ public class PlayerController : Controller
 
 		#endregion
 
+		#region Heal
+
+		if (Input.GetButtonDown("Heal") && m_HealthPacks > 0)
+		{
+			m_HealthPacks -= 1;
+			m_Char.HealthCurrent = m_Char.HealthMax;
+		}
+
+		#endregion
+
 		#region Interaction
 
 		if (Input.GetButtonDown("Interact"))
@@ -202,13 +225,23 @@ public class PlayerController : Controller
 	}
 
 	public override void OnDeath()
-	{
-		base.OnDeath();
+	{	
+		foreach (EnemyController enemy in FindObjectsOfType<EnemyController>())
+		{
+			enemy.enabled = false;
+			enemy.Rig.velocity = Vector2.zero;
+//			enemy.GetComponent<Animator>().enabled = false;
+		}
 		
-		Destroy(GetComponent<Character>());
-		Destroy(GetComponent<Rigidbody>());
-		Destroy(GetComponent<Collider2D>());
-		Destroy(this);
+		base.OnDeath();
+
+		StartCoroutine(RespawnSequence());
+
+
+//		Destroy(GetComponent<Character>());
+//		Destroy(GetComponent<Rigidbody>());
+//		Destroy(GetComponent<Collider2D>());
+//		Destroy(this);
 	}
 
 	#endregion
@@ -222,6 +255,15 @@ public class PlayerController : Controller
 		yield return new WaitForSeconds(time);
 		
 		GamePad.SetVibration(0, 0, 0);
+	}
+
+	public IEnumerator RespawnSequence()
+	{
+		yield return new WaitForSecondsRealtime(1.5f);
+		SceneLoader.instance.LoadLevel("", "");
+		yield return new WaitForSecondsRealtime(0.5f);
+		m_Char.HealthCurrent = m_Char.HealthMax;
+		m_Char.Anim.Play("Idle");
 	}
 
 	#endregion

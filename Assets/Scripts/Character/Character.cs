@@ -28,7 +28,7 @@ public class Character : MonoBehaviour
 	//Stats
 	[Header("Stats")]
 	[SerializeField] private float m_HealthMax = 5;
-	private float m_HealthCurrent;
+	[SerializeField]private float m_HealthCurrent;
 	
 	[Space]
 	
@@ -54,7 +54,7 @@ public class Character : MonoBehaviour
 	
 	//Config
 	[HideInInspector] public bool m_CanMove = true;
-	private bool m_CanRecieveDamge = true;
+	[SerializeField] private bool m_CanRecieveDamge = true;
 	
 	#endregion
 
@@ -135,12 +135,16 @@ public class Character : MonoBehaviour
 
 	public bool CanRecieveDamge
 	{
-		get { return m_CanRecieveDamge; }
+		get
+		{
+			return m_CanRecieveDamge;
+		}
 	}
 
 	#endregion
 
-	//Monobehavior-----------------------------------------------------------------------------------------------------/
+	#region Monobehavior-------------------------------------------------------------------------------------------------------/
+	
 	private void Awake()
 	{
 		//Set component references
@@ -155,8 +159,11 @@ public class Character : MonoBehaviour
 		//Initialize values
 		HealthCurrent = HealthMax;
 	}
+	
+	#endregion
 
-	//Actions----------------------------------------------------------------------------------------------------------/
+	#region Actions------------------------------------------------------------------------------------------------------------/
+	
 	public void Move(Vector2 direction)
 	{
 		if (m_CanMove)
@@ -190,14 +197,19 @@ public class Character : MonoBehaviour
 		m_Anim.SetTrigger("Dash");
 		StartCoroutine(LerpMovement(targetPos, m_DashTime));
 	}
+	
+	#endregion
 
-	//Reactions--------------------------------------------------------------------------------------------------------/
+	#region Reactions----------------------------------------------------------------------------------------------------------/
+	
 	public void Knockback(Vector2 direction)
 	{
 		m_Rig.velocity = direction;
 	}
+	
+	#endregion
 
-	#region Coroutines
+	#region Coroutines---------------------------------------------------------------------------------------------------------/
 
 	private IEnumerator LerpMovement(Vector2 targetPosition, float timer)
 	{

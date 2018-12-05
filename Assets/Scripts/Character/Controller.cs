@@ -8,6 +8,7 @@ public class Controller : MonoBehaviour, IHittable
 
 	protected Character m_Char;
 	protected SpriteRenderer m_Ren;
+	protected Rigidbody2D m_Rig;
 
 	[Header("Controller")]
 	[SerializeField] protected GameObject m_Particles;
@@ -21,6 +22,11 @@ public class Controller : MonoBehaviour, IHittable
 	public Character Char
 	{
 		get { return m_Char; }
+	}
+
+	public Rigidbody2D Rig
+	{
+		get { return m_Rig; }
 	}
 
 	public Interaction CurrentInteractionObject
@@ -42,6 +48,7 @@ public class Controller : MonoBehaviour, IHittable
 	{
 		m_Char = GetComponent<Character>();
 		m_Ren = GetComponent<SpriteRenderer>();
+		m_Rig = GetComponent<Rigidbody2D>();
 	}
 
 	//Reactions--------------------------------------------------------------------------------------------------------/
@@ -50,6 +57,7 @@ public class Controller : MonoBehaviour, IHittable
 		m_Char.Anim.SetTrigger("Stun");
 		m_Char.HealthCurrent -= damage;
 		m_Char.PlayHitNoise();
+		Instantiate(m_Particles, transform.position, Quaternion.identity);
 	}
 
 	public virtual void OnDeath()

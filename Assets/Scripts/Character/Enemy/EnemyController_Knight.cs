@@ -8,10 +8,13 @@ public class EnemyController_Knight : EnemyController
 	{
 		bool c1 = m_Char.Direction.x < 0 && direction.x < 0;
 		bool c2 = m_Char.Direction.x > 0 && direction.x > 0;
+		
+		bool stunThreshold = damage > 3;
 
-		if(c1 || c2)
+		if(c1 || c2 || stunThreshold)
 		{
 			m_Char.Anim.SetTrigger("Stun");
+			Instantiate(m_Particles, transform.position, Quaternion.identity);
 			m_Char.HealthCurrent -= damage;
 		}
 		else

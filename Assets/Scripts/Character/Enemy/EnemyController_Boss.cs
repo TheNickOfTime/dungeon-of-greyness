@@ -96,8 +96,8 @@ public class EnemyController_Boss : EnemyController_Knight
 	
 	//Misc-------------------------------------------------------------------------------------------------------------/
 	private float m_DefaultAttackRadius = 2;
-	private float m_RangedAttackRadius = 5;
-	private float m_SpawnAttackRadius = 4;
+	private float m_RangedAttackRadius = 10;
+	private float m_SpawnAttackRadius = 5;
 
 	#endregion
 	
@@ -113,8 +113,6 @@ public class EnemyController_Boss : EnemyController_Knight
 	protected override void Update()
 	{
 		CheckStage();
-
-		m_HealthBar.value = Char.HealthCurrent / Char.HealthMax;
 		
 		base.Update();
 	}
@@ -149,12 +147,15 @@ public class EnemyController_Boss : EnemyController_Knight
 		{
 			case AttackType.Melee:
 				m_AttackRadius = m_DefaultAttackRadius;
+				m_MinimumDistance = 2;
 				break;
 			case AttackType.Ranged:
 				m_AttackRadius = m_RangedAttackRadius;
+				m_MinimumDistance = 6;
 				break;
 			case AttackType.Spawn:
 				m_AttackRadius = m_SpawnAttackRadius;
+				m_MinimumDistance = 4;
 				break;
 			default:
 				throw new ArgumentOutOfRangeException();
@@ -221,8 +222,15 @@ public class EnemyController_Boss : EnemyController_Knight
 
 	#endregion
 
+	public override void OnHit(Vector2 direction, float damage)
+	{
+		m_HealthBar.value = Char.HealthCurrent / Char.HealthMax;
+		base.OnHit(direction, damage);
+	}
+
 	public override void OnDeath()
 	{
+		
 		base.OnDeath();
 	}
 

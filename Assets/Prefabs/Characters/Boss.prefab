@@ -336,8 +336,8 @@ MonoBehaviour:
   m_DashDistance: 1
   m_DashTime: 0.1
   m_HealthMax: 100
-  m_BaseDamage: 3
-  m_HeavyDamage: 4
+  m_BaseDamage: 2
+  m_HeavyDamage: 2
   m_ComboMax: 1
   m_HitBoxSize: {x: 4, y: 4}
   m_HeavyHitBoxSize: {x: 4, y: 4}
@@ -349,6 +349,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 81a55e740910fe44db8251d941aa9762, type: 3}
   m_DashSound: {fileID: 0}
   m_CanMove: 1
+  m_CanRecieveDamge: 1
 --- !u!114 &114842133715386234
 MonoBehaviour:
   m_ObjectHideFlags: 1
