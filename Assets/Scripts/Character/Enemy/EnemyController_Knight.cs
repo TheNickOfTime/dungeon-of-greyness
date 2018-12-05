@@ -18,6 +18,8 @@ public class EnemyController_Knight : EnemyController
 		{
 			m_Char.Anim.SetTrigger("Block");
 		}
+
+		State = EnemyState.Idle;
 		
 		m_Char.PlayHitNoise();
 	}

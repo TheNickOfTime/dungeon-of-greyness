@@ -93,7 +93,6 @@ public class UI_Gameplay : MonoBehaviour
 	{
 		set
 		{
-			m_FlashPanel.SetActive(false);
 			m_FlashPanel.SetActive(value);
 		}
 	}

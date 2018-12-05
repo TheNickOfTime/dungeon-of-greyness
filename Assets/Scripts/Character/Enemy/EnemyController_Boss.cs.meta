@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 30033d344677703498739c44eac4fad3
+guid: 62c80bf2a47a39246a9230b052a24dea
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - m_EnemySpawnMarker: {fileID: 1333991189017740, guid: 5a5d6453ee3039a4aa6bfb837c35ed67,
-      type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

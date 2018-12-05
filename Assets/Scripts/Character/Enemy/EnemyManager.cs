@@ -1,29 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyManager : MonoBehaviour
 {
+	//Singleton--------------------------------------------------------------------------------------------------------/
 	public static EnemyManager instance;
-	
+
+	//Tokens-----------------------------------------------------------------------------------------------------------/
 	[Range(1, 5)]
 	[SerializeField] private int m_TokenCount = 1;
 	
+	//Waves------------------------------------------------------------------------------------------------------------/
 	private Transform[] m_Waves;
 	private List<EnemyController> m_CurrentWave;
-	public EnemyController[] CurrentWave
+	private EnemyController[] m_NextWave;
+	public List<EnemyController> CurrentWave
 	{
-		get { return m_CurrentWave.ToArray(); }
+		get { return m_CurrentWave; }
 	}
-
 	private int m_WaveIndex = -1;
 
 	private bool[] m_Tokens;
 
+	//Misc-------------------------------------------------------------------------------------------------------------/
+	[SerializeField] private GameObject m_EnemySpawnMarker;
+
+	private UnityEvent m_FinishWavesEvent;
+	
 	private Coroutine m_NextWaveSequence;
+	
+	//Constants--------------------------------------------------------------------------------------------------------/
+	private const int SecondsBetweenWaves = 3;
+
 
 	private void Awake()
 	{
+		//Singleton setup
 		if (instance != null)
 		{
 			Destroy(gameObject);
@@ -33,13 +48,21 @@ public class EnemyManager : MonoBehaviour
 			instance = this;
 		}
 		
+		//Initialize Waves
 		m_Waves = new Transform[transform.childCount];
 		for (int i = 0; i < m_Waves.Length; i++)
 		{
 			m_Waves[i] = transform.GetChild(i);
+			m_Waves[i].gameObject.SetActive(i == 0);
 		}
 		
+		//Initialize CurrentWave and NextWave
 		m_CurrentWave = new List<EnemyController>();
+		m_NextWave = new EnemyController[m_Waves[0].childCount];
+		for (int i = 0; i < m_NextWave.Length; i++)
+		{
+			m_NextWave[i] = m_Waves[0].GetChild(i).GetComponent<EnemyController>();
+		}
 	}
 
 	private void Start()
@@ -49,7 +72,7 @@ public class EnemyManager : MonoBehaviour
 
 	private void Update()
 	{
-		if(m_NextWaveSequence == null && m_WaveIndex < m_Waves.Length)
+		if(m_NextWaveSequence == null)
 		{
 			CheckWave();
 		}
@@ -57,39 +80,26 @@ public class EnemyManager : MonoBehaviour
 
 	private void NextWave()
 	{
-		//Setting new wave
 		m_WaveIndex++;
 
-		Transform wave = m_Waves[m_WaveIndex];
+		//SETTING NEW WAVE
+		Transform newWave = m_Waves[m_WaveIndex];
+		newWave.gameObject.SetActive(true);
+		m_CurrentWave = m_NextWave.ToList();
 		
-		wave.gameObject.SetActive(true);
-
-		m_CurrentWave.Clear();
-		for (int i = 0; i < wave.childCount; i++)
+		//SETTING NEXT WAVE
+		if (m_Waves.Length <= m_WaveIndex + 1)
 		{
-			m_CurrentWave.Add(wave.GetChild(i).GetComponent<EnemyController>());
+			m_NextWave = new EnemyController[0];
+			return;
 		}
 		
-		//Setting initial tokens
-		m_Tokens = new bool[m_CurrentWave.Count];
-		
-		int[] tokenIndexes = new int[m_TokenCount];
-		for (int i = 0; i < tokenIndexes.Length; i++)
+		Transform nextWave = m_Waves[m_WaveIndex + 1];
+		m_NextWave = new EnemyController[nextWave.childCount];
+		for (int i = 0; i < m_NextWave.Length; i++)
 		{
-			int index = -1;
-			while (index < 0 || m_Tokens[index] == true)
-			{
-				index = Random.Range(0, m_Tokens.Length);
-			}
-
-			m_Tokens[index] = true;
-			m_CurrentWave[index].m_HasToken = true;
+			m_NextWave[i] = nextWave.GetChild(i).GetComponent<EnemyController>();
 		}
-	}
-
-	private void CheckTokens()
-	{
-
 	}
 
 	public void CheckWave()
@@ -106,34 +116,36 @@ public class EnemyManager : MonoBehaviour
 		}
 	}
 
-	public void TransferToken(EnemyController tokenHolder)
-	{
-//		StartCoroutine(TransferSequence(tokenHolder));
-	}
-
-	public void TransferToken()
-	{
-
-	}
-
 	private IEnumerator NextWaveSequence()
 	{
-		if (m_WaveIndex >= m_Waves.Length -1)
+		//Separate behavior if the last wave is cleared
+		if (m_NextWave.Length == 0)
 		{
 			m_WaveIndex++;
 			UI_Gameplay.instance.FlashPanel = true;
 			UI_Gameplay.instance.WavePanel.SetActive(true);
 			UI_Gameplay.instance.WaveCountdown.enabled = false;
 			UI_Gameplay.instance.WaveText = "Room Cleared";
-			Debug.Log("WOW");
+
+			m_FinishWavesEvent?.Invoke();
+
 			yield break;
 		}
 
+		//Flashes the screen
 		UI_Gameplay.instance.FlashPanel = true;
 		UI_Gameplay.instance.WavePanel.SetActive(true);
 		UI_Gameplay.instance.WaveText = "More Enemies Incoming";
+		
+		//Spawns markers
+		GameObject[] markers = new GameObject[m_NextWave.Length];
+		for (int i = 0; i < markers.Length; i++)
+		{
+			markers[i] = Instantiate(m_EnemySpawnMarker, m_NextWave[i].transform.position, Quaternion.identity);
+		}
 
-		for (int i = 5; i >= 0; i--)
+		//Fades numbers in countdown
+		for (int i = SecondsBetweenWaves; i >= 0; i--)
 		{
 			float timer = 0;
 			while(timer < 1)
@@ -148,29 +160,19 @@ public class EnemyManager : MonoBehaviour
 			yield return null;
 		}
 
+		//Flashes screen again
 		UI_Gameplay.instance.WavePanel.SetActive(false);
 		UI_Gameplay.instance.FlashPanel = false;
 		UI_Gameplay.instance.FlashPanel = true;
+		
+		//Destroys markers
+		for (int i = 0; i < markers.Length; i++)
+		{
+			Destroy(markers[i]);
+		}
 
+		//Starts next wave
 		m_NextWaveSequence = null;
 		NextWave();
 	}
-
-//	private IEnumerator TransferSequence(EnemyController tokenHolder)
-//	{
-//		int index = m_CurrentWave.IndexOf(tokenHolder);
-//		m_CurrentWave[index].m_HasToken = false;
-//		m_Tokens[index] = false;
-//		
-//		yield return new WaitForSeconds(0.75f);
-//		
-//		index = -1;
-//		while (index < 0 || m_Tokens[index] == true)
-//		{
-//			index = Random.Range(0, m_Tokens.Length);
-//		}
-//		
-//		m_Tokens[index] = true;
-//		m_CurrentWave[index].m_HasToken = true;
-//	}
 }

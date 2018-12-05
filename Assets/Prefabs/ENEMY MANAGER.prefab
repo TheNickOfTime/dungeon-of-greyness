@@ -52,6 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TokenCount: 1
+  m_EnemySpawnMarker: {fileID: 1333991189017740, guid: 5a5d6453ee3039a4aa6bfb837c35ed67,
+    type: 2}
   m_Waves: []
   m_CurrentWave: []
-  m_Tokens: 
+  m_NextWave: []
+  m_WaveIndex: -1

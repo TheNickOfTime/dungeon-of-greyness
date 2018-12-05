@@ -17,7 +17,7 @@ public class EnemyController : Controller
 
 	[Header("Enemy Controller")]
 	[SerializeField] protected EnemyState m_State = EnemyState.Idle;
-	protected EnemyState State
+	protected virtual EnemyState State
 	{
 		get
 		{
@@ -51,6 +51,10 @@ public class EnemyController : Controller
 
 	[SerializeField] protected float m_AlertRadius = 5;
 	[SerializeField] protected float m_AttackRadius = 1;
+	[SerializeField] protected float m_MinimumDistance = 1;
+
+	protected float m_AttackCooldownMax = 1;
+	protected float m_AttackCooldownCurrent;
 	
 	protected Transform m_Target;
 
@@ -60,18 +64,20 @@ public class EnemyController : Controller
 	
 	public bool m_HasToken;
 	
+	
+	
 	#endregion
 
 	#region MonoBehaviour------------------------------------------------------------------------------------------------------/
 	
-	private void Start()
+	protected virtual void Start()
 	{
 		//Set Values
 		m_Target = PlayerController.instance.transform;
 		m_DefaultRenFlip = m_Ren.flipX;
 	}
 
-	private void Update()
+	protected virtual void Update()
 	{
 		StateMachine();
 	}
@@ -114,9 +120,12 @@ public class EnemyController : Controller
 			State = EnemyState.Idle;
 			return;
 		}
+
+		m_AttackCooldownCurrent -= Time.deltaTime;
+		m_AttackCooldownCurrent = Mathf.Clamp(m_AttackCooldownCurrent, 0, 100);
 				
 		//Checks if the player can be attacked;
-		if (PlayerInRadius(m_AttackRadius) && PlayerInSight())
+		if (PlayerInRadius(m_AttackRadius) && PlayerInSight() && m_AttackCooldownCurrent <= 0)
 		{
 			State = EnemyState.Attack;
 		}
@@ -128,7 +137,7 @@ public class EnemyController : Controller
 			m_Char.Direction = direction;
 			m_Ren.flipX = direction.x < 0 ? m_DefaultRenFlip : !m_DefaultRenFlip;
 
-			float directionMultiplier = MobCheck() ? -0.5f : 1.0f;
+			float directionMultiplier = MobCheck() || PlayerInRadius(m_MinimumDistance) ? -0.5f : 1.0f;
 			m_Char.Move(direction * directionMultiplier);
 		}
 	}
@@ -136,6 +145,7 @@ public class EnemyController : Controller
 	protected virtual void AttackState()
 	{
 		m_Char.Move(Vector2.zero);
+		m_AttackCooldownCurrent = m_AttackCooldownMax;
 				
 		//If the player is no longer in the attack state, returns to alert state
 		if (!m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
