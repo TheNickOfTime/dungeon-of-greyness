@@ -112,7 +112,8 @@ MonoBehaviour:
   m_MoveSpeed: 1
   m_DashDistance: 1
   m_DashTime: 0.1
-  m_HealthMax: 8
+  m_HealthMax: 12
+  m_HealthCurrent: 0
   m_BaseDamage: 1
   m_HeavyDamage: 0
   m_ComboMax: 1
@@ -139,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13cb25088a09cb41bd54638bb06cccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Particles: {fileID: 0}
+  m_Particles: {fileID: 1125586849818642, guid: e06271707508bae4fbea78e814fa7e80,
+    type: 2}
   m_State: 0
   m_AlertRadius: 8
   m_AttackRadius: 1

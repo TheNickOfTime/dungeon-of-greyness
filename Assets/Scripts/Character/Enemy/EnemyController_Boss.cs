@@ -90,6 +90,9 @@ public class EnemyController_Boss : EnemyController_Knight
 		public Group[] group;
 	}
 	[SerializeField] private SpawnGroup[] m_SpawnGroups;
+	[SerializeField] private GameObject m_SpawnIndicator;
+	private GameObject[] m_NextSpawn;
+	private GameObject[] m_SpawnIndicators;
 	
 	//UI---------------------------------------------------------------------------------------------------------------/
 	private Slider m_HealthBar;
@@ -204,19 +207,37 @@ public class EnemyController_Boss : EnemyController_Knight
 
 	#region Spawn--------------------------------------------------------------------------------------------------------------/
 
-	private void SpawnEnemyGroup()
+	public void ChooseEnemies()
 	{
 		int randomGroup = Random.Range(0, m_SpawnGroups.Length);
 		SpawnGroup group = m_SpawnGroups[randomGroup];
-		foreach (var spawn  in group.group)
+		m_NextSpawn = new GameObject[group.group.Length];
+		m_SpawnIndicators = new GameObject[group.group.Length];
+
+		for (int i = 0; i < group.group.Length; i++)
 		{
+			var spawn = group.group[i];
 			Vector2 pos = spawn.relativeCoordinates + (Vector2)PlayerController.instance.transform.position;
 			if (!CheckForWall(pos))
 			{
-				GameObject obj = Instantiate(spawn.enemy, pos, Quaternion.identity, transform.parent);
-				EnemyController enemyToAdd = obj.GetComponent<EnemyController>();
+				GameObject enemy = Instantiate(spawn.enemy, pos, Quaternion.identity, transform.parent);
+				enemy.SetActive(false);
+				EnemyController enemyToAdd = enemy.GetComponent<EnemyController>();
 				EnemyManager.instance.CurrentWave.Add(enemyToAdd);
+				m_NextSpawn[i] = enemy;
+
+				GameObject warnings = Instantiate(m_SpawnIndicator, enemy.transform.position, Quaternion.identity);
+				m_SpawnIndicators[i] = warnings;
 			}
+		}
+	}
+
+	private void SpawnEnemyGroup()
+	{
+		for (int i = 0; i < m_NextSpawn.Length; i++)
+		{
+			Destroy(m_SpawnIndicators[i]);
+			m_NextSpawn[i].SetActive(true);
 		}
 	}
 

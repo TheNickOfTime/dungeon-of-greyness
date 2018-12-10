@@ -80,7 +80,7 @@ public class PlayerController : Controller
 	{
 		PlayerInput();
 	}
-	
+
 	#endregion
 
 	#region Methods------------------------------------------------------------------------------------------------------------/

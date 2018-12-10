@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615442529134052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.9909678, y: -0.5444911, z: -9.831547}
+  m_LocalPosition: {x: -4.19, y: 2.79, z: -9.831547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_DashDistance: 1
   m_DashTime: 0.1
   m_HealthMax: 5
+  m_HealthCurrent: 0
   m_BaseDamage: 1
   m_HeavyDamage: 0
   m_ComboMax: 1
@@ -200,4 +201,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1

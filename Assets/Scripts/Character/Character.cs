@@ -214,6 +214,7 @@ public class Character : MonoBehaviour
 	private IEnumerator LerpMovement(Vector2 targetPosition, float timer)
 	{
 		Vector2 direction = Vector3.Normalize(targetPosition - (Vector2)transform.position);
+//		Vector2 startPos = transform.position;
 		
 		m_CanMove = false;
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Water"), true);
@@ -230,6 +231,16 @@ public class Character : MonoBehaviour
 		
 		m_CanMove = true;
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Water"), false);
+
+		if (Physics2D.OverlapPoint(transform.position, 1 << LayerMask.NameToLayer("Water")))
+		{
+			m_Anim.SetTrigger("Stun Light");
+			m_Anim.SetTrigger("Die");
+			yield return new WaitForSeconds(1.0f);
+			SceneLoader.instance.LoadLevel("","");
+			yield return new WaitForSecondsRealtime(0.5f);
+			m_Anim.Play("Idle");
+		}
 	}
 
 	#endregion

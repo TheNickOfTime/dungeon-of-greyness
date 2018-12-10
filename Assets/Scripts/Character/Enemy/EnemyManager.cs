@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
 	//Misc-------------------------------------------------------------------------------------------------------------/
 	[SerializeField] private GameObject m_EnemySpawnMarker;
 
-	private UnityEvent m_FinishWavesEvent;
+	[SerializeField] private UnityEvent m_FinishWavesEvent;
 	
 	private Coroutine m_NextWaveSequence;
 	
