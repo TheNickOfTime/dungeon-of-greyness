@@ -5201,7 +5201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034056933}
   m_Layer: 0
-  m_Name: Spawn_N
+  m_Name: Spawn_W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

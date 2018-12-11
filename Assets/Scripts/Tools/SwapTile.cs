@@ -8,10 +8,10 @@ public class SwapTile : MonoBehaviour
 	private Transform[,] m_Coordinates;
 
 	[SerializeField] private Tilemap m_TilemapA;
-	[SerializeField] private RuleTile m_TileA;
+	[SerializeField] private TileBase m_TileA;
 	[Space]
 	[SerializeField] private Tilemap m_TilemapB;
-	[SerializeField] private RuleTile m_TileB;
+	[SerializeField] private TileBase m_TileB;
 	[Space]
 	[SerializeField] private AudioClip m_AudioClip;
 	
@@ -23,7 +23,7 @@ public class SwapTile : MonoBehaviour
 
 	private void Awake()
 	{
-		m_Coordinates = new Transform[transform.childCount, 20];
+		m_Coordinates = new Transform[transform.childCount, 100];
 		for (int i = 0; i < transform.childCount; i++)
 		{
 			for (int j = 0; j < transform.GetChild(i).childCount; j++)

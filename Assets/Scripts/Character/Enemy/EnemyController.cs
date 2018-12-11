@@ -174,7 +174,7 @@ public class EnemyController : Controller
 
 	protected bool PlayerInSight()
 	{
-		bool didHit = Physics2D.Linecast(transform.position, m_Target.position, 1 << LayerMask.NameToLayer("Environment"));
+		bool didHit = Physics2D.Linecast(transform.position, m_Target.position, 1 << LayerMask.NameToLayer("Environment") | 1 << LayerMask.NameToLayer("Water"));
 		return !didHit;
 	}
 
