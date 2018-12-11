@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Collider2D))]
 public class TriggerInteraction : MonoBehaviour
 {
 	private enum TriggerEvent
 	{
 		Enter,
 		Exit,
-		Stay
+		Stay,
+		OnEnable,
+		OnDisable
 	}
 	[SerializeField] private TriggerEvent m_TriggerEvent;
 	
@@ -35,6 +36,22 @@ public class TriggerInteraction : MonoBehaviour
 	private void OnTriggerStay2D(Collider2D other)
 	{
 		if (m_TriggerEvent == TriggerEvent.Stay && other.GetComponent<PlayerController>() != null)
+		{
+			m_Event.Invoke();
+		}
+	}
+
+	private void OnEnable()
+	{
+		if (m_TriggerEvent == TriggerEvent.OnEnable)
+		{
+			m_Event.Invoke();
+		}
+	}
+
+	private void OnDisable()
+	{
+		if (m_TriggerEvent == TriggerEvent.OnDisable)
 		{
 			m_Event.Invoke();
 		}
