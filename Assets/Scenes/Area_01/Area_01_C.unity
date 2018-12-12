@@ -1292,6 +1292,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114012025118980606, guid: f9333ffb37ccb4f4f8e39817627d18b7,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114012025118980606, guid: f9333ffb37ccb4f4f8e39817627d18b7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9333ffb37ccb4f4f8e39817627d18b7, type: 2}
   m_IsPrefabAsset: 0
@@ -3668,6 +3674,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 892941363}
     m_Modifications:
+    - target: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4058160034326012, guid: d955bfdfb0b20a747b9060e4157ddedd, type: 2}
       propertyPath: m_LocalPosition.x
       value: -15.15
@@ -3704,6 +3720,12 @@ Prefab:
       propertyPath: m_Name
       value: Slime (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d955bfdfb0b20a747b9060e4157ddedd, type: 2}
   m_IsPrefabAsset: 0
@@ -3909,6 +3931,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d955bfdfb0b20a747b9060e4157ddedd, type: 2}
   m_IsPrefabAsset: 0
@@ -4202,6 +4230,12 @@ Prefab:
       propertyPath: m_Name
       value: Slime (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d955bfdfb0b20a747b9060e4157ddedd, type: 2}
   m_IsPrefabAsset: 0
@@ -4306,6 +4340,12 @@ Prefab:
       propertyPath: m_Name
       value: Slime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d955bfdfb0b20a747b9060e4157ddedd, type: 2}
   m_IsPrefabAsset: 0
@@ -4968,6 +5008,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114012025118980606, guid: f9333ffb37ccb4f4f8e39817627d18b7,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114012025118980606, guid: f9333ffb37ccb4f4f8e39817627d18b7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9333ffb37ccb4f4f8e39817627d18b7, type: 2}
   m_IsPrefabAsset: 0
@@ -5075,6 +5121,12 @@ Prefab:
       propertyPath: m_Name
       value: Wizard (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114012025118980606, guid: f9333ffb37ccb4f4f8e39817627d18b7,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114012025118980606, guid: f9333ffb37ccb4f4f8e39817627d18b7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9333ffb37ccb4f4f8e39817627d18b7, type: 2}
   m_IsPrefabAsset: 0
@@ -5387,6 +5439,12 @@ Prefab:
       propertyPath: m_Name
       value: Slime (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d955bfdfb0b20a747b9060e4157ddedd, type: 2}
   m_IsPrefabAsset: 0
@@ -19827,6 +19885,12 @@ Prefab:
       propertyPath: m_Name
       value: Slime (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d955bfdfb0b20a747b9060e4157ddedd, type: 2}
   m_IsPrefabAsset: 0
@@ -19963,6 +20027,12 @@ Prefab:
       propertyPath: m_Name
       value: Slime (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114782780894387716, guid: d955bfdfb0b20a747b9060e4157ddedd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d955bfdfb0b20a747b9060e4157ddedd, type: 2}
   m_IsPrefabAsset: 0

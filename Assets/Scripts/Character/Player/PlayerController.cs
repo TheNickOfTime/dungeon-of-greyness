@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
@@ -95,11 +96,11 @@ public class PlayerController : Controller
 		bool isMoving = h != 0 || v != 0;
 		
 		//Track Values
-		if (isMoving && m_Char.m_CanMove)
+		if (isMoving && m_Char.CanMove)
 		{
 			Vector2 dir = Mathf.Abs(h) > Mathf.Abs(v) ? new Vector2(h, 0) : new Vector2(0, v);
 			dir = Vector3.Normalize(dir);
-			if (m_Char.m_CanMove)
+			if (m_Char.CanMove)
 			{
 				m_Char.Direction = dir;
 			}
@@ -159,7 +160,7 @@ public class PlayerController : Controller
 
 		if (CanDash)
 		{
-			if (Input.GetButtonDown("Dash") && m_Char.m_CanMove)
+			if (Input.GetButtonDown("Dash") && m_Char.CanMove)
 			{
 				Vector2 dir = Vector3.Normalize(new Vector2(h, v));
 				dir = isMoving ? dir : m_Char.Direction;
@@ -220,7 +221,6 @@ public class PlayerController : Controller
 //		StartCoroutine(LerpHealth(damage, 0.25f));
 		m_Char.HealthCurrent -= damage;
 
-		m_Char.PlayHitNoise();
 		Shaker.instance.HapticShake(0.35f, 0.75f);
 	}
 

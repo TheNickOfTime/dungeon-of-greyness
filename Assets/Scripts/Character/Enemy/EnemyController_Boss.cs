@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class EnemyController_Boss : EnemyController_Knight
+public class EnemyController_Boss : EnemyController
 {
 	#region Values & Properties------------------------------------------------------------------------------------------------/
 
@@ -35,12 +35,13 @@ public class EnemyController_Boss : EnemyController_Knight
 			{
 				case EnemyState.Idle:
 					m_Char.Anim.SetBool("IsMoving", false);
-					m_Char.m_CanMove = false;
+					m_Char.CanMove = false;
 					m_Char.Rig.velocity = Vector2.zero;
 					break;
 				case EnemyState.Alert:
 					m_Char.Anim.SetBool("IsMoving", true);
-					m_Char.m_CanMove = true;
+					m_Char.CanMove = true;
+//					m_CheeseCounter = 0;
 					break;
 				case EnemyState.Attack:
 					switch (m_CurrentAttack)
@@ -101,6 +102,8 @@ public class EnemyController_Boss : EnemyController_Knight
 	private float m_DefaultAttackRadius = 2;
 	private float m_RangedAttackRadius = 10;
 	private float m_SpawnAttackRadius = 5;
+
+	private int m_CheeseCounter = 0;
 
 	#endregion
 	
@@ -177,10 +180,32 @@ public class EnemyController_Boss : EnemyController_Knight
 		m_AttackCooldownCurrent = m_AttackCooldownMax;
 	}
 
+	public void ResetCheeseCounter()
+	{
+		m_CheeseCounter = 0;
+	}
+
 	#endregion
 	
 	#region Ranged-------------------------------------------------------------------------------------------------------------/
 
+	private void RandomPosition()
+	{
+		Vector2 playerPos = PlayerController.instance.transform.position;
+		Vector2 newPos = Vector2.zero;
+
+		while (newPos == Vector2.zero)
+		{
+			Vector2 tempPos = Random.insideUnitCircle * m_AlertRadius + playerPos;
+			if (!CheckForWall(tempPos) || tempPos == Vector2.zero)
+			{
+				newPos = tempPos;
+			}
+		}
+
+		m_Char.Rig.MovePosition(newPos);
+	}
+	
 	private bool CheckForWall(Vector2 pos)
 	{
 		return Physics2D.OverlapCircle(pos, 0.5f) != null;
@@ -234,10 +259,27 @@ public class EnemyController_Boss : EnemyController_Knight
 
 	private void SpawnEnemyGroup()
 	{
-		for (int i = 0; i < m_NextSpawn.Length; i++)
+		if (m_NextSpawn != null)
 		{
-			Destroy(m_SpawnIndicators[i]);
-			m_NextSpawn[i].SetActive(true);
+			for (int i = 0; i < m_NextSpawn.Length; i++)
+			{
+				Destroy(m_SpawnIndicators[i]);
+				if (m_NextSpawn[i] != null)
+				{
+					m_NextSpawn[i].SetActive(true);
+				}
+			}
+		}
+	}
+
+	public void DestoryIndicators()
+	{
+		if (m_SpawnIndicators != null)
+		{
+			foreach (GameObject spawnIndicator in m_SpawnIndicators)
+			{
+				Destroy(spawnIndicator);
+			}
 		}
 	}
 
@@ -245,27 +287,51 @@ public class EnemyController_Boss : EnemyController_Knight
 
 	public override void OnHit(Vector2 direction, float damage)
 	{
-		m_HealthBar.value = Char.HealthCurrent / Char.HealthMax;
-		base.OnHit(direction, damage);
-	}
+//		bool isMeleeAttack = m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Melee Attack");
+		bool isSpawnAttack = m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Spawn Attack");
+		bool isRangeAttack = m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Range Attack");
 
-	public override void OnDeath()
-	{
+		if (isSpawnAttack || isRangeAttack)
+		{
+			m_Char.PlayNoise("Block");
+			m_Char.HealthCurrent -= damage * 0.5f;
+			m_HealthBar.value = Char.HealthCurrent / Char.HealthMax;
+			Instantiate(m_Hazard, transform.position, Quaternion.identity);
+			return;
+		}
 		
-		base.OnDeath();
+		//Adds cheese to avoid hit spamming
+		m_CheeseCounter++;
+		
+		if (m_CheeseCounter < 6)//If not cheesing
+		{
+			//Checks conditions for hit or block
+			bool c1 = m_Char.Direction.x < 0 && direction.x < 0;
+			bool c2 = m_Char.Direction.x > 0 && direction.x > 0;
+			bool stunThreshold = damage > 3;
+		
+			if(c1 || c2 || stunThreshold)
+			{
+				m_Char.Anim.SetTrigger("Stun");
+				Instantiate(m_Particles, transform.position, Quaternion.identity);
+				m_Char.HealthCurrent -= damage;
+			}
+			else
+			{
+				m_Char.Anim.SetTrigger("Block");
+			}
+			
+			NextAttack();
+		}
+		else
+		{
+			m_Char.Anim.Play("Teleport");
+			Instantiate(m_Hazard, transform.position, Quaternion.identity);
+			m_CheeseCounter = 0;
+		}
+		
+		m_HealthBar.value = Char.HealthCurrent / Char.HealthMax;
+
+		State = EnemyState.Alert;
 	}
-
-	#region Utility------------------------------------------------------------------------------------------------------------/
-
-	public void PlaySpawnNoise()
-	{
-		SFXManager.PlayClipAtPoint(m_Char.m_AttackSounds[0], transform.position);
-	}
-
-	public void PlayHazardNoise()
-	{
-		SFXManager.PlayClipAtPoint(m_Char.m_AttackSounds[1], transform.position);
-	}
-
-	#endregion
 }

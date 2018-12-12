@@ -48,7 +48,7 @@ public class DialogueSystem : MonoBehaviour
 	{
 		if (m_LineIndex >= m_DialogueData.m_Lines.Length)
 		{
-			PlayerController.instance.Char.m_CanMove = true;
+			PlayerController.instance.Char.CanMove = true;
 			UI_Gameplay.instance.DialoguePanelVisibility = false;
 //			UI_Gameplay.instance.InteractionIconVisibility = true;
 			
@@ -76,7 +76,7 @@ public class DialogueSystem : MonoBehaviour
 			return;
 		}
 
-		PlayerController.instance.Char.m_CanMove = false;
+		PlayerController.instance.Char.CanMove = false;
 		
 		UI_Gameplay.instance.DialoguePanelVisibility = true;
 //		UI_Gameplay.instance.InteractionIconVisibility = false;

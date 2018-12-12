@@ -23,7 +23,5 @@ public class EnemyController_Knight : EnemyController
 		}
 
 		State = EnemyState.Idle;
-		
-		m_Char.PlayHitNoise();
 	}
 }

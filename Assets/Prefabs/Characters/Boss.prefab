@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1005371943030920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.72, y: -2.97, z: 0.10644531}
+  m_LocalPosition: {x: -3.72, y: -2.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224352048938796934}
@@ -332,10 +332,131 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25767501d0ba9846b37b9295f74e51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MoveSpeed: 1
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8300000, guid: 0d7e4a4dc88ddc046ad7dbaa53c3c10e, type: 3}
+    - {fileID: 8300000, guid: 81a55e740910fe44db8251d941aa9762, type: 3}
+    - {fileID: 8300000, guid: ea491c289cefa59469bf6f6d6585f5c0, type: 3}
+    - {fileID: 8300000, guid: 83dcc76e7a7112b46bc4e4fba5db726e, type: 3}
+    - {fileID: 8300000, guid: 30f677285cccc6d458818286041f0e75, type: 3}
+    - {fileID: 8300000, guid: 2c853ce69065c0743950ea7b8e676792, type: 3}
+    - {fileID: 8300000, guid: 38b254971dbcfed41876b3e17f9cb61c, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: m_AudioClips
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.AudioClip,
+        UnityEngine.AudioModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Hit
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Death
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Marker
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Hazard
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Spawn
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Block
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Teleport
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  m_MoveSpeed: 2
   m_DashDistance: 1
   m_DashTime: 0.1
-  m_HealthMax: 100
+  m_HealthMax: 50
+  m_HealthCurrent: 0
   m_BaseDamage: 2
   m_HeavyDamage: 2
   m_ComboMax: 1
@@ -343,13 +464,7 @@ MonoBehaviour:
   m_HeavyHitBoxSize: {x: 4, y: 4}
   m_AttackSounds:
   - {fileID: 8300000, guid: f714d4d76e006354da14746769c11e8c, type: 3}
-  m_HitSounds:
-  - {fileID: 8300000, guid: 0d7e4a4dc88ddc046ad7dbaa53c3c10e, type: 3}
-  m_DeathSounds:
-  - {fileID: 8300000, guid: 81a55e740910fe44db8251d941aa9762, type: 3}
-  m_DashSound: {fileID: 0}
   m_CanMove: 1
-  m_CanRecieveDamge: 1
 --- !u!114 &114842133715386234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -361,7 +476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c80bf2a47a39246a9230b052a24dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Particles: {fileID: 0}
+  m_Particles: {fileID: 1125586849818642, guid: 7c314c97b4ef88b4ebfe85db70a5121a,
+    type: 2}
   m_State: 0
   m_AlertRadius: 10
   m_AttackRadius: 2.25
@@ -435,7 +551,7 @@ MonoBehaviour:
     - {x: -2, y: 2}
     - {x: 0, y: 2}
   m_AttackPatterns:
-  - attackPattern: 000000000000000002000000
+  - attackPattern: 00000000000000000000000002000000
   - attackPattern: 0200000001000000000000000100000000000000
   - attackPattern: 02000000010000000100000001000000000000000200000000000000020000000000000000000000
   m_SpawnGroups:
@@ -475,6 +591,8 @@ MonoBehaviour:
       relativeCoordinates: {x: -3, y: -3}
     - enemy: {fileID: 1615442529134052, guid: 538a366359dbceb4fb4fc7c406fbbcd0, type: 2}
       relativeCoordinates: {x: -3, y: 3}
+  m_SpawnIndicator: {fileID: 1333991189017740, guid: 5a5d6453ee3039a4aa6bfb837c35ed67,
+    type: 2}
 --- !u!114 &114955229735753790
 MonoBehaviour:
   m_ObjectHideFlags: 1

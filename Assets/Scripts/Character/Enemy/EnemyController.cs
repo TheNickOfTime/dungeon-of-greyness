@@ -31,12 +31,12 @@ public class EnemyController : Controller
 			{
 				case EnemyState.Idle:
 					m_Char.Anim.SetBool("IsMoving", false);
-					m_Char.m_CanMove = false;
+					m_Char.CanMove = false;
 					m_Char.Rig.velocity = Vector2.zero;
 					break;
 				case EnemyState.Alert:
 					m_Char.Anim.SetBool("IsMoving", true);
-					m_Char.m_CanMove = true;
+					m_Char.CanMove = true;
 					break;
 				case EnemyState.Attack:
 					m_Char.Anim.SetTrigger("Attack");

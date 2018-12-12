@@ -38,8 +38,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615442529134052}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.19, y: 2.79, z: -9.831547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.36, y: -5.2, z: -9.579767}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,6 +137,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25767501d0ba9846b37b9295f74e51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8300000, guid: 2361669508199164e8358370dbeb988c, type: 3}
+    - {fileID: 8300000, guid: 81a55e740910fe44db8251d941aa9762, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: m_AudioClips
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.AudioClip,
+        UnityEngine.AudioModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Hit
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Death
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   m_MoveSpeed: 1.5
   m_DashDistance: 1
   m_DashTime: 0.1
@@ -149,13 +204,6 @@ MonoBehaviour:
   m_HeavyHitBoxSize: {x: 3, y: 3}
   m_AttackSounds:
   - {fileID: 8300000, guid: 8ae74b9ee8f98f84186a851d4e42b263, type: 3}
-  m_HitSounds:
-  - {fileID: 8300000, guid: 2361669508199164e8358370dbeb988c, type: 3}
-  m_DeathSounds:
-  - {fileID: 8300000, guid: 81a55e740910fe44db8251d941aa9762, type: 3}
-  m_DashSound: {fileID: 0}
-  m_CanMove: 1
-  m_CanRecieveDamge: 1
 --- !u!212 &212659229891902642
 SpriteRenderer:
   m_ObjectHideFlags: 1

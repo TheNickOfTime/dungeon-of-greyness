@@ -63,7 +63,7 @@ public class UI_Gameplay : MonoBehaviour
 		set
 		{
 			m_PopUpPanel.SetActive(value);
-			PlayerController.instance.Char.m_CanMove = !value;
+			PlayerController.instance.Char.CanMove = !value;
 			
 		}
 	}

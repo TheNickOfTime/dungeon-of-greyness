@@ -65,14 +65,4 @@ public class EnemyController_Wizard : EnemyController
 			yield return null;
 		}
 	}
-
-	public void PlaySpawnNoise()
-	{
-		SFXManager.PlayClipAtPoint(m_Char.m_AttackSounds[0], transform.position);
-	}
-
-	public void PlayHazardNoise()
-	{
-		SFXManager.PlayClipAtPoint(m_Char.m_AttackSounds[1], transform.position);
-	}
 }

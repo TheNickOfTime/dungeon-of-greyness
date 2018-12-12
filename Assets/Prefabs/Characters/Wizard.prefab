@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299483748307778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7060289, y: -3.1837015, z: -1.7773438}
+  m_LocalPosition: {x: -7.08, y: -11.1, z: -1.7773438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,6 +109,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25767501d0ba9846b37b9295f74e51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8300000, guid: 3768da311e02587469aef57cb851dd69, type: 3}
+    - {fileID: 8300000, guid: 81a55e740910fe44db8251d941aa9762, type: 3}
+    - {fileID: 8300000, guid: 38b254971dbcfed41876b3e17f9cb61c, type: 3}
+    - {fileID: 8300000, guid: ea491c289cefa59469bf6f6d6585f5c0, type: 3}
+    - {fileID: 8300000, guid: 83dcc76e7a7112b46bc4e4fba5db726e, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: m_AudioClips
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.AudioClip,
+        UnityEngine.AudioModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Hit
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Death
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Spawn
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Teleport
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Attack
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   m_MoveSpeed: 1
   m_DashDistance: 1
   m_DashTime: 0.1
@@ -122,13 +216,6 @@ MonoBehaviour:
   m_AttackSounds:
   - {fileID: 8300000, guid: ea491c289cefa59469bf6f6d6585f5c0, type: 3}
   - {fileID: 8300000, guid: 83dcc76e7a7112b46bc4e4fba5db726e, type: 3}
-  m_HitSounds:
-  - {fileID: 8300000, guid: 4671908e38022db41922b865680278c6, type: 3}
-  m_DeathSounds:
-  - {fileID: 8300000, guid: 30f677285cccc6d458818286041f0e75, type: 3}
-  m_DashSound: {fileID: 8300000, guid: 38b254971dbcfed41876b3e17f9cb61c, type: 3}
-  m_CanMove: 1
-  m_CanRecieveDamge: 1
 --- !u!114 &114443027107218152
 MonoBehaviour:
   m_ObjectHideFlags: 1

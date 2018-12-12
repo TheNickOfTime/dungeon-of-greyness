@@ -56,13 +56,11 @@ public class Controller : MonoBehaviour, IHittable
 	{
 		m_Char.Anim.SetTrigger("Stun");
 		m_Char.HealthCurrent -= damage;
-		m_Char.PlayHitNoise();
 		Instantiate(m_Particles, transform.position, Quaternion.identity);
 	}
 
 	public virtual void OnDeath()
 	{
 		m_Char.Anim.SetTrigger("Die");
-		m_Char.PlayDeathNoise();
 	}
 }

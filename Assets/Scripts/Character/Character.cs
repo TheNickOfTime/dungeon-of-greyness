@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Timers;
 using Cinemachine;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 using XInputDotNetPure;
 
-public class Character : MonoBehaviour
+public class Character : SerializedMonoBehaviour
 {
 	#region Components---------------------------------------------------------------------------------------------------------/
 
@@ -47,14 +49,12 @@ public class Character : MonoBehaviour
 	
 	//Audio
 	[Header("Audio")]
-	public AudioClip[] m_AttackSounds;
-	public AudioClip[] m_HitSounds;
-	public AudioClip[] m_DeathSounds;
-	public AudioClip m_DashSound;
-	
+	[SerializeField] private AudioClip[] m_AttackSounds;
+	[OdinSerialize] private Dictionary<string, AudioClip> m_AudioClips;
+
 	//Config
-	[HideInInspector] public bool m_CanMove = true;
-	[SerializeField] private bool m_CanRecieveDamge = true;
+	private bool m_CanMove = true;
+	private bool m_CanRecieveDamge = true;
 	
 	#endregion
 
@@ -133,6 +133,12 @@ public class Character : MonoBehaviour
 		}
 	}
 
+	public bool CanMove
+	{
+		get { return m_CanMove; }
+		set { m_CanMove = value; }
+	}
+
 	public bool CanRecieveDamge
 	{
 		get
@@ -166,7 +172,7 @@ public class Character : MonoBehaviour
 	
 	public void Move(Vector2 direction)
 	{
-		if (m_CanMove)
+		if (CanMove)
 		{
 			m_Rig.velocity = direction * m_MoveSpeed;
 		}
@@ -216,7 +222,7 @@ public class Character : MonoBehaviour
 		Vector2 direction = Vector3.Normalize(targetPosition - (Vector2)transform.position);
 //		Vector2 startPos = transform.position;
 		
-		m_CanMove = false;
+		CanMove = false;
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Water"), true);
 		
 		float t = 0;
@@ -229,7 +235,7 @@ public class Character : MonoBehaviour
 			yield return null;
 		}
 		
-		m_CanMove = true;
+		CanMove = true;
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Water"), false);
 
 		if (Physics2D.OverlapPoint(transform.position, 1 << LayerMask.NameToLayer("Water")))
@@ -305,14 +311,14 @@ public class Character : MonoBehaviour
 		fadeScript.Sprite = ren;
 	}
 
-	public void RecieveAttackEnable()
+	public void MovementEnable()
 	{
-		m_CanRecieveDamge = true;
+		CanMove = true;
 	}
 
-	public void RecieveAttackDisable()
+	public void MovementDisable()
 	{
-		m_CanRecieveDamge = false;
+		CanMove = false;
 	}
 
 	public void PlayAttackNoise()
@@ -320,19 +326,11 @@ public class Character : MonoBehaviour
 		SFXManager.PlayClipAtPoint(m_AttackSounds[Random.Range(0, m_AttackSounds.Length)], transform.position);
 	}
 
-	public void PlayHitNoise()
+	public void PlayNoise(string key)
 	{
-		SFXManager.PlayClipAtPoint(m_HitSounds[Random.Range(0, m_HitSounds.Length)], transform.position);
-	}
-
-	public void PlayDeathNoise()
-	{
-		SFXManager.PlayClipAtPoint(m_DeathSounds[Random.Range(0, m_DeathSounds.Length)], transform.position);
-	}
-
-	public void PlayDashNoise()
-	{
-		SFXManager.PlayClipAtPoint(m_DashSound, transform.position);
+		if (m_AudioClips.ContainsKey(key))
+			SFXManager.PlayClipAtPoint(m_AudioClips[key], transform.position);
+		else Debug.LogWarning("Key: " + key + " does not exist. Try checking your spelling, idiot!");
 	}
 	
 	#endregion

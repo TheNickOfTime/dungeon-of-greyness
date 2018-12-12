@@ -127,8 +127,8 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0
-    functionName: PlaySpawnNoise
-    data: 
+    functionName: PlayNoise
+    data: Spawn
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -141,8 +141,8 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.75
-    functionName: PlayHazardNoise
-    data: 
+    functionName: PlayNoise
+    data: Attack
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

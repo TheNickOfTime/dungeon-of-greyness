@@ -18,6 +18,11 @@ public class FloorHazard : MonoBehaviour
 		}
 	}
 
+	public void PlayAudio()
+	{
+		GetComponent<AudioSource>().Play();
+	}
+
 	public void Destroy()
 	{
 		Destroy(gameObject);

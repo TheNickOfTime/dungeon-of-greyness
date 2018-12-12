@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1503171591612662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.162085, y: 0.45837212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,24 +119,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25767501d0ba9846b37b9295f74e51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8300000, guid: e50d8386d31b35548ab8a30e9703e85d, type: 3}
+    - {fileID: 8300000, guid: 81a55e740910fe44db8251d941aa9762, type: 3}
+    - {fileID: 8300000, guid: 2c853ce69065c0743950ea7b8e676792, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: m_AudioClips
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.AudioClip,
+        UnityEngine.AudioModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Hit
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Death
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Block
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   m_MoveSpeed: 1
   m_DashDistance: 1
   m_DashTime: 0.1
-  m_HealthMax: 15
-  m_BaseDamage: 2
-  m_HeavyDamage: 2
+  m_HealthMax: 18
+  m_HealthCurrent: 0
+  m_BaseDamage: 1.5
+  m_HeavyDamage: 1.5
   m_ComboMax: 1
   m_HitBoxSize: {x: 2.5, y: 2.5}
   m_HeavyHitBoxSize: {x: 3, y: 3}
   m_AttackSounds:
   - {fileID: 8300000, guid: f714d4d76e006354da14746769c11e8c, type: 3}
-  m_HitSounds:
-  - {fileID: 8300000, guid: 0d7e4a4dc88ddc046ad7dbaa53c3c10e, type: 3}
-  m_DeathSounds:
-  - {fileID: 8300000, guid: 81a55e740910fe44db8251d941aa9762, type: 3}
-  m_DashSound: {fileID: 0}
-  m_CanMove: 1
-  m_CanRecieveDamge: 1
 --- !u!114 &114599446795668164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,7 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6aa778067f026408d6946f575677fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Particles: {fileID: 0}
+  m_Particles: {fileID: 1125586849818642, guid: e06271707508bae4fbea78e814fa7e80,
+    type: 2}
   m_State: 0
   m_AlertRadius: 5
   m_AttackRadius: 2
