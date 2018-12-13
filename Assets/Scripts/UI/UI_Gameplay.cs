@@ -20,6 +20,25 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 
+	[SerializeField] private Slider m_PowerBar;
+	public float PowerBar
+	{
+		set
+		{
+			m_PowerBar.value = value;
+		}
+	}
+
+	[SerializeField] private Text m_HealthPackCounter;
+	public int HealthPackCounter
+	{
+		set
+		{
+			m_HealthPackCounter.text = "x" + value;
+			
+		}
+	}
+
 	//Dialogue---------------------------------------------------------------------------------------------------------/
 	[Header("Dialogue")]
 	[SerializeField] private GameObject m_DialoguePanel;
@@ -144,6 +163,7 @@ public class UI_Gameplay : MonoBehaviour
 	private void Start()
 	{
 		HealthBar = PlayerController.instance.Char.HealthCurrent / PlayerController.instance.Char.HealthMax;
+		HealthPackCounter = PlayerController.instance.HealthPacks;
 	}
 
 	private void Update()

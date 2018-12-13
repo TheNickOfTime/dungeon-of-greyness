@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1005371943030920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.72, y: -2.97, z: 0}
+  m_LocalPosition: {x: -6.74, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224352048938796934}
@@ -452,7 +452,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  m_MoveSpeed: 2
+  m_MoveSpeed: 1.5
   m_DashDistance: 1
   m_DashTime: 0.1
   m_HealthMax: 50
@@ -464,7 +464,6 @@ MonoBehaviour:
   m_HeavyHitBoxSize: {x: 4, y: 4}
   m_AttackSounds:
   - {fileID: 8300000, guid: f714d4d76e006354da14746769c11e8c, type: 3}
-  m_CanMove: 1
 --- !u!114 &114842133715386234
 MonoBehaviour:
   m_ObjectHideFlags: 1

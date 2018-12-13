@@ -54,13 +54,17 @@ public class Controller : MonoBehaviour, IHittable
 	//Reactions--------------------------------------------------------------------------------------------------------/
 	public virtual void OnHit(Vector2 direction, float damage)
 	{
-		m_Char.Anim.SetTrigger("Stun");
+		if (damage > 1)
+		{
+			m_Char.Anim.SetTrigger("Stun");
+		}
 		m_Char.HealthCurrent -= damage;
 		Instantiate(m_Particles, transform.position, Quaternion.identity);
 	}
 
 	public virtual void OnDeath()
 	{
+		m_Char.Anim.SetTrigger("Stun");
 		m_Char.Anim.SetTrigger("Die");
 	}
 }

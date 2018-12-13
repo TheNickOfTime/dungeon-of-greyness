@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class Destructable : MonoBehaviour, IHittable
 {
@@ -13,6 +14,7 @@ public class Destructable : MonoBehaviour, IHittable
 	[Space] [SerializeField] private float m_MoveAmount = 1;
 	[SerializeField] private GameObject m_Particles;
 	[SerializeField] private Color m_FlashColor = Color.red;
+	[SerializeField] private GameObject m_ChanceToSpawn;
 	
 
 	private void Awake()
@@ -34,6 +36,11 @@ public class Destructable : MonoBehaviour, IHittable
 		if (m_Index >= m_Sprites.Length - 1)
 		{
 			GetComponent<Collider2D>().enabled = false;
+			int seed = UnityEngine.Random.Range(0, 20 * PlayerController.instance.HealthPacks);
+			if (seed == 0 && m_ChanceToSpawn != null)
+			{
+				Instantiate(m_ChanceToSpawn, transform.position, Quaternion.identity);
+			}
 		}
 		m_Rig.velocity = direction * m_MoveAmount;
 		StartCoroutine(SpriteSwap());

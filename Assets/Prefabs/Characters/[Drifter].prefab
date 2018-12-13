@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1453056511114090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2, y: -3.36, z: 0}
+  m_LocalPosition: {x: -6.78, y: -7.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -117,10 +117,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25767501d0ba9846b37b9295f74e51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8300000, guid: 9b97450c414990a4e9cfb9a3558afa8d, type: 3}
+    - {fileID: 8300000, guid: d658cd6f28fda7a4fb43c111e7f00ad6, type: 3}
+    - {fileID: 8300000, guid: 126a71324fb118b47b991218783c4f7e, type: 3}
+    - {fileID: 8300000, guid: e76b040964ec4f14e8f325bea1704eb3, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: m_AudioClips
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.AudioClip,
+        UnityEngine.AudioModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Dash
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Hit
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Heavy Charge
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: Heavy Attack
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   m_MoveSpeed: 4.5
   m_DashDistance: 4.5
   m_DashTime: 0.12
   m_HealthMax: 5
+  m_HealthCurrent: 0
   m_BaseDamage: 1
   m_HeavyDamage: 5
   m_ComboMax: 3
@@ -130,12 +212,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b9b49b1731d11f9479e948bc569d89dc, type: 3}
   - {fileID: 8300000, guid: 8de03522c9038dc45b6aff40a6c334dd, type: 3}
   - {fileID: 8300000, guid: b2194b8b4e7deff4390e030faaa034f6, type: 3}
-  m_HitSounds:
-  - {fileID: 8300000, guid: 2017095884850ad4e93de776754e5a07, type: 3}
-  m_DeathSounds:
-  - {fileID: 8300000, guid: d658cd6f28fda7a4fb43c111e7f00ad6, type: 3}
-  m_DashSound: {fileID: 8300000, guid: 9b97450c414990a4e9cfb9a3558afa8d, type: 3}
-  m_CanMove: 1
 --- !u!114 &114431194450422236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +228,7 @@ MonoBehaviour:
   m_CanDash: 0
   m_CanSuperDash: 0
   m_CanHeavyHit: 0
+  m_HealSound: {fileID: 0}
 --- !u!212 &212704760591356016
 SpriteRenderer:
   m_ObjectHideFlags: 1

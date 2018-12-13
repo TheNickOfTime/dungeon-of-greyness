@@ -34,6 +34,8 @@ public class SpriteOrder : MonoBehaviour
 
 	private void Sort(SpriteRenderer obj)
 	{
+		if (obj == null) return;
+		
 		obj.sortingOrder = -(int)(obj.transform.position.y * 10);
 	}
 }

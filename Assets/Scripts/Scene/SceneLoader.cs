@@ -13,6 +13,7 @@ public class SceneLoader : MonoBehaviour
 	private struct PlayerRespawnData
 	{
 		public int healthPacks;
+		public int powerPacks;
 	}
 	private PlayerRespawnData m_PlayerRespawnData;
 

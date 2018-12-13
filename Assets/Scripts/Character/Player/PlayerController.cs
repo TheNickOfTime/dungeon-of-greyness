@@ -11,6 +11,8 @@ public class PlayerController : Controller
 	public static PlayerController instance;
 	
 	#region Values-------------------------------------------------------------------------------------------------------------/
+
+	private float m_Power;
 	
 	private float m_InputTime;
 
@@ -29,6 +31,16 @@ public class PlayerController : Controller
 	public float TimeScale
 	{
 		set { Time.timeScale = value; }
+	}
+
+	public float Power
+	{
+		get { return m_Power; }
+		set
+		{
+			m_Power = Mathf.Clamp(value, 0, 1);
+			UI_Gameplay.instance.PowerBar = value;
+		}
 	}
 
 	public bool CanDash
@@ -52,7 +64,11 @@ public class PlayerController : Controller
 	public int HealthPacks
 	{
 		get { return m_HealthPacks; }
-		set { m_HealthPacks = value; }
+		set
+		{
+			m_HealthPacks = value;
+			UI_Gameplay.instance.HealthPackCounter = value;
+		}
 	}
 
 	#endregion
@@ -77,9 +93,16 @@ public class PlayerController : Controller
 		spawn.transform.position = transform.position;
 	}
 
-	private void Update()
+	private void Start()
 	{
+		HealthPacks++;
+	}
+
+	private void Update()
+	{	
 		PlayerInput();
+
+		Power += Time.deltaTime * 0.25f;
 	}
 
 	#endregion
@@ -119,9 +142,10 @@ public class PlayerController : Controller
 
 		#region Attack
 
-		if (Input.GetButtonDown("Attack"))
+		if (Input.GetButtonDown("Attack") && Power > 0.1f)
 		{
 			m_Char.Attack();
+			Power -= 0.15f;
 		}
 		
 		#endregion
@@ -131,7 +155,7 @@ public class PlayerController : Controller
 
 		if (CanHeavyHit)
 		{
-			if (Input.GetButton("Attack"))
+			if (Input.GetButton("Attack") && Power > 0.5f)
 			{
 				bool animCheck =  m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack_01") &&
 				                  m_InputTime >= m_Char.Anim.GetCurrentAnimatorStateInfo(0).length - 0.05f;
@@ -140,18 +164,19 @@ public class PlayerController : Controller
 				if (animCheck)
 				{
 					m_Char.HeavyCharge();
+					Power -= 1.0f;
 				}
 			}
 
-			if (Input.GetButtonUp("Attack"))
-			{
-				m_InputTime = 0;
-
-				if (m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Heavy Charge"))
-				{
-					m_Char.HeavyAttack();
-				}
-			}
+//			if (Input.GetButtonUp("Attack"))
+//			{
+//				m_InputTime = 0;
+//
+//				if (m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Heavy Charge"))
+//				{
+//					m_Char.HeavyAttack();
+//				}
+//			}
 		}
 
 		#endregion
@@ -160,11 +185,12 @@ public class PlayerController : Controller
 
 		if (CanDash)
 		{
-			if (Input.GetButtonDown("Dash") && m_Char.CanMove)
+			if (Input.GetButtonDown("Dash") && m_Char.CanMove && Power > 0.15f)
 			{
 				Vector2 dir = Vector3.Normalize(new Vector2(h, v));
 				dir = isMoving ? dir : m_Char.Direction;
 				m_Char.Dash(dir);
+				Power -= 0.25f;
 			}
 		}
 
@@ -174,7 +200,7 @@ public class PlayerController : Controller
 
 		if (Input.GetButtonDown("Heal") && m_HealthPacks > 0)
 		{
-			m_HealthPacks -= 1;
+			HealthPacks -= 1;
 			m_Char.HealthCurrent = m_Char.HealthMax;
 		}
 

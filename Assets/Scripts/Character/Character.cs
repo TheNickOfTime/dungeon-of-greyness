@@ -259,6 +259,9 @@ public class Character : SerializedMonoBehaviour
 		Collider2D[] hits = Physics2D.OverlapBoxAll(offset + Direction, m_HitBoxSize, 0);
 		foreach (Collider2D hit in hits)
 		{
+//			if(Physics2D.LinecastAll(transform.position, hit.transform.position,  1 << LayerMask.NameToLayer("Enemy")).Length > 1)
+//				return;
+			
 			IHittable hitref = hit.gameObject.GetComponent<IHittable>();
 			Character charref = hit.gameObject.GetComponent<Character>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
