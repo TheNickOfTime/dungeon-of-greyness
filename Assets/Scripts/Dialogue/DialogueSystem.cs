@@ -46,6 +46,9 @@ public class DialogueSystem : MonoBehaviour
 	private int m_LineIndex = 0;
 	private bool m_HasFinished = false;
 
+	private Coroutine m_TypingSequence;
+	private bool m_IsTyping = false;
+
 	public void PlayLine()
 	{
 		if (m_LineIndex >= m_DialogueData.m_Lines.Length)
@@ -72,7 +75,10 @@ public class DialogueSystem : MonoBehaviour
 			if (!m_HasFinished)
 			{
 				m_HasFinished = true;
-				m_FinishEvent.Invoke();
+				if (m_FinishEvent != null)
+				{
+					m_FinishEvent.Invoke();
+				}
 			}
 			
 			return;
@@ -82,8 +88,12 @@ public class DialogueSystem : MonoBehaviour
 		
 		UI_Gameplay.instance.DialoguePanelVisibility = true;
 //		UI_Gameplay.instance.InteractionIconVisibility = false;
-		
-		StartCoroutine(TypeText());
+
+		if (m_TypingSequence != null)
+		{
+			StopCoroutine(m_TypingSequence);
+		}
+		m_TypingSequence = StartCoroutine(TypeText());
 	}
 
 	private void DisableSystem()
@@ -102,6 +112,16 @@ public class DialogueSystem : MonoBehaviour
 		string currentLine = m_DialogueData.m_Lines[m_LineIndex];
 		string currentString = "";
 		
+		if (m_IsTyping)
+		{
+			UI_Gameplay.instance.DialogueText = currentLine;
+			m_IsTyping = false;
+			m_LineIndex++;
+			yield break;
+		}
+
+		m_IsTyping = true;
+
 		for (int i = 0; i < currentLine.Length; i++)
 		{
 			currentString += currentLine[i];
@@ -109,6 +129,7 @@ public class DialogueSystem : MonoBehaviour
 			yield return null;
 		}
 
+		m_IsTyping = false;
 		m_LineIndex++;
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TriggerInteraction : MonoBehaviour
+public class TriggerInteraction : MonoBehaviour, IHittable
 {
 	private enum TriggerEvent
 	{
@@ -11,7 +11,8 @@ public class TriggerInteraction : MonoBehaviour
 		Exit,
 		Stay,
 		OnEnable,
-		OnDisable
+		OnDisable,
+		OnHit
 	}
 	[SerializeField] private TriggerEvent m_TriggerEvent;
 	
@@ -52,6 +53,14 @@ public class TriggerInteraction : MonoBehaviour
 	private void OnDisable()
 	{
 		if (m_TriggerEvent == TriggerEvent.OnDisable)
+		{
+			m_Event.Invoke();
+		}
+	}
+
+	public void OnHit(Vector2 direction, float damage)
+	{
+		if (m_TriggerEvent == TriggerEvent.OnHit)
 		{
 			m_Event.Invoke();
 		}

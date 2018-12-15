@@ -11,5 +11,6 @@ public class DialogueData : ScriptableObject
 		public string m_Line;
 	}
 
+	[TextArea]
 	public string[] m_Lines;
 }
