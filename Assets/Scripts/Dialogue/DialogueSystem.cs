@@ -11,6 +11,7 @@ public class DialogueSystem : MonoBehaviour
 	{
 		set
 		{
+
 			m_DialogueData = value;
 			m_LineIndex = 0;
 			m_HasFinished = false;
@@ -22,6 +23,7 @@ public class DialogueSystem : MonoBehaviour
 	{
 		set
 		{
+			//Debug.Log(m_FinishEvent);
 			m_FinishEvent = value;
 		}
 	}

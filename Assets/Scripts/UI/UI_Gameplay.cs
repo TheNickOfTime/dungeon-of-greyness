@@ -105,6 +105,27 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 
+	//Upgrade----------------------------------------------------------------------------------------------------------/
+	[Header("Upgrade")]
+	[SerializeField] private GameObject m_UpgradePanel;
+	[SerializeField] private Button m_HeavyHitButton;
+	[SerializeField] private Button m_SuperDashButton;
+	public bool UpgradePanelVisibility
+	{
+		set
+		{
+			m_UpgradePanel.SetActive(value);
+			if(PlayerController.instance.CanHeavyHit)
+			{
+				m_HeavyHitButton.interactable = false;
+			}
+			else
+			{
+				m_SuperDashButton.interactable = false;
+			}
+		}
+	}
+
 	//Effects----------------------------------------------------------------------------------------------------------/
 	[Header("Effects")]
 	[SerializeField] private GameObject m_FlashPanel;

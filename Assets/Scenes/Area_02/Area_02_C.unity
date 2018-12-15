@@ -4239,6 +4239,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9dae11d445b7e84bacb2724647546ec, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &186597956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114377780724564780, guid: a9dae11d445b7e84bacb2724647546ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 186597955}
+  m_Script: {fileID: 11500000, guid: 1d98d605d5d17ea4797abb1930359920, type: 3}
 --- !u!1 &186785659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6199,6 +6205,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4468107469563362, guid: 2a24da1e92825c748b89c7b9228e4818, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6230,6 +6241,71 @@ Prefab:
     - target: {fileID: 4468107469563362, guid: 2a24da1e92825c748b89c7b9228e4818, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1567809809}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 186597956}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_WingsCompleted
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a24da1e92825c748b89c7b9228e4818, type: 2}

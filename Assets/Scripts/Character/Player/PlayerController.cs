@@ -16,13 +16,13 @@ public class PlayerController : Controller
 	
 	private float m_InputTime;
 
-	[SerializeField] private bool m_CanDash;
-	[SerializeField] private bool m_CanSuperDash;
-	[SerializeField] private bool m_CanHeavyHit;
-
-	[SerializeField] private AudioClip m_HealSound;
+	private static bool m_CanDash;
+	private static bool m_CanSuperDash;
+	private static bool m_CanHeavyHit;
 
 	private int m_HealthPacks = 0;
+
+	private int m_RoomsCompleted;
 	
 	#endregion
 	
@@ -45,20 +45,20 @@ public class PlayerController : Controller
 
 	public bool CanDash
 	{
-		get { return instance.m_CanDash; }
-		set { instance.m_CanDash = value; }
+		get { return m_CanDash; }
+		set { m_CanDash = value; }
 	}
 
 	public bool CanSuperDash
 	{
-		get { return instance.m_CanSuperDash; }
-		set { instance.m_CanSuperDash = value; }
+		get { return m_CanSuperDash; }
+		set { m_CanSuperDash = value; }
 	}
 
 	public bool CanHeavyHit
 	{
-		get { return instance.m_CanHeavyHit; }
-		set { instance.m_CanHeavyHit = value; }
+		get { return m_CanHeavyHit; }
+		set { m_CanHeavyHit = value; }
 	}
 
 	public int HealthPacks
@@ -68,6 +68,18 @@ public class PlayerController : Controller
 		{
 			m_HealthPacks = value;
 			UI_Gameplay.instance.HealthPackCounter = value;
+		}
+	}
+
+	public int RoomsCompleted
+	{
+		get
+		{
+			return m_RoomsCompleted;
+		}
+		set
+		{
+			m_RoomsCompleted = value;
 		}
 	}
 
@@ -165,9 +177,9 @@ public class PlayerController : Controller
 				{
 					m_Char.HeavyCharge();
 					Power -= 1.0f;
+					m_InputTime = 0;
 				}
 			}
-
 //			if (Input.GetButtonUp("Attack"))
 //			{
 //				m_InputTime = 0;

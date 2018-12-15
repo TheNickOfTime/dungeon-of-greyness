@@ -54,7 +54,7 @@ public class Character : SerializedMonoBehaviour
 
 	//Config
 	private bool m_CanMove = true;
-	private bool m_CanRecieveDamge = true;
+	private bool m_CanRecieveDamage = true;
 	
 	#endregion
 
@@ -139,11 +139,15 @@ public class Character : SerializedMonoBehaviour
 		set { m_CanMove = value; }
 	}
 
-	public bool CanRecieveDamge
+	public bool CanRecieveDamage
 	{
 		get
 		{
-			return m_CanRecieveDamge;
+			return m_CanRecieveDamage;
+		}
+		set
+		{
+			m_CanRecieveDamage = value;
 		}
 	}
 
@@ -266,7 +270,7 @@ public class Character : SerializedMonoBehaviour
 			Character charref = hit.gameObject.GetComponent<Character>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
-				if (charref != null && charref.CanRecieveDamge || charref == null)
+				if (charref != null && charref.CanRecieveDamage || charref == null)
 				{
 					Shaker.instance.CameraShake(1.5f * ComboCurrent, 1, 0.2f);
 					hitref.OnHit(Direction, m_BaseDamage * ComboCurrent);
@@ -290,7 +294,7 @@ public class Character : SerializedMonoBehaviour
 			Character charref = hit.gameObject.GetComponent<Character>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
-				if (charref != null && charref.CanRecieveDamge || charref == null)
+				if (charref != null && charref.CanRecieveDamage || charref == null)
 				{
 					Shaker.instance.CameraShake(1.5f * 3, 1, 0.2f);
 					hitref.OnHit(Direction, m_HeavyDamage);
@@ -322,6 +326,16 @@ public class Character : SerializedMonoBehaviour
 	public void MovementDisable()
 	{
 		CanMove = false;
+	}
+
+	public void RecieveAttackEnable()
+	{
+		CanRecieveDamage = true;
+	}
+
+	public void RecieveAttackDisable()
+	{
+		CanRecieveDamage = false;
 	}
 
 	public void PlayAttackNoise()

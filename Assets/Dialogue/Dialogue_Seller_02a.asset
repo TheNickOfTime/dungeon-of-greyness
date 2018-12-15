@@ -9,7 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f43c380e8629624d8a1f745d8bde1b0, type: 3}
-  m_Name: Dialogue_Seller_02
+  m_Name: Dialogue_Seller_02a
   m_EditorClassIdentifier: 
   m_Lines:
-  - Good luck traveller.
+  - You have returned...
+  - Few have made it this far, you have great strength.
+  - I can make you stronger.

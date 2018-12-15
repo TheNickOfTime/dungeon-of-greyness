@@ -748,12 +748,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &138600222 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114283022212048838, guid: 571109c29dd8aa749bc75e3df73f6cf1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1879681175}
-  m_Script: {fileID: 11500000, guid: b26b4163cb9ce834ca51ca6466a14506, type: 3}
 --- !u!1001 &186597955
 Prefab:
   m_ObjectHideFlags: 0
@@ -796,6 +790,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9dae11d445b7e84bacb2724647546ec, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &186597956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114377780724564780, guid: a9dae11d445b7e84bacb2724647546ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 186597955}
+  m_Script: {fileID: 11500000, guid: 1d98d605d5d17ea4797abb1930359920, type: 3}
 --- !u!4 &187824046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4994904164899214, guid: f9333ffb37ccb4f4f8e39817627d18b7,
@@ -5128,6 +5128,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114313070722073742, guid: 96d039bf21f1a424f8950613ba8f22c4,
+        type: 2}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114313070722073742, guid: 96d039bf21f1a424f8950613ba8f22c4,
+        type: 2}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4751496348708382, guid: 96d039bf21f1a424f8950613ba8f22c4, type: 2}
       propertyPath: m_LocalPosition.x
       value: -6.95
@@ -5159,6 +5169,23 @@ Prefab:
     - target: {fileID: 4751496348708382, guid: 96d039bf21f1a424f8950613ba8f22c4, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114313070722073742, guid: 96d039bf21f1a424f8950613ba8f22c4,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114313070722073742, guid: 96d039bf21f1a424f8950613ba8f22c4,
+        type: 2}
+    - target: {fileID: 114313070722073742, guid: 96d039bf21f1a424f8950613ba8f22c4,
+        type: 2}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"m_AudioClips","add_keys":{"$id":0,"$type":"System.Object[],
+        mscorlib","$rlength":2,"$rcontent":[{"$id":1,"$type":"System.String, mscorlib","Heal"},$iref:1]},"remove_keys":null'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114313070722073742, guid: 96d039bf21f1a424f8950613ba8f22c4,
+        type: 2}
+      propertyPath: serializationData.PrefabModifications.Array.data[1]
+      value: '"path":"m_AudioClips.{\"Heal\"}","value":null'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d039bf21f1a424f8950613ba8f22c4, type: 2}
@@ -5257,7 +5284,7 @@ Prefab:
     - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
         type: 2}
       propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4468107469563362, guid: 2a24da1e92825c748b89c7b9228e4818, type: 2}
       propertyPath: m_LocalPosition.x
@@ -5324,7 +5351,7 @@ Prefab:
     - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
         type: 2}
       propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
         type: 2}
@@ -5340,16 +5367,21 @@ Prefab:
         type: 2}
       propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 138600222}
+      objectReference: {fileID: 186597956}
     - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
         type: 2}
       propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: set_FlashPanel
+      value: set_WingsCompleted
       objectReference: {fileID: 0}
     - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
         type: 2}
       propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373695046171458, guid: 2a24da1e92825c748b89c7b9228e4818,
+        type: 2}
+      propertyPath: m_FinishWavesEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a24da1e92825c748b89c7b9228e4818, type: 2}

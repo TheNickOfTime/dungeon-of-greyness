@@ -8,7 +8,7 @@ public class InteractText : MonoBehaviour
 	private void OnEnable()
 	{
 		string prompt = "";
-		if (Input.GetJoystickNames()[0].Contains("Controller"))
+		if (Input.GetJoystickNames().Length > 0 && Input.GetJoystickNames()[0].Contains("Controller"))
 		{
 			prompt = "rb";
 		}
