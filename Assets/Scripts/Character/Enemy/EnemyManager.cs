@@ -127,7 +127,10 @@ public class EnemyManager : MonoBehaviour
 			UI_Gameplay.instance.WaveCountdown.enabled = false;
 			UI_Gameplay.instance.WaveText = "Room Cleared";
 
-			m_FinishWavesEvent?.Invoke();
+			if (m_FinishWavesEvent != null)
+			{
+				m_FinishWavesEvent.Invoke();
+			}
 
 			yield break;
 		}

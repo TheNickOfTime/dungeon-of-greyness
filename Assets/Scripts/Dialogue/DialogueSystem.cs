@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,6 +28,8 @@ public class DialogueSystem : MonoBehaviour
 			m_FinishEvent = value;
 		}
 	}
+	
+	[SerializeField] private AudioClip m_TypingNoise;
 	
 	public enum PostFinishBehavior
 	{
@@ -121,15 +124,23 @@ public class DialogueSystem : MonoBehaviour
 		}
 
 		m_IsTyping = true;
-
 		for (int i = 0; i < currentLine.Length; i++)
 		{
 			currentString += currentLine[i];
 			UI_Gameplay.instance.DialogueText = currentString;
+
+			if (currentLine[i] == ' ' || currentLine[i] == ',')
+			{
+				yield return new WaitForSeconds(0.05f);
+			}
+			else
+			{
+				SFXManager.PlayClipAtPoint(m_TypingNoise, transform.position).volume = 0.5f;
+			}
 			yield return null;
 		}
-
 		m_IsTyping = false;
+		
 		m_LineIndex++;
 	}
 }

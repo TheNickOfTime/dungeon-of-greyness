@@ -13,6 +13,13 @@ public class PersistentData : MonoBehaviour
 		set { m_WingsCompleted = value; }
 	}
 
+	private static int m_HealthPacks;
+	public static int HealthPacks
+	{
+		get { return m_HealthPacks; }
+		set { m_HealthPacks = value; }
+	}
+
 	private void Awake()
 	{
 		if(instance != null)

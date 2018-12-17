@@ -115,11 +115,13 @@ public class UI_Gameplay : MonoBehaviour
 		set
 		{
 			m_UpgradePanel.SetActive(value);
+			PlayerController.instance.Char.CanMove = !value;
+			
 			if(PlayerController.instance.CanHeavyHit)
 			{
 				m_HeavyHitButton.interactable = false;
 			}
-			else
+			else if(PlayerController.instance.CanSuperDash)
 			{
 				m_SuperDashButton.interactable = false;
 			}

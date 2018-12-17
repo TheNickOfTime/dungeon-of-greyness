@@ -9,49 +9,50 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1615442529134052}
+  m_RootGameObject: {fileID: 1040130321336906}
   m_IsPrefabAsset: 1
---- !u!1 &1615442529134052
+--- !u!1 &1040130321336906
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4148763621660226}
-  - component: {fileID: 212659229891902642}
-  - component: {fileID: 50435105035380374}
-  - component: {fileID: 61366549093895462}
-  - component: {fileID: 95341789157865948}
-  - component: {fileID: 114986230571120510}
-  - component: {fileID: 114409108429715382}
-  m_Layer: 9
-  m_Name: Skeleton
+  - component: {fileID: 4610109562864284}
+  - component: {fileID: 212626971080424864}
+  - component: {fileID: 50146130877264026}
+  - component: {fileID: 58095340910792884}
+  - component: {fileID: 95211313900669936}
+  - component: {fileID: 114531416911542148}
+  - component: {fileID: 114619647597271308}
+  - component: {fileID: 114473247508011906}
+  m_Layer: 0
+  m_Name: NPC_Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4148763621660226
+--- !u!4 &4610109562864284
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615442529134052}
+  m_GameObject: {fileID: 1040130321336906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.27, y: -2.33, z: -9.831547}
+  m_LocalPosition: {x: -11, y: -6.6651316, z: -9.831547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50435105035380374
+--- !u!50 &50146130877264026
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615442529134052}
+  m_GameObject: {fileID: 1040130321336906}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
@@ -65,38 +66,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61366549093895462
-BoxCollider2D:
+--- !u!58 &58095340910792884
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615442529134052}
+  m_GameObject: {fileID: 1040130321336906}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09908581, y: 0.15}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.43478262, y: 0}
-    oldSize: {x: 1.4375, y: 2}
-    newSize: {x: 0.71875, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.0518284, y: 0.75}
-  m_EdgeRadius: 0
---- !u!95 &95341789157865948
+  m_Radius: 1.5
+--- !u!95 &95211313900669936
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615442529134052}
+  m_GameObject: {fileID: 1040130321336906}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fdfd42bc6d8b5a0468f14eca9115c9f4, type: 2}
@@ -108,108 +99,66 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114409108429715382
+--- !u!114 &114473247508011906
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615442529134052}
+  m_GameObject: {fileID: 1040130321336906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3942be6e92ce2845a3a4207c56c1165, type: 3}
+  m_Script: {fileID: 11500000, guid: f1748e0d1f2c7d64d81025f5a9d9a3db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Particles: {fileID: 1125586849818642, guid: e06271707508bae4fbea78e814fa7e80,
-    type: 2}
-  m_State: 0
-  m_AlertRadius: 10
-  m_AttackRadius: 2
-  m_MinimumDistance: 1
-  m_HasToken: 0
---- !u!114 &114986230571120510
+  m_DialogueData: {fileID: 11400000, guid: a96b5f81d3717ed45a65d5e0ac965cea, type: 2}
+  m_FinishEvent: {fileID: 0}
+  m_TypingNoise: {fileID: 8300000, guid: 79f592e9d6fb59b4ea49bb19273bcf9e, type: 3}
+  m_OnFinish: 0
+--- !u!114 &114531416911542148
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615442529134052}
+  m_GameObject: {fileID: 1040130321336906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d25767501d0ba9846b37b9295f74e51a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9204c94abfc9547458dd03fdbd41920f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 8300000, guid: 2361669508199164e8358370dbeb988c, type: 3}
-    - {fileID: 8300000, guid: 81a55e740910fe44db8251d941aa9762, type: 3}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: m_AudioClips
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.AudioClip,
-        UnityEngine.AudioModule]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
-        mscorlib]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 1
-      Data: Hit
-    - Name: 
-      Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 1
-      Data: Death
-    - Name: 
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  m_MoveSpeed: 1.5
-  m_DashDistance: 1
-  m_DashTime: 0.1
-  m_HealthMax: 5
-  m_HealthCurrent: 0
-  m_BaseDamage: 1
-  m_HeavyDamage: 0
-  m_ComboMax: 1
-  m_HitBoxSize: {x: 2, y: 2}
-  m_HeavyHitBoxSize: {x: 3, y: 3}
-  m_AttackSounds:
-  - {fileID: 8300000, guid: 8ae74b9ee8f98f84186a851d4e42b263, type: 3}
---- !u!212 &212659229891902642
+--- !u!114 &114619647597271308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1040130321336906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c53f916d53588941a9e75c4445ca65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TriggerEvent: 5
+  m_Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114473247508011906}
+        m_MethodName: PlayLine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!212 &212626971080424864
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615442529134052}
+  m_GameObject: {fileID: 1040130321336906}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -241,7 +190,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4b6d1f27200a1ab43b3506f6d929e285, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.71875, y: 1}

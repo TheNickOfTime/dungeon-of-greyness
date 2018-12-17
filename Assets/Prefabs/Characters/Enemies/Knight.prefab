@@ -216,7 +216,6 @@ MonoBehaviour:
   m_AlertRadius: 5
   m_AttackRadius: 2
   m_MinimumDistance: 1
-  m_HasToken: 0
 --- !u!212 &212877478446529898
 SpriteRenderer:
   m_ObjectHideFlags: 1

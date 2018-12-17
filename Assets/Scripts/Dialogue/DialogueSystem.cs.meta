@@ -3,7 +3,10 @@ guid: f1748e0d1f2c7d64d81025f5a9d9a3db
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_DialogueData: {instanceID: 0}
+  - m_FinishEvent: {instanceID: 0}
+  - m_TypingNoise: {fileID: 8300000, guid: 79f592e9d6fb59b4ea49bb19273bcf9e, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

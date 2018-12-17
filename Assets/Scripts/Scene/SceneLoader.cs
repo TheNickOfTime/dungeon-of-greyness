@@ -9,13 +9,6 @@ public class SceneLoader : MonoBehaviour
 	public static SceneLoader instance;
 
 	[SerializeField] private Image m_FadePanel;
-	
-	private struct PlayerRespawnData
-	{
-		public int healthPacks;
-		public int powerPacks;
-	}
-	private PlayerRespawnData m_PlayerRespawnData;
 
 	private string m_LastSpawn;
 	private string m_LastLevel;
@@ -34,13 +27,18 @@ public class SceneLoader : MonoBehaviour
 
 		m_LastLevel = SceneManager.GetActiveScene().name;
 		m_LastSpawn = "Player Spawn";
+		PersistentData.HealthPacks = 1;
 	}
 
 	public void LoadLevel(string levelName, string spawnName)
 	{
 		if (levelName == "")
 		{
-			PlayerController.instance.HealthPacks = m_PlayerRespawnData.healthPacks;
+			PlayerController.instance.HealthPacks = PersistentData.HealthPacks;
+		}
+		else
+		{
+			PersistentData.HealthPacks = PlayerController.instance.HealthPacks;
 		}
 		
 		levelName = levelName == "" ? m_LastLevel : levelName;

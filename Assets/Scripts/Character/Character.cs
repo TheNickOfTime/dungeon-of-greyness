@@ -203,7 +203,7 @@ public class Character : SerializedMonoBehaviour
 
 	public void Dash(Vector2 direction)
 	{
-		Vector2 targetPos = (Vector2)transform.position + direction * m_DashDistance;
+		Vector2 targetPos = direction /*(Vector2)transform.position + direction * m_DashDistance*/;
 		m_Anim.SetTrigger("Dash");
 		StartCoroutine(LerpMovement(targetPos, m_DashTime));
 	}
@@ -221,11 +221,8 @@ public class Character : SerializedMonoBehaviour
 
 	#region Coroutines---------------------------------------------------------------------------------------------------------/
 
-	private IEnumerator LerpMovement(Vector2 targetPosition, float timer)
+	private IEnumerator LerpMovement(Vector2 direction, float timer)
 	{
-		Vector2 direction = Vector3.Normalize(targetPosition - (Vector2)transform.position);
-//		Vector2 startPos = transform.position;
-		
 		CanMove = false;
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Water"), true);
 		
@@ -250,6 +247,7 @@ public class Character : SerializedMonoBehaviour
 			SceneLoader.instance.LoadLevel("","");
 			yield return new WaitForSecondsRealtime(0.5f);
 			m_Anim.Play("Idle");
+			PlayerController.instance.HealthPacks = PersistentData.HealthPacks;
 		}
 	}
 
@@ -270,7 +268,7 @@ public class Character : SerializedMonoBehaviour
 			Character charref = hit.gameObject.GetComponent<Character>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
-				if (charref != null && charref.CanRecieveDamage || charref == null)
+				if (charref != null)
 				{
 					Shaker.instance.CameraShake(1.5f * ComboCurrent, 1, 0.2f);
 					hitref.OnHit(Direction, m_BaseDamage * ComboCurrent);
@@ -294,7 +292,7 @@ public class Character : SerializedMonoBehaviour
 			Character charref = hit.gameObject.GetComponent<Character>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
-				if (charref != null && charref.CanRecieveDamage || charref == null)
+				if (charref != null)
 				{
 					Shaker.instance.CameraShake(1.5f * 3, 1, 0.2f);
 					hitref.OnHit(Direction, m_HeavyDamage);

@@ -60,7 +60,7 @@ public class TriggerInteraction : MonoBehaviour, IHittable
 
 	public void OnHit(Vector2 direction, float damage)
 	{
-		if (m_TriggerEvent == TriggerEvent.OnHit)
+		if (m_TriggerEvent == TriggerEvent.OnHit && this.enabled)
 		{
 			m_Event.Invoke();
 		}

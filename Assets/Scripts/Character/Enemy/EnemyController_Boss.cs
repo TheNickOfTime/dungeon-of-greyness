@@ -11,9 +11,12 @@ public class EnemyController_Boss : EnemyController
 	#region Values & Properties------------------------------------------------------------------------------------------------/
 
 	[Header("Boss Controller")]
+
+	//Spawn Objects----------------------------------------------------------------------------------------------------/
+	[SerializeField] private GameObject m_Hazard;
+	[SerializeField] private GameObject m_SpawnIndicator;
 	
 	//Hazard-----------------------------------------------------------------------------------------------------------/
-	[SerializeField] private GameObject m_Hazard;
 	[System.Serializable] private struct HazardPositions
 	{
 		public Vector2[] positions;
@@ -91,7 +94,7 @@ public class EnemyController_Boss : EnemyController
 		public Group[] group;
 	}
 	[SerializeField] private SpawnGroup[] m_SpawnGroups;
-	[SerializeField] private GameObject m_SpawnIndicator;
+	
 	private GameObject[] m_NextSpawn;
 	private GameObject[] m_SpawnIndicators;
 	

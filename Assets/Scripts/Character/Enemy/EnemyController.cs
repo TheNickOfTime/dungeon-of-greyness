@@ -62,10 +62,6 @@ public class EnemyController : Controller
 
 	private Vector3 m_AltDirection;
 	
-	public bool m_HasToken;
-	
-	
-	
 	#endregion
 
 	#region MonoBehaviour------------------------------------------------------------------------------------------------------/
@@ -172,7 +168,7 @@ public class EnemyController : Controller
 		return hit != null;
 	}
 
-	protected bool PlayerInSight()
+	protected virtual bool PlayerInSight()
 	{
 		bool didHit = Physics2D.Linecast(transform.position, m_Target.position, 1 << LayerMask.NameToLayer("Environment") | 1 << LayerMask.NameToLayer("Water"));
 		return !didHit;

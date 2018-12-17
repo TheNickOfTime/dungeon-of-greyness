@@ -20,7 +20,7 @@ public class PlayerController : Controller
 	private static bool m_CanSuperDash;
 	private static bool m_CanHeavyHit;
 
-	private int m_HealthPacks = 0;
+	[SerializeField] private int m_HealthPacks = 0;
 
 	private int m_RoomsCompleted;
 	
@@ -180,15 +180,15 @@ public class PlayerController : Controller
 					m_InputTime = 0;
 				}
 			}
-//			if (Input.GetButtonUp("Attack"))
-//			{
-//				m_InputTime = 0;
-//
+			if (Input.GetButtonUp("Attack"))
+			{
+				m_InputTime = 0;
+
 //				if (m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Heavy Charge"))
 //				{
 //					m_Char.HeavyAttack();
 //				}
-//			}
+			}
 		}
 
 		#endregion
@@ -247,6 +247,8 @@ public class PlayerController : Controller
 	//Overrides--------------------------------------------------------------------------------------------------------/
 	public override void OnHit(Vector2 direction, float damage)
 	{
+		if(!m_Char.CanRecieveDamage) return;
+		
 		if(damage > 1)
 		{
 			m_Char.Anim.SetTrigger("Stun Heavy");

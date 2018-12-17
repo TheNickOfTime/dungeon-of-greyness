@@ -481,7 +481,6 @@ MonoBehaviour:
   m_AlertRadius: 10
   m_AttackRadius: 2.25
   m_MinimumDistance: 2
-  m_HasToken: 0
   m_Hazard: {fileID: 1282276929820458, guid: c011ce8a372b23842af87d40111f2603, type: 2}
   m_HazardPositions:
   - positions:
