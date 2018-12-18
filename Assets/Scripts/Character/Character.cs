@@ -4,6 +4,7 @@ using System.Timers;
 using Cinemachine;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using XInputDotNetPure;
 
@@ -24,8 +25,9 @@ public class Character : SerializedMonoBehaviour
 	[Header("Movement")]
 	[SerializeField] private float m_MoveSpeed = 1;
 	[SerializeField] private float m_DashDistance = 1;
-	[SerializeField] private float m_DashTime = 0.1f;
+	[SerializeField] private float m_DashTime = 0.15f;
 	private Vector2 m_Direction = new Vector2(0, -1);
+	private Vector2 m_DashStart;
 	
 	//Stats
 	[Header("Stats")]
@@ -51,6 +53,9 @@ public class Character : SerializedMonoBehaviour
 	[Header("Audio")]
 	[SerializeField] private AudioClip[] m_AttackSounds;
 	[OdinSerialize] private Dictionary<string, AudioClip> m_AudioClips;
+
+	[Header("Spawn")]
+	[SerializeField] private Sprite m_DashIndicator;
 
 	//Config
 	private bool m_CanMove = true;
@@ -136,7 +141,10 @@ public class Character : SerializedMonoBehaviour
 	public bool CanMove
 	{
 		get { return m_CanMove; }
-		set { m_CanMove = value; }
+		set
+		{
+			m_CanMove = value;
+		}
 	}
 
 	public bool CanRecieveDamage
@@ -204,7 +212,8 @@ public class Character : SerializedMonoBehaviour
 	public void Dash(Vector2 direction)
 	{
 		Vector2 targetPos = direction /*(Vector2)transform.position + direction * m_DashDistance*/;
-		m_Anim.SetTrigger("Dash");
+//		m_Anim.SetTrigger("Dash");
+		m_DashStart = transform.position;
 		StartCoroutine(LerpMovement(targetPos, m_DashTime));
 	}
 	
@@ -223,6 +232,8 @@ public class Character : SerializedMonoBehaviour
 
 	private IEnumerator LerpMovement(Vector2 direction, float timer)
 	{
+		Rig.velocity = Vector2.zero;
+		
 		CanMove = false;
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Water"), true);
 		
@@ -268,15 +279,12 @@ public class Character : SerializedMonoBehaviour
 			Character charref = hit.gameObject.GetComponent<Character>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
-				if (charref != null)
-				{
-					Shaker.instance.CameraShake(1.5f * ComboCurrent, 1, 0.2f);
-					hitref.OnHit(Direction, m_BaseDamage * ComboCurrent);
+				Shaker.instance.CameraShake(1.5f * ComboCurrent, 1, 0.2f);
+				hitref.OnHit(Direction, m_BaseDamage * ComboCurrent);
 				
-					if (m_Controller is PlayerController)
-					{
-						Shaker.instance.HapticShake(0.15f, 0.5f);
-					}
+				if (m_Controller is PlayerController)
+				{
+					Shaker.instance.HapticShake(0.15f, 0.5f);
 				}
 			}
 		}
@@ -292,10 +300,35 @@ public class Character : SerializedMonoBehaviour
 			Character charref = hit.gameObject.GetComponent<Character>();
 			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
 			{
+				Shaker.instance.CameraShake(1.5f * 3, 1, 0.2f);
+				hitref.OnHit(Direction, m_HeavyDamage);
+				
+				if (m_Controller is PlayerController)
+				{
+					Shaker.instance.HapticShake(0.21f, 0.65f);
+				}
+			}
+		}
+	}
+
+	public void HeavyDashHit()
+	{
+		Vector2 centerPos = new Vector2((transform.position.x + m_DashStart.x) / 2, (transform.position.y + m_DashStart.y) / 2);
+		float length = Vector2.Distance(transform.position, m_DashStart);
+		float angle = Vector2.Angle(Vector2.up, Vector3.Normalize((Vector2)transform.position - m_DashStart));
+		Collider2D[] hits = Physics2D.OverlapCapsuleAll(centerPos, new Vector2(1.0f, length), CapsuleDirection2D.Vertical, angle, 1 << LayerMask.NameToLayer("Enemy"));
+		
+		foreach (Collider2D hit in hits)
+		{
+			IHittable hitref = hit.gameObject.GetComponent<IHittable>();
+			Character charref = hit.gameObject.GetComponent<Character>();
+			if (hitref != null && hit.gameObject != this.gameObject && hit.gameObject.layer != gameObject.layer)
+			{
 				if (charref != null)
 				{
 					Shaker.instance.CameraShake(1.5f * 3, 1, 0.2f);
-					hitref.OnHit(Direction, m_HeavyDamage);
+					hitref.OnHit(Direction, 1);
+					charref.Anim.SetTrigger("Stun");
 				
 					if (m_Controller is PlayerController)
 					{
@@ -312,6 +345,17 @@ public class Character : SerializedMonoBehaviour
 		obj.transform.position = transform.position;
 		SpriteRenderer ren = obj.AddComponent<SpriteRenderer>();
 		ren.sprite = m_Ren.sprite;
+		FadeSprite fadeScript = obj.AddComponent<FadeSprite>();
+		fadeScript.Sprite = ren;
+	}
+
+	public void SpawnDashIndicator()
+	{
+		GameObject obj = new GameObject();
+		obj.transform.position = transform.position;
+		obj.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, m_Rig.velocity));
+		SpriteRenderer ren = obj.AddComponent<SpriteRenderer>();
+		ren.sprite = m_DashIndicator;
 		FadeSprite fadeScript = obj.AddComponent<FadeSprite>();
 		fadeScript.Sprite = ren;
 	}

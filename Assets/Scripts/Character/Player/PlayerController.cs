@@ -14,11 +14,16 @@ public class PlayerController : Controller
 
 	private float m_Power;
 	
-	private float m_InputTime;
+	private float m_AttackInputTime;
+	private float m_DashInputTime;
+	private float m_HealInputTime;
 
 	private static bool m_CanDash;
 	private static bool m_CanSuperDash;
 	private static bool m_CanHeavyHit;
+
+	private bool m_CanDashAgain = true;
+	private bool m_CanHealAgain = true;
 
 	[SerializeField] private int m_HealthPacks = 0;
 
@@ -170,19 +175,19 @@ public class PlayerController : Controller
 			if (Input.GetButton("Attack") && Power > 0.5f)
 			{
 				bool animCheck =  m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack_01") &&
-				                  m_InputTime >= m_Char.Anim.GetCurrentAnimatorStateInfo(0).length - 0.05f;
+				                  m_AttackInputTime >= m_Char.Anim.GetCurrentAnimatorStateInfo(0).length - 0.05f;
 			
-				m_InputTime += Time.deltaTime;
+				m_AttackInputTime += Time.deltaTime;
 				if (animCheck)
 				{
 					m_Char.HeavyCharge();
 					Power -= 1.0f;
-					m_InputTime = 0;
+					m_AttackInputTime = 0;
 				}
 			}
 			if (Input.GetButtonUp("Attack"))
 			{
-				m_InputTime = 0;
+				m_AttackInputTime = 0;
 
 //				if (m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Heavy Charge"))
 //				{
@@ -197,23 +202,82 @@ public class PlayerController : Controller
 
 		if (CanDash)
 		{
-			if (Input.GetButtonDown("Dash") && m_Char.CanMove && Power > 0.15f)
+			if (Input.GetButtonDown("Dash"))
 			{
-				Vector2 dir = Vector3.Normalize(new Vector2(h, v));
-				dir = isMoving ? dir : m_Char.Direction;
-				m_Char.Dash(dir);
-				Power -= 0.25f;
+				m_Char.Anim.SetBool("Dash", true);
 			}
+
+			if (Input.GetButton("Dash") && CanSuperDash)
+			{
+				m_DashInputTime += Time.deltaTime;
+				if (m_CanDashAgain && m_DashInputTime > 0.25f && Power > 0.35f)
+				{
+					m_Char.Anim.SetTrigger("Dash Heavy");
+					m_Char.Anim.SetBool("Dash", false);
+					
+					Vector2 dir = Vector3.Normalize(new Vector2(h, v));
+					dir = isMoving ? dir : m_Char.Direction;
+					m_Char.Dash(dir);
+					Power -= 0.5f;
+					
+					m_CanDashAgain = false;
+					m_DashInputTime = 0;
+				}
+			}
+
+			if (Input.GetButtonUp("Dash"))
+			{
+				if (m_DashInputTime < 0.25f && Power > 0.15f)
+				{
+					m_Char.Anim.SetTrigger("Dash Regular");
+					m_Char.Anim.SetBool("Dash", false);
+					
+					Vector2 dir = Vector3.Normalize(new Vector2(h, v));
+					dir = isMoving ? dir : m_Char.Direction;
+					m_Char.Dash(dir);
+					Power -= 0.25f;
+				}
+				m_Char.Anim.SetBool("Dash", false);
+				m_CanDashAgain = true;
+				m_DashInputTime = 0;
+			}
+			
+//			if (Input.GetButtonUp("Dash") && m_Char.CanMove && Power > 0.15f)
+//			{
+//				Vector2 dir = Vector3.Normalize(new Vector2(h, v));
+//				dir = isMoving ? dir : m_Char.Direction;
+//				m_Char.Dash(dir);
+//				Power -= 0.25f;
+//			}
 		}
 
 		#endregion
 
 		#region Heal
 
-		if (Input.GetButtonDown("Heal") && m_HealthPacks > 0)
+//		if (Input.GetButtonDown("Heal") && m_HealthPacks > 0)
+//		{
+//			HealthPacks -= 1;
+//			m_Char.HealthCurrent = m_Char.HealthMax;
+//		}
+
+		if (Input.GetButton("Heal") && m_HealthPacks > 0)
 		{
-			HealthPacks -= 1;
-			m_Char.HealthCurrent = m_Char.HealthMax;
+			m_HealInputTime += Time.deltaTime;
+			if (m_HealInputTime > 0.25 && m_CanHealAgain)
+			{
+				m_CanHealAgain = false;
+				HealthPacks -= 1;
+				m_Char.HealthCurrent = m_Char.HealthMax;
+				m_Char.PlayNoise("Heal");
+				m_HealInputTime = 0;
+			}
+		}
+
+		if (Input.GetButtonUp("Heal"))
+		{
+			m_CanHealAgain = true;
+			m_HealInputTime = 0;
 		}
 
 		#endregion

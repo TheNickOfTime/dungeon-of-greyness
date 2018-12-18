@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UI_Gameplay : MonoBehaviour
@@ -120,10 +121,12 @@ public class UI_Gameplay : MonoBehaviour
 			if(PlayerController.instance.CanHeavyHit)
 			{
 				m_HeavyHitButton.interactable = false;
+				EventSystem.current.SetSelectedGameObject(m_SuperDashButton.gameObject);
 			}
 			else if(PlayerController.instance.CanSuperDash)
 			{
 				m_SuperDashButton.interactable = false;
+				EventSystem.current.SetSelectedGameObject(m_HeavyHitButton.gameObject);
 			}
 		}
 	}

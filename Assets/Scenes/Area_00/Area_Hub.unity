@@ -9920,6 +9920,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114313070722073742, guid: 96d039bf21f1a424f8950613ba8f22c4,
+        type: 2}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114313070722073742, guid: 96d039bf21f1a424f8950613ba8f22c4,
+        type: 2}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4751496348708382, guid: 96d039bf21f1a424f8950613ba8f22c4, type: 2}
       propertyPath: m_LocalPosition.x
       value: -6.95
