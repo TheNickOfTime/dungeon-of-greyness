@@ -4,24 +4,33 @@ using UnityEngine;
 
 public abstract class Interaction : MonoBehaviour
 {
+	private PlayerController player;
+	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		PlayerController player = other.GetComponent<PlayerController>();
+		player = other.GetComponent<PlayerController>();
+		if (player != null)
+		{
+			EnterTrigger();
+		}
+	}
+
+	private void OnTriggerStay2D(Collider2D other)
+	{
 		if (player != null)
 		{
 			player.CurrentInteractionObject = this;
 		}
-		EnterTrigger();
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-		PlayerController player = other.GetComponent<PlayerController>();
 		if (player != null)
 		{
 			player.CurrentInteractionObject = null;
+			player = null;
+			ExitTrigger();
 		}
-		ExitTrigger();
 	}
 
 	public abstract void TriggerInteraction();

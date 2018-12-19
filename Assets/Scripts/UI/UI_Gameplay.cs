@@ -1,17 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UI_Gameplay : MonoBehaviour
+public class UI_Gameplay : UI
 {
 	public static UI_Gameplay instance;
 
+	public enum Panels
+	{
+		Gameplay,
+		Pause
+	}
+	[SerializeField] private Dictionary<Panels, GameObject> m_Panels;
+	private GameObject m_CurrentPanel;
+	private GameObject m_PreviousPanel;
+
+	#region Gameplay Panel
+	
 	//Health-----------------------------------------------------------------------------------------------------------/
+	
 	[Header("Health")]
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Slider m_HealthBar;
 	public float HealthBar
 	{
@@ -21,6 +35,7 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Slider m_PowerBar;
 	public float PowerBar
 	{
@@ -30,6 +45,7 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Text m_HealthPackCounter;
 	public int HealthPackCounter
 	{
@@ -42,6 +58,7 @@ public class UI_Gameplay : MonoBehaviour
 
 	//Dialogue---------------------------------------------------------------------------------------------------------/
 	[Header("Dialogue")]
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private GameObject m_DialoguePanel;
 	public bool DialoguePanelVisibility
 	{
@@ -51,6 +68,7 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 	
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Text m_DialogueText;
 	public string DialogueText
 	{
@@ -62,6 +80,7 @@ public class UI_Gameplay : MonoBehaviour
 
 	//Interaction------------------------------------------------------------------------------------------------------/
 	[Header("Interaction")]
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private GameObject m_InteractionIcon;
 	public bool InteractionIconVisibility
 	{
@@ -77,6 +96,7 @@ public class UI_Gameplay : MonoBehaviour
 
 	//Pop Up-----------------------------------------------------------------------------------------------------------/
 	[Header("Pop-Up")]
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private GameObject m_PopUpPanel;
 	public bool PopUpPanelVisibility
 	{
@@ -88,6 +108,7 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 	
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Image m_PopUpIcon;
 	public Sprite PopUpIcon
 	{
@@ -97,6 +118,7 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 	
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Text m_PopUpText;
 	public string PopUpText
 	{
@@ -108,8 +130,11 @@ public class UI_Gameplay : MonoBehaviour
 
 	//Upgrade----------------------------------------------------------------------------------------------------------/
 	[Header("Upgrade")]
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private GameObject m_UpgradePanel;
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Button m_HeavyHitButton;
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Button m_SuperDashButton;
 	public bool UpgradePanelVisibility
 	{
@@ -117,6 +142,8 @@ public class UI_Gameplay : MonoBehaviour
 		{
 			m_UpgradePanel.SetActive(value);
 			PlayerController.instance.Char.CanMove = !value;
+			EventSystem.current.SetSelectedGameObject(m_HeavyHitButton.gameObject);
+			
 			
 			if(PlayerController.instance.CanHeavyHit)
 			{
@@ -133,6 +160,7 @@ public class UI_Gameplay : MonoBehaviour
 
 	//Effects----------------------------------------------------------------------------------------------------------/
 	[Header("Effects")]
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private GameObject m_FlashPanel;
 	public bool FlashPanel
 	{
@@ -144,6 +172,7 @@ public class UI_Gameplay : MonoBehaviour
 
 	//Wave-------------------------------------------------------------------------------------------------------------/
 	[Header("Wave")]
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private GameObject m_WavePanel;
 	public GameObject WavePanel
 	{
@@ -153,6 +182,7 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Text m_WaveText;
 	public string WaveText
 	{
@@ -162,6 +192,7 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 
+	[FoldoutGroup("Gameplay Panel")]
 	[SerializeField] private Text m_WaveCountdown;
 	public Text WaveCountdown
 	{
@@ -171,6 +202,13 @@ public class UI_Gameplay : MonoBehaviour
 		}
 	}
 
+	#endregion
+
+	#region Pause Panel
+
+//	[FoldoutGroup("Pause Panel")]
+
+	#endregion
 
 	#region Monobehavior-------------------------------------------------------------------------------------------------------/
 
@@ -195,6 +233,33 @@ public class UI_Gameplay : MonoBehaviour
 	private void Update()
 	{
 		m_InteractionIcon.transform.position = Camera.main.WorldToScreenPoint(PlayerController.instance.transform.position + new Vector3(0, 2.5f));
+	}
+
+	#endregion
+
+	#region Methods
+
+	public void SetPanel(Panels panel)
+	{
+		m_PreviousPanel = m_CurrentPanel;
+		if (m_PreviousPanel != null)
+		{
+			m_PreviousPanel.SetActive(false);
+		}
+
+		m_CurrentPanel = m_Panels[panel];
+		m_CurrentPanel.SetActive(true);
+	}
+
+	public void Resume()
+	{
+		PlayerController.instance.Paused = false;
+	}
+
+	public void Restart()
+	{
+		SceneLoader.instance.LoadLevel("", "");
+		PlayerController.instance.Paused = false;
 	}
 
 	#endregion

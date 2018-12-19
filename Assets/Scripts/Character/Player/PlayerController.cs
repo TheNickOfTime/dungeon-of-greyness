@@ -28,6 +28,8 @@ public class PlayerController : Controller
 	[SerializeField] private int m_HealthPacks = 0;
 
 	private int m_RoomsCompleted;
+
+	private bool m_Paused;
 	
 	#endregion
 	
@@ -76,15 +78,14 @@ public class PlayerController : Controller
 		}
 	}
 
-	public int RoomsCompleted
+	public bool Paused
 	{
-		get
-		{
-			return m_RoomsCompleted;
-		}
+		get { return m_Paused; }
 		set
 		{
-			m_RoomsCompleted = value;
+			m_Paused = value;
+			Time.timeScale = value ? 0 : 1;
+			UI_Gameplay.instance.SetPanel(m_Paused ? UI_Gameplay.Panels.Pause : UI_Gameplay.Panels.Gameplay);
 		}
 	}
 
@@ -128,6 +129,43 @@ public class PlayerController : Controller
 		
 	private void PlayerInput()
 	{
+		#region PlayerCheats
+
+		#if UNITY_EDITOR
+		if (Input.GetKeyDown(KeyCode.F1))
+		{
+			CanDash = true;
+			CanSuperDash = true;
+			CanHeavyHit = true;
+		}
+
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			PersistentData.instance.WingsCompleted = 1;
+			Debug.Log("Marking one rooms completed");
+		}
+		
+		if (Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			PersistentData.instance.WingsCompleted = 2;
+			Debug.Log("Marking two rooms completed");
+		}
+		
+		#endif
+
+		#endregion
+		
+		#region Pause
+
+		if (Input.GetButtonDown("Pause"))
+		{
+			Paused = !Paused;
+		}
+		
+		#endregion
+		
+		if (Paused) return;
+		
 		#region Movement
 
 		//Get Values
@@ -291,19 +329,6 @@ public class PlayerController : Controller
 				CurrentInteractionObject.TriggerInteraction();
 			}
 		}
-
-		#endregion
-
-		#region PlayerCheats
-
-#if UNITY_EDITOR
-		if (Input.GetKeyDown(KeyCode.F1))
-		{
-			CanDash = true;
-			CanSuperDash = true;
-			CanHeavyHit = true;
-		}
-#endif
 
 		#endregion
 	}

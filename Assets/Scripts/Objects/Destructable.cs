@@ -32,15 +32,16 @@ public class Destructable : MonoBehaviour, IHittable
 	{
 		Instantiate(m_Particles, transform.position, Quaternion.identity);
 		
+		int seed = UnityEngine.Random.Range(0, 20 * PlayerController.instance.HealthPacks);
+		if (seed == 0 && m_ChanceToSpawn != null)
+		{
+			Instantiate(m_ChanceToSpawn, transform.position, Quaternion.identity);
+		}
+		
 		m_Index++;
 		if (m_Index >= m_Sprites.Length - 1)
 		{
 			GetComponent<Collider2D>().enabled = false;
-			int seed = UnityEngine.Random.Range(0, 20 * PlayerController.instance.HealthPacks);
-			if (seed == 0 && m_ChanceToSpawn != null)
-			{
-				Instantiate(m_ChanceToSpawn, transform.position, Quaternion.identity);
-			}
 		}
 		m_Rig.velocity = direction * m_MoveAmount;
 		StartCoroutine(SpriteSwap());

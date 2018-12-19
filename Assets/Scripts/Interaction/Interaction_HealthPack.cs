@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Interaction_HealthPack : Interaction
 {
+	private Collider2D m_Col;
+	
+	private void Awake()
+	{
+		m_Col = GetComponent<Collider2D>();
+	}
+
 	public override void TriggerInteraction()
 	{
 		PlayerController.instance.HealthPacks++;

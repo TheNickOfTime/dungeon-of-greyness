@@ -30,6 +30,8 @@ public class SceneLoader : MonoBehaviour
 		PersistentData.HealthPacks = 1;
 	}
 
+	#region Load Level
+
 	public void LoadLevel(string levelName, string spawnName)
 	{
 		if (levelName == "")
@@ -73,16 +75,19 @@ public class SceneLoader : MonoBehaviour
 		yield return new WaitForSecondsRealtime(1);
 		yield return new WaitUntil(() => levelAsync.progress >= 0.9f);
 		levelAsync.allowSceneActivation = true;
-		
-//		string oldSceneName = SceneManager.GetActiveScene().name;
-//		SceneManager.SetActiveScene(SceneManager.GetSceneByName(levelName));
 
 		yield return null;
-
-		Transform spawnLocation = GameObject.Find(spawnName).transform;
-//		Transform player = GameObject.FindObjectOfType<PlayerController>().transform;
-
-		PlayerController.instance.transform.position = spawnLocation.position;
+		
+		if (levelName != "MainMenu")
+		{
+			Transform spawnLocation = GameObject.Find(spawnName).transform;
+			PlayerController.instance.transform.position = spawnLocation.position;
+		}
+		else
+		{
+			Destroy(PlayerController.instance.gameObject);
+		}
+		
 
 		//Fade to scene------------------------------------------------------------------------------------------------/
 		t = 0;
@@ -98,4 +103,55 @@ public class SceneLoader : MonoBehaviour
 			yield return null;
 		}
 	}
+
+	#endregion
+
+	#region StartGame
+
+	public void StartGame()
+	{
+		StartCoroutine(StartGameSequence());
+	}
+
+	private IEnumerator StartGameSequence()
+	{
+		Time.timeScale = 0.0f;
+
+		AsyncOperation levelAsync = SceneManager.LoadSceneAsync("Area_00", LoadSceneMode.Single);
+		levelAsync.allowSceneActivation = false;
+
+		//Fade to black------------------------------------------------------------------------------------------------/
+		float timer = 0.5f;
+		float t = 0;
+		while(t < timer)
+		{
+			t += Time.unscaledDeltaTime;
+
+			m_FadePanel.color = Color.Lerp(Color.clear, Color.black, t / timer);
+
+			yield return null;
+		}
+
+		//Do Stuff-----------------------------------------------------------------------------------------------------/
+		yield return new WaitForSecondsRealtime(1);
+		yield return new WaitUntil(() => levelAsync.progress >= 0.9f);
+		levelAsync.allowSceneActivation = true;
+		
+
+		//Fade to scene------------------------------------------------------------------------------------------------/
+		t = 0;
+		while (t < timer)
+		{
+			t += Time.unscaledDeltaTime;
+			m_FadePanel.color = Color.Lerp(Color.black, Color.clear, t / timer);
+			if(t > 0.5f)
+			{
+				Time.timeScale = 1.0f;
+			}
+
+			yield return null;
+		}
+	}
+
+	#endregion
 }
