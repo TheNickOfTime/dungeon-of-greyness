@@ -54,7 +54,7 @@ public class Controller : MonoBehaviour, IHittable
 	//Reactions--------------------------------------------------------------------------------------------------------/
 	public virtual void OnHit(Vector2 direction, float damage)
 	{
-//		Debug.Log(m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Stun"));
+		//		Debug.Log(m_Char.Anim.GetCurrentAnimatorStateInfo(0).IsName("Stun"));
 		if (damage > 1)
 		{
 			m_Char.Anim.SetTrigger("Stun");

@@ -265,7 +265,7 @@ public class PlayerController : Controller
 
 			if (Input.GetButtonUp("Dash"))
 			{
-				if (m_DashInputTime < 0.25f && Power > 0.15f)
+				if (m_DashInputTime < 0.25f && Power > 0.15f && m_CanDashAgain)
 				{
 					m_Char.Anim.SetTrigger("Dash Regular");
 					m_Char.Anim.SetBool("Dash", false);
