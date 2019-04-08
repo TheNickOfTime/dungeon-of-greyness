@@ -17,7 +17,11 @@ public class PersistentData : MonoBehaviour
 	public static int HealthPacks
 	{
 		get { return m_HealthPacks; }
-		set { m_HealthPacks = value; }
+		set
+		{
+			m_HealthPacks = value;
+			Debug.Log(m_HealthPacks);
+		}
 	}
 
 	private void Awake()

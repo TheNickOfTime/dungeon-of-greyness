@@ -197,10 +197,9 @@ public class PlayerController : Controller
 
 		#region Attack
 
-		if (Input.GetButtonDown("Attack") && Power > 0.1f)
+		if (Input.GetButtonDown("Attack"))
 		{
 			m_Char.Attack();
-			Power -= 0.15f;
 		}
 		
 		#endregion
@@ -243,42 +242,61 @@ public class PlayerController : Controller
 			if (Input.GetButtonDown("Dash"))
 			{
 				m_Char.Anim.SetBool("Dash", true);
-			}
-
-			if (Input.GetButton("Dash") && CanSuperDash)
-			{
-				m_DashInputTime += Time.deltaTime;
-				if (m_CanDashAgain && m_DashInputTime > 0.25f && Power > 0.35f)
-				{
-					m_Char.Anim.SetTrigger("Dash Heavy");
-					m_Char.Anim.SetBool("Dash", false);
-					
-					Vector2 dir = Vector3.Normalize(new Vector2(h, v));
-					dir = isMoving ? dir : m_Char.Direction;
-					m_Char.Dash(dir);
-					Power -= 0.5f;
-					
-					m_CanDashAgain = false;
-					m_DashInputTime = 0;
-				}
+				m_Char.Anim.SetTrigger("Dash Regular");
+				
+				Vector2 dir = Vector3.Normalize(new Vector2(h, v));
+				dir = isMoving ? dir : m_Char.Direction;
+				m_Char.Dash(dir);
+				Power -= 0.25f;
 			}
 
 			if (Input.GetButtonUp("Dash"))
 			{
-				if (m_DashInputTime < 0.25f && Power > 0.15f && m_CanDashAgain)
-				{
-					m_Char.Anim.SetTrigger("Dash Regular");
-					m_Char.Anim.SetBool("Dash", false);
-					
-					Vector2 dir = Vector3.Normalize(new Vector2(h, v));
-					dir = isMoving ? dir : m_Char.Direction;
-					m_Char.Dash(dir);
-					Power -= 0.25f;
-				}
 				m_Char.Anim.SetBool("Dash", false);
 				m_CanDashAgain = true;
 				m_DashInputTime = 0;
 			}
+			
+			
+//			if (Input.GetButtonDown("Dash"))
+//			{
+//				m_Char.Anim.SetBool("Dash", true);
+//			}
+//
+//			if (Input.GetButton("Dash") && CanSuperDash)
+//			{
+//				m_DashInputTime += Time.deltaTime;
+//				if (m_CanDashAgain && m_DashInputTime > 0.25f && Power > 0.35f)
+//				{
+//					m_Char.Anim.SetTrigger("Dash Heavy");
+//					m_Char.Anim.SetBool("Dash", false);
+//					
+//					Vector2 dir = Vector3.Normalize(new Vector2(h, v));
+//					dir = isMoving ? dir : m_Char.Direction;
+//					m_Char.Dash(dir);
+//					Power -= 0.5f;
+//					
+//					m_CanDashAgain = false;
+//					m_DashInputTime = 0;
+//				}
+//			}
+//
+//			if (Input.GetButtonUp("Dash"))
+//			{
+//				if (m_DashInputTime < 0.25f && Power > 0.15f && m_CanDashAgain)
+//				{
+//					m_Char.Anim.SetTrigger("Dash Regular");
+//					m_Char.Anim.SetBool("Dash", false);
+//					
+//					Vector2 dir = Vector3.Normalize(new Vector2(h, v));
+//					dir = isMoving ? dir : m_Char.Direction;
+//					m_Char.Dash(dir);
+//					Power -= 0.25f;
+//				}
+//				m_Char.Anim.SetBool("Dash", false);
+//				m_CanDashAgain = true;
+//				m_DashInputTime = 0;
+//			}
 			
 //			if (Input.GetButtonUp("Dash") && m_Char.CanMove && Power > 0.15f)
 //			{

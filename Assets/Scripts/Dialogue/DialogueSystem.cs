@@ -101,7 +101,13 @@ public class DialogueSystem : MonoBehaviour
 		m_TypingSequence = StartCoroutine(TypeText());
 	}
 
-	private void DisableSystem()
+	public void EndDialogue()
+	{
+		UI_Gameplay.instance.DialoguePanelVisibility = false;
+		m_LineIndex = 0;
+	}
+
+	public void DisableSystem()
 	{
 		Interaction_Dialogue interaction = GetComponent<Interaction_Dialogue>();
 		if (interaction != null)

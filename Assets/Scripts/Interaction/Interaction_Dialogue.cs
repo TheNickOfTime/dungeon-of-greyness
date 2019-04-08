@@ -15,4 +15,9 @@ public class Interaction_Dialogue : Interaction
 	{
 		m_DialogueSystem.PlayLine();
 	}
+
+	protected override void ExitTrigger()
+	{
+		m_DialogueSystem.EndDialogue();
+	}
 }

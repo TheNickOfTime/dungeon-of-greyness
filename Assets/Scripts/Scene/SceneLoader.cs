@@ -13,6 +13,8 @@ public class SceneLoader : MonoBehaviour
 	private string m_LastSpawn;
 	private string m_LastLevel;
 
+	private float AFKTimer = 0;
+
 	private void Awake()
 	{
 		if(instance != null)
@@ -27,7 +29,14 @@ public class SceneLoader : MonoBehaviour
 
 		m_LastLevel = SceneManager.GetActiveScene().name;
 		m_LastSpawn = "Player Spawn";
-		PersistentData.HealthPacks = 1;
+//		PersistentData.HealthPacks = 1;
+	}
+
+	private void Update()
+	{
+		#if SPRING_SHOW
+		AFKCheck();
+		#endif
 	}
 
 	#region Load Level
@@ -59,17 +68,7 @@ public class SceneLoader : MonoBehaviour
 		AsyncOperation levelAsync = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Single);
 		levelAsync.allowSceneActivation = false;
 
-		//Fade to black------------------------------------------------------------------------------------------------/
-		float timer = 0.5f;
-		float t = 0;
-		while(t < timer)
-		{
-			t += Time.unscaledDeltaTime;
-
-			m_FadePanel.color = Color.Lerp(Color.clear, Color.black, t / timer);
-
-			yield return null;
-		}
+		yield return FadeOut();
 
 		//Do Stuff-----------------------------------------------------------------------------------------------------/
 		yield return new WaitForSecondsRealtime(1);
@@ -87,10 +86,33 @@ public class SceneLoader : MonoBehaviour
 		{
 			Destroy(PlayerController.instance.gameObject);
 		}
-		
 
+
+		yield return FadeIn();
+	}
+
+	#endregion
+
+	public IEnumerator FadeOut()
+	{
+		//Fade to black------------------------------------------------------------------------------------------------/
+		float timer = 0.5f;
+		float t = 0;
+		while(t < timer)
+		{
+			t += Time.unscaledDeltaTime;
+
+			m_FadePanel.color = Color.Lerp(Color.clear, Color.black, t / timer);
+
+			yield return null;
+		}
+	}
+
+	public IEnumerator FadeIn()
+	{
 		//Fade to scene------------------------------------------------------------------------------------------------/
-		t = 0;
+		float timer = 0.5f;
+		float t = 0;
 		while (t < timer)
 		{
 			t += Time.unscaledDeltaTime;
@@ -103,8 +125,6 @@ public class SceneLoader : MonoBehaviour
 			yield return null;
 		}
 	}
-
-	#endregion
 
 	#region StartGame
 
@@ -154,4 +174,18 @@ public class SceneLoader : MonoBehaviour
 	}
 
 	#endregion
+
+	private void AFKCheck()
+	{
+		AFKTimer += Time.deltaTime;
+		
+		if (Input.anyKey)
+		{
+			AFKTimer = 0;
+		}
+		else if(AFKTimer > 90.0f)
+		{
+			Application.Quit();
+		}
+	}
 }

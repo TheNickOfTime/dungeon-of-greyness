@@ -14,6 +14,7 @@ public class Interaction_HealthPack : Interaction
 	public override void TriggerInteraction()
 	{
 		PlayerController.instance.HealthPacks++;
+		PersistentData.HealthPacks = PlayerController.instance.HealthPacks;
 		Destroy(gameObject);
 	}
 }

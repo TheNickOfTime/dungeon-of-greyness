@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using XInputDotNetPure;
 
 public class Character : SerializedMonoBehaviour
@@ -59,6 +60,7 @@ public class Character : SerializedMonoBehaviour
 
 	//Config
 	private bool m_CanMove = true;
+	private bool m_CanMoveNonAnim = true;
 	private bool m_CanRecieveDamage = true;
 	
 	#endregion
@@ -147,6 +149,12 @@ public class Character : SerializedMonoBehaviour
 		}
 	}
 
+	public bool CanMoveNonAnim
+	{
+		get { return m_CanMoveNonAnim; }
+		set { m_CanMoveNonAnim = value; }
+	}
+
 	public bool CanRecieveDamage
 	{
 		get
@@ -184,7 +192,7 @@ public class Character : SerializedMonoBehaviour
 	
 	public void Move(Vector2 direction)
 	{
-		if (CanMove)
+		if (CanMove )
 		{
 			m_Rig.velocity = direction * m_MoveSpeed;
 		}
@@ -255,10 +263,22 @@ public class Character : SerializedMonoBehaviour
 			m_Anim.SetTrigger("Stun Light");
 			m_Anim.SetTrigger("Die");
 			yield return new WaitForSeconds(1.0f);
-			SceneLoader.instance.LoadLevel("","");
-			yield return new WaitForSecondsRealtime(0.5f);
-			m_Anim.Play("Idle");
-			PlayerController.instance.HealthPacks = PersistentData.HealthPacks;
+			if (SceneManager.GetActiveScene().name == "Area_Hub")
+			{
+				yield return SceneLoader.instance.FadeOut();
+				yield return null;
+				transform.position = m_DashStart;
+				yield return SceneLoader.instance.FadeIn();
+				yield return new WaitForSecondsRealtime(0.5f);
+				m_Anim.Play("Idle");
+			}
+			else
+			{
+				SceneLoader.instance.LoadLevel("", "");
+				yield return new WaitForSecondsRealtime(0.5f);
+				m_Anim.Play("Idle");
+//				PlayerController.instance.HealthPacks = PersistentData.HealthPacks;
+			}
 		}
 	}
 

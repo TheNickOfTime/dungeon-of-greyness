@@ -24,7 +24,7 @@ public abstract class Interaction : MonoBehaviour
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
-	{
+	{	
 		if (player != null)
 		{
 			player.CurrentInteractionObject = null;

@@ -748,7 +748,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &186597955
+--- !u!1001 &131652824
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -794,7 +794,7 @@ Prefab:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114377780724564780, guid: a9dae11d445b7e84bacb2724647546ec,
     type: 2}
-  m_PrefabInternal: {fileID: 186597955}
+  m_PrefabInternal: {fileID: 131652824}
   m_Script: {fileID: 11500000, guid: 1d98d605d5d17ea4797abb1930359920, type: 3}
 --- !u!4 &187824046 stripped
 Transform:
